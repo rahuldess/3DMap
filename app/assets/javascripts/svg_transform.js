@@ -8,7 +8,6 @@ const DIGIT_0 = 48, DIGIT_9 = 57, COMMA = 44, SPACE = 32, PERIOD = 46, MINUS = 4
 exports.transformSVGPath =
 function transformSVGPath(pathStr) {
 	var path = new THREE.ShapePath();
-	path.userData = { URL: 'RahulSambari'};
 	var idx = 1, len = pathStr.length, activeCmd,
 		x = 0, y = 0, nx = 0, ny = 0, firstX = null, firstY = null,
 		x1 = 0, x2 = 0, y1 = 0, y2 = 0,

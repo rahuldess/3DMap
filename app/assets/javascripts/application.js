@@ -18,4 +18,5 @@
 //= require stats.min
 //= require svg_transform
 //= require threex.domevents
+//= require orbit_control
 //= require show
