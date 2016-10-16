@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Initializing variables
-  var renderer, scene, camera,
+  var renderer, scene, camera, spotLight,
       plane, controls, group, loader;
 
   var mouse     = new THREE.Vector2(),
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   /*
     In initMap() function below steps happen
-    1. Initializes camera, renderer, scene, group( which will group all geometries together and add to the scene at once).
+    1. Initializes camera, renderer, scene, light, group( which will group all geometries together and add to the scene at once).
     2. Converts SVG path to Shape geometries
     3. Adds all City Geometries to the group
   */
@@ -52,6 +52,10 @@ $(document).ready(function() {
     group = new THREE.Group();
     scene.add( group );
 
+    spotLight = new THREE.SpotLight( 0xffffff );
+    spotLight.position.set(0, 0, 1300 );
+    scene.add( spotLight );
+
     // This is for big plane which is at back of all our city geometries.
     var planGeometry  = new THREE.PlaneGeometry(2000, 1500, 10 );
     var planeMaterial = new THREE.MeshBasicMaterial( {color: 'black', side: THREE.DoubleSide} );
@@ -60,10 +64,8 @@ $(document).ready(function() {
 
     // Get the shapeGeometry from SVG path's
     initSVGObject().done(function(data) {
-      // Add the Shape Geometries with properties to the group
       addGeoObject( group, data );
     });
-
   };
 
   function trackMovement() {
@@ -76,6 +78,7 @@ $(document).ready(function() {
     return $.ajax({ url: 'load_city_data' });
   };
 
+  // Add the Shape Geometries with properties to the group
   function addGeoObject( group, svgObject ) {
     var i, j, len, len1;
     var mesh, color, material, amount, simpleShapes, simpleShape, shape3d, x, toAdd, results = [];
@@ -89,7 +92,7 @@ $(document).ready(function() {
       path = $d3g.transformSVGPath( thePaths[i] );
 
       color = new THREE.Color( theColors[i] );
-      material = new THREE.MeshBasicMaterial({
+      material = new THREE.MeshPhongMaterial({
         color: color
       });
 
