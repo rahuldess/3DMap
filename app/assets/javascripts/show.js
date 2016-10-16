@@ -53,7 +53,7 @@ $(document).ready(function() {
     scene.add( group );
 
     // This is for big plane which is at back of all our city geometries.
-    var planGeometry  = new THREE.PlaneGeometry(1000, 1000, 10 );
+    var planGeometry  = new THREE.PlaneGeometry(2000, 1500, 10 );
     var planeMaterial = new THREE.MeshBasicMaterial( {color: 'black', side: THREE.DoubleSide} );
         plane         = new THREE.Mesh( planGeometry, planeMaterial );
     group.add( plane );
@@ -78,8 +78,7 @@ $(document).ready(function() {
 
   function addGeoObject( group, svgObject ) {
     var i, j, len, len1;
-    var color, material, amount, simpleShapes, simpleShape, shape3d, x, toAdd, results = [];
-    mesh = null;
+    var mesh, color, material, amount, simpleShapes, simpleShape, shape3d, x, toAdd, results = [];
     var thePaths   = svgObject.paths;
     var theAmounts = svgObject.amounts;
     var theColors  = svgObject.colors;
