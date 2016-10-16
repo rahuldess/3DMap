@@ -86,15 +86,14 @@ $(document).ready(function() {
     var theAmounts = svgObject.amounts;
     var theColors  = svgObject.colors;
     var theCenter  = svgObject.center;
+    var theInfo    = svgObject.info;
     len = thePaths.length;
 
     for (i = 0; i < len; ++i) {
       path = $d3g.transformSVGPath( thePaths[i] );
 
       color = new THREE.Color( theColors[i] );
-      material = new THREE.MeshPhongMaterial({
-        color: color
-      });
+      material = new THREE.MeshPhongMaterial({ color: color });
 
       amount = theAmounts[i];
       simpleShapes = path.toShapes(true);
@@ -106,6 +105,7 @@ $(document).ready(function() {
           bevelEnabled: false
         });
         mesh = new THREE.Mesh(shape3d, material);
+        mesh.info = theInfo[i];
         mesh.rotation.x = Math.PI;
         mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1 );
         mesh.translateZ( - amount - 1);
@@ -119,7 +119,9 @@ $(document).ready(function() {
 
   function eventListeners(){
     window.addEventListener( 'resize', onWindowResize, false );
-    // window.addEventListener( 'mousemove', onDocumentMouseMoveTest, true );
+
+    // check if hovered over cities
+    window.addEventListener( 'mousemove', onDocumentMouseMove, true );
   };
 
 
@@ -129,10 +131,12 @@ $(document).ready(function() {
     renderer.setSize( window.innerWidth, window.innerHeight );
   };
 
-  function onDocumentMouseMoveTest(event){
+  function onDocumentMouseMove(event){
     event.preventDefault();
     mouse.x =    ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y =  - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+    raycasting();
   };
 
   function animate() {
@@ -142,23 +146,28 @@ $(document).ready(function() {
   };
 
   function render() {
-    // raycaster.setFromCamera( mouse, camera );
-    // var intersects = raycaster.intersectObjects( scene.children, true );
-    //
-    // if ( intersects.length > 0 ) {
-    //   if ( INTERSECTED != intersects[ 0 ].object ) {
-    //     if ( INTERSECTED ) INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
-    //     INTERSECTED = intersects[ 0 ].object;
-    //
-    //     INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
-    //     INTERSECTED.material.color.setHex( 0xff0000 );
-    //   }
-    // } else {
-    //   if ( INTERSECTED ) INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
-    //   INTERSECTED = null;
-    // }
     renderer.render( scene, camera );
   };
 
+  function raycasting() {
+    raycaster.setFromCamera( mouse, camera );
+    var intersects = raycaster.intersectObjects( scene.children, true );
+
+    if ( intersects.length > 0 ) {
+      if ( INTERSECTED != intersects[ 0 ].object ) {
+        if ( INTERSECTED ) {
+          INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+        }
+
+        INTERSECTED = intersects[ 0 ].object;
+        console.log(INTERSECTED.info);
+        INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+        INTERSECTED.material.color.setHex( 0xff0000 );
+      }
+    } else {
+      if ( INTERSECTED ) INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+      INTERSECTED = null;
+    }
+  };
 
 });
