@@ -66,7 +66,6 @@ $(document).ready(function() {
 
   };
 
-
   function trackMovement() {
     controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.addEventListener( 'change', render );
