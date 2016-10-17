@@ -53,9 +53,11 @@ $(document).ready(function() {
 
     for (var i = 0; i < data.length; i++) {
 
-      var x = data[i][0] * (Math.PI / 180);
-      var y = data[i][1] * (Math.PI / 180);
-      var position = lonLatToVector3(x, y);
+      // var x = data[i][0] * (Math.PI / 180);
+      // var y = data[i][1] * (Math.PI / 180);
+      var x = data[i][0];
+      var y = data[i][1];
+      var position = latLongToVector3(x, y);
 
       window.pos.push(position); // for debugging purpose.
 
@@ -64,35 +66,58 @@ $(document).ready(function() {
         cubeMat));
 
       // position the cube correctly
-      cube.position = position;
-      // cube.lookAt(new THREE.Vector3(0, 0, 0));
+      cube.position.set(position["x"], position["y"], position["z"]);
+
       console.log(cube);
       scene.add(cube);
 
     }
   }
 
-  function lonLatToVector3(lat, lng, out) {
-    out = out || new THREE.Vector3();
-    var radius = 600;
-    //flips the Y axis
-    // lat = Math.PI / 2 - lat;
+  function latLngFun(lat, lng) {
+    var radius = 60;
+    var vectorLoc = {};
 
-    //distribute to sphere
-    out.set(
-      Math.cos(lat) * Math.cos(lng) * -radius,
-      Math.sin(lat) * radius,
-      Math.cos(lat) * Math.sin(lng) * radius
-    );
-
-    // out.set(
-    //   Math.sin(lat) * Math.sin(lng),
-    //   Math.cos(lat),
-    //   Math.sin(lat) * Math.cos(lng)
-    // );
-
-    return out;
+    vectorLoc["x"] = Math.abs(Math.sin(lat) * Math.sin(lng));
+    vectorLoc["y"] = Math.abs(Math.cos(lat));
+    vectorLoc["z"] = Math.abs(Math.sin(lat) * Math.cos(lng));
+    return vectorLoc;
   }
+
+  function latLngFun2(lat, lon) {
+    var vectorLoc = {};
+    var cosLat = Math.cos(lat * Math.PI / 180.0);
+    var sinLat = Math.sin(lat * Math.PI / 180.0);
+    var cosLon = Math.cos(lon * Math.PI / 180.0);
+    var sinLon = Math.sin(lon * Math.PI / 180.0);
+    var rad = 1.0;
+
+    vectorLoc["x"] = rad * cosLat * cosLon;
+    vectorLoc["y"] = rad * cosLat * sinLon;
+    vectorLoc["z"] = rad * sinLat;
+    return vectorLoc;
+  }
+
+
+  function latLongToVector3(lat, lon) {
+    var radius = 60;
+    var heigth = 2;
+    var vectorLoc = {};
+
+    var phi = (lat) * Math.PI / 180;
+    var theta = (lon - 180) * Math.PI / 180;
+
+    var x = -(radius + heigth) * Math.cos(phi) * Math.cos(theta);
+    var y = (radius + heigth) * Math.sin(phi);
+    var z = (radius + heigth) * Math.cos(phi) * Math.sin(theta);
+
+    vectorLoc["x"] = x;
+    vectorLoc["y"] = y;
+    vectorLoc["z"] = z;
+    return vectorLoc;
+  }
+
+
 
   function initMap() {
     // Sets the renderer, which basically renders (scene + camera) together
@@ -107,7 +132,7 @@ $(document).ready(function() {
     // Sets the camera.
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
       1, 10000);
-    camera.position.set(0, 0, 1500);
+    camera.position.set(0, -700, 1500);
 
     // Sets the Scene
     scene = new THREE.Scene();
