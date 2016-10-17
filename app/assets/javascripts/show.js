@@ -43,7 +43,7 @@ $(document).ready(function() {
 
     // Sets the camera.
     camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.set(0, 0, 1500 );
+    camera.position.set(0, -700, 1500 );
 
     // Sets the Scene
     scene = new THREE.Scene();
