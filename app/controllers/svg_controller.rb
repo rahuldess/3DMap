@@ -14,7 +14,7 @@ class SvgController < ApplicationController
                 "#{City.saratoga}",
                 "#{City.milpitas}"],
         amounts: [ 50, 30, 100, 30, 20, 70, 99, 10 ],
-        colors: [ '#0000A0', '#0000FF', 'green', 'maroon', 'brown', 'blue', 'white', 'orange' ],
+        colors: [ '#ffcccc', '#ffb2b2', '#ff9999', '#ff7f7f', '#ff6666', '#ff4c4c', '#ffe5e5', 'orange' ],
         info: [{ name: 'Sunnyvale' },
                 { name: 'Santa Clara' },
                 { name: 'Mountain View' },
