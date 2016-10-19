@@ -1,0 +1,91 @@
+{
+  "city": "san jose",
+  "areas": [{
+    "zip_code": "95112",
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "5978 Gleneagles Cir",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 40,
+        "leads": 2,
+        "saved": 4,
+        "shared": 3
+      }, {
+        "date": "10_16_2016",
+        "views": 90,
+        "leads": 0,
+        "saved": 0,
+        "shared": 1
+      }, {
+        "date": "10_15_2016",
+        "views": 10,
+        "leads": 0,
+        "saved": 1,
+        "shared": 1
+      }, {
+        "date": "10_14_2016",
+        "views": 12,
+        "leads": 0,
+        "saved": 0,
+        "shared": 0
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 200,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }, {
+        "date": "10_01_2016",
+        "views": 200,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 200,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }, {
+        "date": "10_01_2016",
+        "views": 200,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 200,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }, {
+        "date": "10_01_2016",
+        "views": 200,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }]
+  }]
+}
