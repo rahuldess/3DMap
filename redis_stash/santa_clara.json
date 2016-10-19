@@ -1,36 +1,36 @@
 {
-  "city": "san jose",
+  "city": "santa clara",
   "areas": [{
-    "zip_code": "95112",
+    "zip_code": "95050",
     "properties": [{
       "mpr_id": 2271768559,
       "lat": 37.272272,
       "long": -121.752132,
-      "display_address": "5978 Gleneagles Cir",
+      "display_address": "Address",
       "data_points": [{
         "date": "10_17_2016",
-        "views": 40,
-        "leads": 2,
-        "saved": 4,
+        "views": 20,
+        "leads": 8,
+        "saved": 10,
         "shared": 3
       }, {
         "date": "10_16_2016",
         "views": 90,
-        "leads": 0,
-        "saved": 0,
-        "shared": 1
+        "leads": 15,
+        "saved": 4,
+        "shared": 7
       }, {
         "date": "10_15_2016",
         "views": 10,
-        "leads": 0,
+        "leads": 3,
         "saved": 1,
         "shared": 1
       }, {
         "date": "10_14_2016",
-        "views": 12,
-        "leads": 0,
-        "saved": 0,
-        "shared": 0
+        "views": 150,
+        "leads": 20,
+        "saved": 89,
+        "shared": 90
       }]
     }, {
       "mpr_id": 1981194633,
@@ -39,13 +39,13 @@
       "display_address": "5206 Nice Ct",
       "data_points": [{
         "date": "10_01_2016",
-        "views": 200,
-        "leads": 20,
-        "saved": 12,
-        "shared": 30
+        "views": 45,
+        "leads": 12,
+        "saved": 9,
+        "shared": 34
       }, {
         "date": "10_01_2016",
-        "views": 200,
+        "views": 190,
         "leads": 20,
         "saved": 12,
         "shared": 30
@@ -57,16 +57,16 @@
       "display_address": "4509 Thistle Dr",
       "data_points": [{
         "date": "10_01_2016",
-        "views": 200,
-        "leads": 20,
-        "saved": 12,
-        "shared": 30
+        "views": 89,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
       }, {
         "date": "10_01_2016",
-        "views": 200,
-        "leads": 20,
+        "views": 65,
+        "leads": 23,
         "saved": 12,
-        "shared": 30
+        "shared": 8
       }]
     }, {
       "mpr_id": 2267630114,
@@ -75,20 +75,20 @@
       "display_address": "1653 Forman Ave",
       "data_points": [{
         "date": "10_01_2016",
-        "views": 200,
-        "leads": 20,
-        "saved": 12,
-        "shared": 30
+        "views": 67,
+        "leads": 23,
+        "saved": 9,
+        "shared": 8
       }, {
         "date": "10_01_2016",
-        "views": 200,
-        "leads": 20,
-        "saved": 12,
-        "shared": 30
+        "views": 98,
+        "leads": 23,
+        "saved": 89,
+        "shared": 12
       }]
     }]
   }, {
-    "zip_code": "95110",
+    "zip_code": "95051",
     "properties": [{
       "mpr_id": 2271768559,
       "lat": 37.272272,
@@ -96,28 +96,28 @@
       "display_address": "5978 Gleneagles Cir",
       "data_points": [{
         "date": "10_17_2016",
-        "views": 2,
-        "leads": 0,
-        "saved": 1,
-        "shared": 1
+        "views": 120,
+        "leads": 34,
+        "saved": 78,
+        "shared": 13
       }, {
         "date": "10_16_2016",
-        "views": 9,
-        "leads": 0,
-        "saved": 0,
-        "shared": 1
+        "views": 109,
+        "leads": 43,
+        "saved": 67,
+        "shared": 12
       }, {
         "date": "10_15_2016",
-        "views": 1,
-        "leads": 0,
-        "saved": 1,
-        "shared": 1
+        "views": 109,
+        "leads": 2,
+        "saved": 23,
+        "shared": 12
       }, {
         "date": "10_14_2016",
-        "views": 1,
-        "leads": 0,
-        "saved": 0,
-        "shared": 0
+        "views": 109,
+        "leads": 45,
+        "saved": 23,
+        "shared": 12
       }]
     }, {
       "mpr_id": 1981194633,
@@ -126,16 +126,16 @@
       "display_address": "5206 Nice Ct",
       "data_points": [{
         "date": "10_01_2016",
-        "views": 2,
-        "leads": 0,
-        "saved": 1,
-        "shared": 1
+        "views": 78,
+        "leads": 23,
+        "saved": 3,
+        "shared": 6
       }, {
         "date": "10_01_2016",
-        "views": 11,
-        "leads": 2,
-        "saved": 1,
-        "shared": 3
+        "views": 89,
+        "leads": 12,
+        "saved": 11,
+        "shared": 33
       }]
     }, {
       "mpr_id": 1984712153,
