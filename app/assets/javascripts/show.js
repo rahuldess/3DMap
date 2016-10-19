@@ -106,11 +106,12 @@ $(document).ready(function() {
       material = new THREE.MeshPhongMaterial({
         color: "green"
       });
+
       simpleShapes = path.toShapes(true);
       for (j = 0; j < simpleShapes.length; ++j) {
         simpleShape = simpleShapes[j];
         shape3d = simpleShape.extrude({
-          amount: 200,
+          amount: 50,
           bevelEnabled: false
         });
       }
