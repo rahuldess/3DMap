@@ -1,0 +1,178 @@
+{
+  "city": "sunnyvale",
+  "areas": [{
+    "zip_code": "94085",
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "Address",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 12,
+        "leads": 4,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_16_2016",
+        "views": 45,
+        "leads": 9,
+        "saved": 1,
+        "shared": 1
+      }, {
+        "date": "10_15_2016",
+        "views": 98,
+        "leads": 31,
+        "saved": 65,
+        "shared": 45
+      }, {
+        "date": "10_14_2016",
+        "views": 123,
+        "leads": 65,
+        "saved": 12,
+        "shared": 9
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 145,
+        "leads": 23,
+        "saved": 11,
+        "shared": 23
+      }, {
+        "date": "10_01_2016",
+        "views": 10,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 89,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 56,
+        "leads": 12,
+        "saved": 7,
+        "shared": 4
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 67,
+        "leads": 23,
+        "saved": 9,
+        "shared": 8
+      }, {
+        "date": "10_01_2016",
+        "views": 98,
+        "leads": 23,
+        "saved": 89,
+        "shared": 12
+      }]
+    }]
+  }, {
+    "zip_code": "94086",
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "5978 Gleneagles Cir",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 65,
+        "leads": 12,
+        "saved": 7,
+        "shared": 23
+      }, {
+        "date": "10_16_2016",
+        "views": 109,
+        "leads": 43,
+        "saved": 67,
+        "shared": 12
+      }, {
+        "date": "10_15_2016",
+        "views": 234,
+        "leads": 67,
+        "saved": 13,
+        "shared": 45
+      }, {
+        "date": "10_14_2016",
+        "views": 109,
+        "leads": 45,
+        "saved": 23,
+        "shared": 12
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 78,
+        "leads": 23,
+        "saved": 3,
+        "shared": 6
+      }, {
+        "date": "10_01_2016",
+        "views": 89,
+        "leads": 12,
+        "saved": 11,
+        "shared": 33
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 10,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 23,
+        "leads": 12,
+        "saved": 10,
+        "shared": 15
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 50,
+        "leads": 12,
+        "saved": 9,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 34,
+        "leads": 2,
+        "saved": 12,
+        "shared": 3
+      }]
+    }]
+  }]
+}
