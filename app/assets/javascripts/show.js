@@ -31,6 +31,9 @@ $(document).ready(function() {
   // Event listeners for mouse
   eventListeners();
 
+  // Add pointsData
+  addDensityData(pointsData);
+
   function initMap() {
     // Sets the renderer, which basically renders (scene + camera) together
     renderer = new THREE.WebGLRenderer();
@@ -188,5 +191,63 @@ $(document).ready(function() {
       INTERSECTED = null;
     }
   };
+  function addDensityData(data) {
+    window.pos = [];
+    var geom = new THREE.Geometry();
+
+    var cubeMat = new THREE.MeshLambertMaterial({
+      color: 0x000000,
+      opacity: 0.6,
+      emissive: 0xffffff
+    });
+
+    for (var i = 0; i < data.length; i++) {
+
+      // var x = data[i][0] * (Math.PI / 180);
+      // var y = data[i][1] * (Math.PI / 180);
+      var x = data[i][0];
+      var y = data[i][1];
+      // var position = latLongToVector3(x, y);
+      var postion = latLngToPointXY(x, y)
+
+    }
+  }
+
+  function latLngToPointXY(lat, lng) {
+    // [37.38122, -121.98051]
+    // per 0.00001 in svg
+    const Y_UNIT = 0.05268209219, X_UNIT = 0.05235987756;
+    const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
+    const POVOT_POINT_SVG =[43.30236423376482,69.81056448139134]; //(x, y)
+
+    // var newY = (lat - PIVOT_POINT[0]) * Y_UNIT * 100000
+    // var newX = (lng - PIVOT_POINT[1]) * X_UNIT * 100000
+    var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT * 100000
+    var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT * 100000
+
+    // console.log(newX)
+    // console.log(newY)
+
+    svgToPlot = "M,"+newX+","+newY+", L,"+(newX+20)+","+(newY)+", L,"+(newX+20)+","+(newY+20)+", L,"+(newX)+","+(newY)+", L,"+(newX)+","+(newY);
+    path = $d3g.transformSVGPath(svgToPlot);
+    // color = new THREE.Color( theColors[i] );
+    material = new THREE.MeshPhongMaterial({ color: "green" });
+    simpleShapes = path.toShapes(true);
+    for (j = 0; j < simpleShapes.length; ++j) {
+      simpleShape = simpleShapes[j];
+      shape3d = simpleShape.extrude({
+        amount: 200,
+        bevelEnabled: false
+      });
+    }
+    mesh = new THREE.Mesh(shape3d, material);
+    group.add(mesh)
+    mesh.rotation.x = Math.PI;
+    mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1 );
+    mesh.translateZ( - 80 - 1);
+    mesh.translateX( - 600);
+    mesh.translateY( - 150);
+    return true;
+  }
 
 });
