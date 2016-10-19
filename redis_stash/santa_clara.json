@@ -90,6 +90,95 @@
       }]
     }]
   }, {
+    "zip_code": "95052",
+    "lat": 37.3493,
+    "lng": -121.9472,
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "Address",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 20,
+        "leads": 8,
+        "saved": 10,
+        "shared": 3
+      }, {
+        "date": "10_16_2016",
+        "views": 90,
+        "leads": 15,
+        "saved": 4,
+        "shared": 7
+      }, {
+        "date": "10_15_2016",
+        "views": 10,
+        "leads": 3,
+        "saved": 1,
+        "shared": 1
+      }, {
+        "date": "10_14_2016",
+        "views": 150,
+        "leads": 20,
+        "saved": 89,
+        "shared": 90
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 45,
+        "leads": 12,
+        "saved": 9,
+        "shared": 34
+      }, {
+        "date": "10_01_2016",
+        "views": 190,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 89,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 65,
+        "leads": 23,
+        "saved": 12,
+        "shared": 8
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 67,
+        "leads": 23,
+        "saved": 9,
+        "shared": 8
+      }, {
+        "date": "10_01_2016",
+        "views": 98,
+        "leads": 23,
+        "saved": 89,
+        "shared": 12
+      }]
+    }]
+  }, {
     "zip_code": "95051",
     "lat": 37.3472,
     "lng": -121.9855,
@@ -176,6 +265,273 @@
         "leads": 2,
         "saved": 12,
         "shared": 3
+      }]
+    }]
+  }, {
+    "zip_code": "95056",
+    "lat": 37.3997,
+    "lng": -121.962,
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "Address",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 20,
+        "leads": 8,
+        "saved": 10,
+        "shared": 3
+      }, {
+        "date": "10_16_2016",
+        "views": 90,
+        "leads": 15,
+        "saved": 4,
+        "shared": 7
+      }, {
+        "date": "10_15_2016",
+        "views": 10,
+        "leads": 3,
+        "saved": 1,
+        "shared": 1
+      }, {
+        "date": "10_14_2016",
+        "views": 150,
+        "leads": 20,
+        "saved": 89,
+        "shared": 90
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 45,
+        "leads": 12,
+        "saved": 9,
+        "shared": 34
+      }, {
+        "date": "10_01_2016",
+        "views": 190,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 89,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 65,
+        "leads": 23,
+        "saved": 12,
+        "shared": 8
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 67,
+        "leads": 23,
+        "saved": 9,
+        "shared": 8
+      }, {
+        "date": "10_01_2016",
+        "views": 98,
+        "leads": 23,
+        "saved": 89,
+        "shared": 12
+      }]
+    }]
+  }, {
+    "zip_code": "95054",
+    "lat": 37.3931,
+    "lng": -121.9592,
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "Address",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 20,
+        "leads": 8,
+        "saved": 10,
+        "shared": 3
+      }, {
+        "date": "10_16_2016",
+        "views": 90,
+        "leads": 15,
+        "saved": 4,
+        "shared": 7
+      }, {
+        "date": "10_15_2016",
+        "views": 10,
+        "leads": 3,
+        "saved": 1,
+        "shared": 1
+      }, {
+        "date": "10_14_2016",
+        "views": 150,
+        "leads": 20,
+        "saved": 89,
+        "shared": 90
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 45,
+        "leads": 12,
+        "saved": 9,
+        "shared": 34
+      }, {
+        "date": "10_01_2016",
+        "views": 190,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 89,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 65,
+        "leads": 23,
+        "saved": 12,
+        "shared": 8
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 67,
+        "leads": 23,
+        "saved": 9,
+        "shared": 8
+      }, {
+        "date": "10_01_2016",
+        "views": 98,
+        "leads": 23,
+        "saved": 89,
+        "shared": 12
+      }]
+    }]
+  }, {
+    "zip_code": "95053",
+    "lat": 37.3493,
+    "lng": -121.9379,
+    "properties": [{
+      "mpr_id": 2271768559,
+      "lat": 37.272272,
+      "long": -121.752132,
+      "display_address": "Address",
+      "data_points": [{
+        "date": "10_17_2016",
+        "views": 20,
+        "leads": 8,
+        "saved": 10,
+        "shared": 3
+      }, {
+        "date": "10_16_2016",
+        "views": 90,
+        "leads": 15,
+        "saved": 4,
+        "shared": 7
+      }, {
+        "date": "10_15_2016",
+        "views": 10,
+        "leads": 3,
+        "saved": 1,
+        "shared": 1
+      }, {
+        "date": "10_14_2016",
+        "views": 150,
+        "leads": 20,
+        "saved": 89,
+        "shared": 90
+      }]
+    }, {
+      "mpr_id": 1981194633,
+      "lat": 37.277563,
+      "long": -121.779046,
+      "display_address": "5206 Nice Ct",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 45,
+        "leads": 12,
+        "saved": 9,
+        "shared": 34
+      }, {
+        "date": "10_01_2016",
+        "views": 190,
+        "leads": 20,
+        "saved": 12,
+        "shared": 30
+      }]
+    }, {
+      "mpr_id": 1984712153,
+      "lat": 37.266648,
+      "long": -121.853346,
+      "display_address": "4509 Thistle Dr",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 89,
+        "leads": 2,
+        "saved": 1,
+        "shared": 3
+      }, {
+        "date": "10_01_2016",
+        "views": 65,
+        "leads": 23,
+        "saved": 12,
+        "shared": 8
+      }]
+    }, {
+      "mpr_id": 2267630114,
+      "lat": 37.260166,
+      "long": -121.906441,
+      "display_address": "1653 Forman Ave",
+      "data_points": [{
+        "date": "10_01_2016",
+        "views": 67,
+        "leads": 23,
+        "saved": 9,
+        "shared": 8
+      }, {
+        "date": "10_01_2016",
+        "views": 98,
+        "leads": 23,
+        "saved": 89,
+        "shared": 12
       }]
     }]
   }]
