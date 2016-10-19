@@ -2,6 +2,8 @@
   "city": "santa clara",
   "areas": [{
     "zip_code": "95050",
+    "lat": 37.3484,
+    "lng": -121.9536,
     "properties": [{
       "mpr_id": 2271768559,
       "lat": 37.272272,
@@ -89,6 +91,8 @@
     }]
   }, {
     "zip_code": "95051",
+    "lat": 37.3472,
+    "lng": -121.9855,
     "properties": [{
       "mpr_id": 2271768559,
       "lat": 37.272272,

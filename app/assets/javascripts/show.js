@@ -1,3 +1,5 @@
+//= require ./geo_plotter
+
 $(document).ready(function() {
 
   // Initializing variables
@@ -32,7 +34,105 @@ $(document).ready(function() {
   eventListeners();
 
   // Add pointsData
-  addDensityData(pointsData);
+  addDensityData("santa_clara", "hot_area");
+
+  function addDensityData(geo, dataType) {
+    url = "area_statistics?area=" + geo + "&type=" + dataType;
+
+    requestDataFromServer(url).done(function(data) {
+      plotGeoDataPoints(data);
+    });
+  }
+
+  function plotGeoDataPoints(data) {
+    // var obj = new GeoPlotter(data).plot();
+    window.geoData = data;
+    var geom = new THREE.Geometry();
+    var dataToPlot = [];
+    // var latLongCollection = [];
+
+    var cubeMat = new THREE.MeshLambertMaterial({
+      color: 0x000000,
+      opacity: 0.6,
+      emissive: 0xffffff
+    });
+
+    // Loop through the Zip codes and grab one lat/long per zip Code for future plotting.
+    for (var i = 0; i < data.areas.length; i++) {
+      var plotData = {}
+
+      plotData["zip_code"] = data.areas[i]["zip_code"];
+      plotData["lat_lng"] = [data.areas[i]["lat"], data.areas[i]["lng"]];
+      plotData["most_viewed"] = data.areas[i]["most_viewed"];
+      plotData["leads_submitted"] = data.areas[i]["leads_submitted"];
+      plotData["saved"] = data.areas[i]["saved"];
+      plotData["shared"] = data.areas[i]["shared"];
+      plotData["hotness_score"] = data.areas[i]["most_viewed"] + data.areas[
+        i]["leads_submitted"] + data.areas[i]["saved"] + data.areas[i][
+        "shared"
+      ];
+      dataToPlot.push(plotData);
+    }
+
+
+    plotIn3dWorld(dataToPlot);
+  }
+
+  function plotIn3dWorld(geoPoints) {
+
+    for (var x = 0; x < geoPoints.length; x++) {
+      var lat = geoPoints[x]["lat_lng"][0];
+      var lng = geoPoints[x]["lat_lng"][1];
+
+      const Y_UNIT = 0.05268209219,
+        X_UNIT = 0.05235987756;
+
+      const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
+      const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+
+      var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
+        100000
+      var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
+        100000
+
+
+      svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
+          newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX +
+          30) +
+        "," + (newY) + ", L," + (newX + 30) + "," + (newY);
+
+      path = $d3g.transformSVGPath(svgToPlot);
+      // color = new THREE.Color( theColors[i] );
+      material = new THREE.MeshPhongMaterial({
+        color: "green"
+      });
+      simpleShapes = path.toShapes(true);
+      for (j = 0; j < simpleShapes.length; ++j) {
+        simpleShape = simpleShapes[j];
+        shape3d = simpleShape.extrude({
+          amount: 200,
+          bevelEnabled: false
+        });
+      }
+      mesh = new THREE.Mesh(shape3d, material);
+      group.add(mesh)
+      mesh.rotation.x = Math.PI;
+      mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
+      // mesh.scale.set(1, 1, 1);
+      mesh.translateZ(-80 - 1);
+      mesh.translateX(-600);
+      mesh.translateY(-150);
+    } // end of for Loop
+
+
+    return true;
+  }
+
+  function requestDataFromServer(url) {
+    return $.ajax({
+      url: url
+    });
+  }
 
   function initMap() {
     // Sets the renderer, which basically renders (scene + camera) together
@@ -191,63 +291,71 @@ $(document).ready(function() {
       INTERSECTED = null;
     }
   };
-  function addDensityData(data) {
-    window.pos = [];
-    var geom = new THREE.Geometry();
 
-    var cubeMat = new THREE.MeshLambertMaterial({
-      color: 0x000000,
-      opacity: 0.6,
-      emissive: 0xffffff
-    });
-
-    for (var i = 0; i < data.length; i++) {
-
-      // var x = data[i][0] * (Math.PI / 180);
-      // var y = data[i][1] * (Math.PI / 180);
-      var x = data[i][0];
-      var y = data[i][1];
-      // var position = latLongToVector3(x, y);
-      var postion = latLngToPointXY(x, y)
-
-    }
-  }
-
-  function latLngToPointXY(lat, lng) {
-    // [37.38122, -121.98051]
-    // per 0.00001 in svg
-    const Y_UNIT = 0.05268209219, X_UNIT = 0.05235987756;
-    const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-    const POVOT_POINT_SVG =[43.30236423376482,69.81056448139134]; //(x, y)
-
-    // var newY = (lat - PIVOT_POINT[0]) * Y_UNIT * 100000
-    // var newX = (lng - PIVOT_POINT[1]) * X_UNIT * 100000
-    var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT * 100000
-    var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT * 100000
-
-    // console.log(newX)
-    // console.log(newY)
-
-    svgToPlot = "M,"+newX+","+newY+", L,"+(newX+20)+","+(newY)+", L,"+(newX+20)+","+(newY+20)+", L,"+(newX)+","+(newY)+", L,"+(newX)+","+(newY);
-    path = $d3g.transformSVGPath(svgToPlot);
-    // color = new THREE.Color( theColors[i] );
-    material = new THREE.MeshPhongMaterial({ color: "green" });
-    simpleShapes = path.toShapes(true);
-    for (j = 0; j < simpleShapes.length; ++j) {
-      simpleShape = simpleShapes[j];
-      shape3d = simpleShape.extrude({
-        amount: 200,
-        bevelEnabled: false
-      });
-    }
-    mesh = new THREE.Mesh(shape3d, material);
-    group.add(mesh)
-    mesh.rotation.x = Math.PI;
-    mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1 );
-    mesh.translateZ( - 80 - 1);
-    mesh.translateX( - 600);
-    mesh.translateY( - 150);
-    return true;
-  }
+  // function addDensityData(data) {
+  //   window.pos = [];
+  //   var geom = new THREE.Geometry();
+  //
+  //   var cubeMat = new THREE.MeshLambertMaterial({
+  //     color: 0x000000,
+  //     opacity: 0.6,
+  //     emissive: 0xffffff
+  //   });
+  //
+  //   for (var i = 0; i < data.length; i++) {
+  //
+  //     // var x = data[i][0] * (Math.PI / 180);
+  //     // var y = data[i][1] * (Math.PI / 180);
+  //     var x = data[i][0];
+  //     var y = data[i][1];
+  //     // var position = latLongToVector3(x, y);
+  //     var postion = latLngToPointXY(x, y)
+  //
+  //   }
+  // }
+  //
+  // function latLngToPointXY(lat, lng) {
+  //   // [37.38122, -121.98051]
+  //   // per 0.00001 in svg
+  //   const Y_UNIT = 0.05268209219,
+  //     X_UNIT = 0.05235987756;
+  //   const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
+  //   const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+  //
+  //   // var newY = (lat - PIVOT_POINT[0]) * Y_UNIT * 100000
+  //   // var newX = (lng - PIVOT_POINT[1]) * X_UNIT * 100000
+  //   var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
+  //     100000
+  //   var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
+  //     100000
+  //
+  //   // console.log(newX)
+  //   // console.log(newY)
+  //
+  //   svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 20) + "," + (
+  //       newY) + ", L," + (newX + 20) + "," + (newY + 20) + ", L," + (newX) +
+  //     "," + (newY) + ", L," + (newX) + "," + (newY);
+  //   path = $d3g.transformSVGPath(svgToPlot);
+  //   // color = new THREE.Color( theColors[i] );
+  //   material = new THREE.MeshPhongMaterial({
+  //     color: "green"
+  //   });
+  //   simpleShapes = path.toShapes(true);
+  //   for (j = 0; j < simpleShapes.length; ++j) {
+  //     simpleShape = simpleShapes[j];
+  //     shape3d = simpleShape.extrude({
+  //       amount: 200,
+  //       bevelEnabled: false
+  //     });
+  //   }
+  //   mesh = new THREE.Mesh(shape3d, material);
+  //   group.add(mesh)
+  //   mesh.rotation.x = Math.PI;
+  //   mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
+  //   mesh.translateZ(-80 - 1);
+  //   mesh.translateX(-600);
+  //   mesh.translateY(-150);
+  //   return true;
+  // }
 
 });
