@@ -4,7 +4,7 @@
 $(document).ready(function() {
 
   // Initializing variables
-  var renderer, scene, camera, spotLight,
+  var renderer, scene, camera, spotLight, directionLightLeft, directionLightRight,
     plane, controls, group, loader, camBackup = {};
 
   var clickCounter = 0;
@@ -166,9 +166,17 @@ $(document).ready(function() {
     group = new THREE.Group();
     scene.add(group);
 
-    spotLight = new THREE.SpotLight(0xffffff);
-    spotLight.position.set(0, 0, 1300);
+    spotLight = new THREE.SpotLight(0x99CC66);
+    spotLight.position.set(0, 0, 1500);
     scene.add(spotLight);
+
+    directionLightLeft = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionLightLeft.position.set(-500, 0, 100);
+    scene.add(directionLightLeft);
+
+    directionLightRight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionLightRight.position.set(500, 0, 100);
+    scene.add(directionLightRight);
 
     // This is for big plane which is at back of all our city geometries.
     var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
