@@ -1,398 +1,54 @@
 {
-  html_attributions: [],
-  results: [{
-    formatted_address: "Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.284496,
-        lng: -122.063859
-      },
-      viewport: {
-        northeast: {
-          lat: 37.2885436,
-          lng: -122.0581068
-        },
-        southwest: {
-          lat: 37.2831468,
-          lng: -122.0657764
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "8b652933c385e605d2b02c6d83b990ef9aa44884",
-    name: "Fremont Older Open Space Preserve",
-    photos: [{
-      height: 3833,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/112041794600068620398/photos">Maik Krüger</a>"
-      ],
-      photo_reference: "CoQBcwAAAMg5CRWnkK0UrAfv-7ntJ6eFnhUHpYtNhz3Oi-o-aSDBWJZDz0_5e1DyOZl25qD9GP89CEgNIdNbykRfGAhBS_YGFwEnutun6XZgccM3OXzpDEuobRz29ZlDeHwaMG7XcI7sPxMTBEIWaYZaIBZ-S1g8wxqDChT7uQs-4VWruCokEhBjIApa1E9xP90wGfwN3HgQGhSm6GKxtSIHULLVwkXjqrJ7bc2_Wg",
-      width: 5749
-    }],
-    place_id: "ChIJe6KVX5S0j4ARvnbvWutH4Bk",
-    rating: 4.7,
-    reference: "CmRRAAAAfgEYnzLFDR11U_DJyzMwHDeol-QRdBNJsAU5H_kgiS5e7YE16XetHXT71gdPd4-C0wyVyW7ut1y4ho_emqmUXz5LgsQf2qGfuYEF-cfVt_VlEuP1jySY78MH4uTuvx4FEhBAsZ65d5-BDywt_bw4JrPgGhTPgSOmVJ3QuDFT9bEUHevTXT0RmA",
-    types: [
-      "park",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "10741 N Wolfe Rd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.3334622,
-        lng: -122.0148983
-      },
-      viewport: {
-        northeast: {
-          lat: 37.33348055,
-          lng: -122.0141279
-        },
-        southwest: {
-          lat: 37.33340714999999,
-          lng: -122.0151551
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "efcfd73bd12f669b94da4e242c221e52269ada24",
-    name: "Hilton Garden Inn Cupertino",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 390,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/117796898061587957158/photos">Hilton Garden Inn Cupertino</a>"
-      ],
-      photo_reference: "CoQBcwAAAF1Ea-TIZGoHL45d9noEqtzgMkmuIFoW29I0NC1q-mhe9ntb38hZnG51-X1On0qIVg8KdUw0iZeNVB5LdpArP8e-338mSCiRoD_AlBNY4Yv9Y2OV21B90cYaBoy43nW_d0xPWLOCAcM_McPp9Elh3nE6lQ_7Q1dqxw1J4dX5VYn6EhCq6i49P5CUgrexNntYWa6fGhQ3O59znh8B_Y9OZkeTeWj-4MDSwg",
-      width: 390
-    }],
-    place_id: "ChIJZ5D-JJa1j4ARAnYHTpGKbOE",
-    rating: 4.2,
-    reference: "CmRSAAAA4wjtnQkFKBaY97UWn_0KVRHFe8OrqYCb-9mBRfqgBWpkr1Ffz56Xdal3wN8GhjfIAQRcXjqF2k-nFbW5eaPaII2qr44OZyfJfOetbLzvQFD84BZN4USNkNcCaskQ6iePEhDQg10gnLJDRw2ReJ5nbgxsGhRw5GmDP9pWI_6tHKuZqDo9-GFtiA",
-    types: [
-      "lodging",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "10889 N De Anza Blvd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.33530769999999,
-        lng: -122.0331998
-      },
-      viewport: {
-        northeast: {
-          lat: 37.33537294999999,
-          lng: -122.0320973
-        },
-        southwest: {
-          lat: 37.33528594999999,
-          lng: -122.0335673
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "11ab0133021a23291af4a4c748349ade6d466a60",
-    name: "Cupertino Inn",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 648,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/109173683074743846482/photos">Tricky Ricky</a>"
-      ],
-      photo_reference: "CoQBcwAAAE7xD8IssGJoOimq7_2QqwVIebTHUc4JnLmFJJKv4YWkIkjZFXyXyMNqMV54IcD8VksFK4Gi3mtmHZBKc3FaxF2ubBHIYAjPUuvzqBtPY_vh5eQkR9yiFcqayJ4ncU2cWux7PNGy_JNG--KiFHqghDqOhkfdWoIcs9zo9PD9I4S0EhCrTpy1nMe0pBOS10vT6A-vGhQ352jurk4e5lEzqzlAGS4xl-GdRg",
-      width: 486
-    }],
-    place_id: "ChIJ1SFcGsq1j4ARLK361SBsx7Q",
-    rating: 4.2,
-    reference: "CmRSAAAAuTMF8UXJb2tAnyZnN03fhI3iFkrcOjXtqjL_33SM_eDr_Hn9vgznHYKVuX0BGZv6eeSRP78F3PhMOHNOrlF-mhIWx6BRC9fH6wiFkZCPIH4Uk9MP3TowymJ07tZK4rC-EhAvyyXrqHie8HCbS4YfVa-0GhRL015kx0urPGTusIkYIumb2H1MqQ",
-    types: [
-      "lodging",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "10165 N De Anza Blvd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.3254761,
-        lng: -122.0330089
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "4cd880b28e2bf3b0249dba265fda646c0cd0becf",
-    name: "Aloft Cupertino",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 808,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/118072251652424540037/photos">Aloft Cupertino</a>"
-      ],
-      photo_reference: "CoQBdwAAAIIjLO3mK3sDd6-IkEBgDdA8f6jHJkzEdgihgUrIjP3cZ-7UHZEQPR4Yhi6905AAVbYkAgdtsfIsqwikAQUTCkYuXfDZ1k0_J9hQlnMFSEqKhWzt2MRH9UR5zOqHsd_CeHDFUAwBECMy4lgv5yI08xdXEp2uUOmCkmNqX0f-b4awEhBm5sTCaLkcFbsKgJEj1_nIGhRbIzOTdjLxO5DWcrd3JIELFYmXXA",
-      width: 1500
-    }],
-    place_id: "ChIJz_T_HLK1j4ARXrxrpvmiVys",
-    rating: 4.3,
-    reference: "CmRRAAAAyf7Do0-6FNDlfX-vDeWt8xabHuZEyby9Wp8mfNvDqAhrsLCPVTDM2AqbOatpzMStWFn4irDYvNfPLEP_zA0VY1fuq-v85Y4LYV7wIB9_S_5O6-tJX8TF0BPLNOY82B_HEhAZUa0grxGvH9lF4tlM7Ls-GhSQ_VXFqs8WMCv6xe6H3ajwDP7JaA",
-    types: [
-      "lodging",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "Junipero Serra Fwy, Los Altos, CA 94022, United States",
-    geometry: {
-      location: {
-        lat: 37.3330522,
-        lng: -122.1138335
-      },
-      viewport: {
-        northeast: {
-          lat: 37.33398474999999,
-          lng: -122.0681291
-        },
-        southwest: {
-          lat: 37.33025455000001,
-          lng: -122.1290683
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "7a7b6bbd3f369dfee4f84040752e1d2f7f91f43d",
-    name: "Rancho San Antonio Open Space Preserve",
-    photos: [{
-      height: 2304,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/105827506627756362646/photos">Daniel N. Lang</a>"
-      ],
-      photo_reference: "CoQBdwAAALc3KFfDLf20RDLzHW_mjlMNHue54xQ85Xr4dahyTs0QxSRlucC3Rf-gpTrnmRVF3y2Dy1N3hgpR9vpS6z3adVvTi4GM3Io5SziG8l180nF9MoiMkfMePx15naoPuQeCozHNmV8W6ZFe_ree5-4lYVOU4q0MxuSDvftVsfuGLEVIEhADI_LrrQXZ--58Ps58DYuuGhQ8cy3I7s3Ci1UFjwtYJ_DQfWFhXQ",
-      width: 4096
-    }],
-    place_id: "ChIJ2dQVnHexj4ARXlmGG7n0BsQ",
-    rating: 4.6,
-    reference: "CmRSAAAAjoOwYI2fFIqKJnPSu67aW17_31EIfRUdI_Guvcu9pTaGhlYKTU1SOUs4svp-WgVCfXRYiBh2FoyOz5OaTpGLF6xz8A30pjJH41-xo4eFMAKy0KH5tSROpW4oF2Ok5IpKEhBdJ5BUl3M4346XhI_PLADPGhQPKaNw8dndXlJJ25cjJoP1IMs2pA",
-    types: [
-      "park",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "10123 N Wolfe Rd #3000, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.325724,
-        lng: -122.015007
-      },
-      viewport: {
-        northeast: {
-          lat: 37.3258042,
-          lng: -122.0150007
-        },
-        southwest: {
-          lat: 37.32548339999999,
-          lng: -122.0150091
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
-    id: "55ec3563f49e9ed7cd77d9940ab5ceceb65731e8",
-    name: "AMC Cupertino Square 16",
-    photos: [{
-      height: 3024,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/106147316764498333608/photos">Thomas Kuo</a>"
-      ],
-      photo_reference: "CoQBdwAAAPbgPEFcT2A6bbw91PLfZBzF0G5-c4IizlvAma1DuHKa58qnzRMtCqhndJ-189tsfFcQVA5HqRE75IEUFTFGGB3K6u6o-SPD3pv0XVTlrXsvFOPyNO7zPnAJDLRC42cQ2BzH2KE0JS3l2kf6ohIWW1Q2uwEpWKK3r2V-x9OSmkV4EhDk1mGn445N9FY4ydqWnKNTGhQ5XCAouSKjah6HhbOHr71Uop_Kng",
-      width: 4032
-    }],
-    place_id: "ChIJWa2Aopi1j4ARcRg9i2ymrPA",
-    rating: 4,
-    reference: "CmRSAAAApcDIs_8XWpVyViQjxpaD2SNq3tjHWO3L47O-Nr8RFXzwO5XnT7hQcp6lVU6knvwYtOiAHuQYIb-xEtRQkCAg0QGG4Rp0X0pW_EG1sz9CRabafQIuFCSQg0eJgKx-0TV8EhBCQgdZ0N8sjyxzoCA8vRSQGhSmctWejvYyfgyQP-tmg1w4uLA72Q",
-    types: [
-      "movie_theater",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "10185 N Stelling Rd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.3251877,
-        lng: -122.0449625
-      },
-      viewport: {
-        northeast: {
-          lat: 37.32531955,
-          lng: -122.0398745
-        },
-        southwest: {
-          lat: 37.32514375,
-          lng: -122.0466585
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "d6ed5cbec3aeb25c29503f5ebd73952b69f13375",
-    name: "Cupertino Memorial Park",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 3264,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/109049802887553786804/photos">Holly Gallagher</a>"
-      ],
-      photo_reference: "CoQBcwAAALEh3OHKQpOxJgIarkifwE-JKyg90d_EY35Lg4l8uP0lhTVSvfhenDGb1YwzK_heWUwigmeg23VpWKMYMxX-mvGmDJBEVOFZyU1mwP1ABbGlnmqizxjBcrExSGAGJ3C3P2KD-reyEiR89cPcUGIz1Kp1cQb7N3KkKlXp9wOlE87OEhDPuaxJkH_6kBojtqOgvQCNGhRTZESYPpqsnXRaA_n0K0uahn5xvw",
-      width: 2448
-    }],
-    place_id: "ChIJeTOCm060j4ARQQ7tAZPSJaM",
-    rating: 4.3,
-    reference: "CmRSAAAAshyCufqThnweLV-s6QDUPNVfI5wDGdfPre1CYrDJX4LP1UupX-29RTpZMlBBb8_RaQwEcZs_nVcbq2usOzXV4ZixvkdhjMtpwzgDyRZoCzJkMCN-lIkKrQuIl6tD4fdPEhA1B9l-bBouj_CiPhl6qYCnGhSvJfrDRIOI08DCJD3UTZt0qOOPdA",
-    types: [
-      "park",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "21250 Stevens Creek Blvd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.3198512,
-        lng: -122.0452038
-      },
-      viewport: {
-        northeast: {
-          lat: 37.32632904999999,
-          lng: -122.03850455
-        },
-        southwest: {
-          lat: 37.31219245,
-          lng: -122.05220675
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
-    id: "1696c8cdad9cfb8736b2c9691245cab63e6e7d64",
-    name: "De Anza College",
-    photos: [{
-      height: 2448,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/117526954715560845211/photos">Areg Nersisyan</a>"
-      ],
-      photo_reference: "CoQBdwAAAGwvliap5uuAPwtQL6YCyfedK08g1Q8CPn3H6tCJENS9Zzx91oSm5zTY7RcEm65eL-o6bfk4ZgTqJ_Mk4ZahU0lSMqZ5HkY4H061m9184OFoVI7ndRPMcoYzs9HLuxqasHPm3pqhDdnNO3UV7pA9fLUrloo-iIs6FjlC_QZnixKZEhCxlIKL6-rW6hnI7Q1M3yUeGhTUT5gU0TUEvMy_6v8GMRMhyXek5A",
-      width: 3264
-    }],
-    place_id: "ChIJ5bBQdVG0j4ARq-rAvnfnjXQ",
-    rating: 4.2,
-    reference: "CmRRAAAA6TwaejNeKGZ7Ytj2O86LndLfAvzf69LQVS4vdXfagTuL36CWTkfS3y18xF82fYGhXaSfjtLKulVaA_-BxDkxncNr_uUkZnyWRzNRM4faPozOlnaF7NiFjHaE2yPDXhB2EhCYF-owGxFKMq6jp0L205gdGhTyagUoWME7ASTDi1fnqXtLMY5gsw",
-    types: [
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "10050 S De Anza Blvd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.321511,
-        lng: -122.031442
-      },
-      viewport: {
-        northeast: {
-          lat: 37.32154495,
-          lng: -122.03107165
-        },
-        southwest: {
-          lat: 37.32140915,
-          lng: -122.03255305
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "d9b63cba130f1977c351b97937bfdbb67814e3c6",
-    name: "Juniper Hotel Cupertino, Curio Collection by Hilton",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 1173,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/107881136258139865120/photos">Juniper Hotel Cupertino, Curio Collection by Hilton</a>"
-      ],
-      photo_reference: "CoQBcwAAAL2rxi-Q1-TsvWNWzwX8xmeH7h6paew4nNivkgLtPuWYyb2uKUHZGp9sANHi0EBY2pPpMSjFFyfrI77go5hXhu2DqS8uPeFcC4nn0kuhpXLiz9FLhfIVdlVGd3OeUf5O51x4GImqTQsAYAcCEUkgMagnqIhWjZD4cXMc2lri_3QxEhD1TgyRTSA3QMgPJkFKH9ujGhQEQdzZepPGFKMTkhz69v9MLmSVXA",
-      width: 1172
-    }],
-    place_id: "ChIJCzqxua61j4AR2ISmLkepSRA",
-    rating: 4.2,
-    reference: "CmRRAAAA8or67jY8tSmCswF-9ELsaRWBWBIN758C_WFOnIkSqb_Fd8llm0ciKbvDDpnxq_EN3KlNWn67hZ-r0v67WaR9ftdM-CSz26dno8fcZWHowvJXAqXYu_LY-S2DAKngG_vBEhAUOMbx5Wb77gCeRVFeQH75GhQb0U_Nrb3Xat2gAdsekMekXGwr_Q",
-    types: [
-      "lodging",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "22221 McClellan Rd, Cupertino, CA 95014, United States",
-    geometry: {
-      location: {
-        lat: 37.3146337,
-        lng: -122.063287
-      },
-      viewport: {
-        northeast: {
-          lat: 37.3152334,
-          lng: -122.06293175
-        },
-        southwest: {
-          lat: 37.3144338,
-          lng: -122.06435275
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "4b6f467c6179e5093e195b46f0260759cc0c595f",
-    name: "McClellan Ranch Preserve",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 3006,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/113400196208780198429/photos">Bertalan Eged</a>"
-      ],
-      photo_reference: "CoQBdwAAAOnfjMaFh7Ue5SvXMc9FXKM69Pz2CA61AocxXB2eXrpyfvEHRzJ84VAjmfcrhqEOOFXKyGrakuuVDpMBWzcmCpNzt2Qw4oNQ1fxaBvPFoEWKJuSnjQCftMOMI_tQzOzS88BbxMPvEtE-TfT2_9rPqZmzqolUaLlZ4aqE6mQEuf0fEhCzzbIy7De1-F-4oA4kdMH_GhTEvYQetA-WzBTsnXwZNQ9mPL0QIg",
-      width: 5344
-    }],
-    place_id: "ChIJS5XZAme0j4ARo7EI4nXxk1Y",
-    rating: 4.3,
-    reference: "CmRRAAAA3tQdCJIph7Kmw9zXDEipzVTrqUL78qXbJ_r_1XZinhyv4sY4gQaiqPktsiBLniXB7DzqrMLWTHgwaSpsXETVT_R3iGkRcHikf98_3Nx_LQEuobl6XxjAYuo2XkzjFu51EhDt1Z3YiU4OLjxu_SLjQs7BGhTz-WA6ozqPAOgeZq1CL3RtcgOrwQ",
-    types: [
-      "park",
-      "point_of_interest",
-      "establishment"
-    ]
-  }],
-  status: "OK"
+  "city": "cupertino",
+  "poi": [{
+      "formatted_address": "10741 N Wolfe Rd, Cupertino, CA 95014, United States",
+      "lat": 37.3334622,
+      "lng": -122.0148983,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "name": "Hilton Garden Inn Cupertino",
+      "rating": 4.2,
+
+      "types": [
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    }, {
+      "formatted_address": "10123 N Wolfe Rd #3000, Cupertino, CA 95014, United States",
+      "lat": 37.325724,
+      "lng": -122.015007,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+      "name": "AMC Cupertino Square 16",
+      "rating": 4,
+      "types": [
+        "movie_theater",
+        "point_of_interest",
+        "establishment"
+      ]
+    }, {
+      "formatted_address": "10185 N Stelling Rd, Cupertino, CA 95014, United States",
+      "lat": 37.3251877,
+      "lng": -122.0449625,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+      "name": "Cupertino Memorial Park",
+      "rating": 4.3,
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ]
+    }, {
+      "formatted_address": "21250 Stevens Creek Blvd, Cupertino, CA 95014, United States",
+      "lat": 37.3198512,
+      "lng": -122.0452038,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
+      "name": "De Anza College",
+      "rating": 4.2,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+
+  ]
 }

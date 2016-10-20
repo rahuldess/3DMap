@@ -9,6 +9,16 @@ class Statistics
     self.send(@module)
   end
 
+  def get_poi
+    area_collection = []
+    Dir.glob("#{Rails.root}/point_of_interest/*.json") do |file|
+      file_ref    = File.open(file).read
+      parsed_data = JSON.parse(file_ref, symbolize_names: true)
+      area_collection << parsed_data
+    end
+    area_collection
+  end
+
 
   private
 
@@ -63,10 +73,10 @@ class Statistics
       saved           = 0
       zip_code[:properties].each do |item|
         item[:data_points].each do |set|
-          most_viewed     += set[:views]
-          leads_submitted += set[:leads]
-          shared          += set[:shared]
-          saved           += set[:saved]
+          most_viewed     += set[:views].to_i
+          leads_submitted += set[:leads].to_i
+          shared          += set[:shared].to_i
+          saved           += set[:saved].to_i
         end
         zip_code[:most_viewed] = most_viewed
         zip_code[:leads_submitted] = leads_submitted
