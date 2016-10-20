@@ -18,20 +18,196 @@
   border-width  : 2px;
 }
 
+.snip1540 {
+  box-shadow: none !important;
+  background-color: #ffffff;
+  /*color: #141414;*/
+  display: inline-block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin: 16px 5px;
+  max-width: 315px;
+  min-width: 230px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.snip1540 .profile-image img {
+  border-radius: 5px;
+  max-width: 100%;
+  height: 100px;
+  vertical-align: top;
+  float: left;
+}
+
+
+.snip1540 figcaption:after {
+  border-color: transparent transparent #333333 transparent;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  bottom: 100%;
+  content: '';
+  height: 0;
+  left: 32px;
+  position: absolute;
+  width: 0;
+}
+
+.snip1540 .icons {
+  padding: 20px 90px;
+}
+
+
+.snip1527 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  float: left;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
+  margin: 10px 1%;
+  max-width: 310px;
+  min-width: 250px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.snip1527 img {
+  max-width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+
+.snip1527 figcaption {
+  padding: 20px 15px 15px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.snip1527 figcaption:before {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #700877;
+  content: '';
+  background: -moz-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
+  background: -webkit-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
+  background: linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.snip1527 .date {
+  background-color: #fff;
+  border-radius: 50%;
+  color: #700877;
+  font-size: 18px;
+  font-weight: 700;
+  min-height: 28px;
+  min-width: 48px;
+  padding: 10px 0;
+  position: absolute;
+  right: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  top: -25px;
+}
+
+.snip1527 .date span {
+  display: block;
+  line-height: 14px;
+}
+
+.snip1527 .date .month {
+  font-size: 11px;
+}
+
+.snip1527 h3,
+.snip1527 p {
+  margin: 0;
+  padding: 0;
+}
+
+.snip1527 h3 {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-bottom: 5px;
+}
+
+.snip1527 p {
+  font-size: 0.8em;
+  line-height: 1.6em;
+  margin-bottom: 0px;
+}
+
+.snip1527 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
 
 </style>
 
 <div id="infoPopUp" style="display: none; width: 290px; height: 90px;">
-  <div id="popup1" class="overlay">
-  	<div class="popup">
-  		<h2>Summary</h2>
+  <div id="popup1"
+  	<div>
   		<a id="pop_over_button" class="close" onclick="closePopUp();">&times;</a>
-  		<div class="content">
-  			This is where the data will go.
-  		</div>
+
+      <!-- Top Section with Geo Map and Header -->
+      <figure class="snip1540">
+        <div class="profile-image"><%= image_tag('santa_clara_95050')%>
+        </div>
+        <figcaption>
+          <h3>Santa Clara, 95050</h3>
+          <h4>Hot Properties
+            <a href="#"> <i class="ion-social-vimeo"></i></a>
+            <a href="#"> <i class="ion-social-vimeo"></i></a>
+          </h4>
+        </figcaption>
+      </figure>
+
+
+      <figure class="snip1527">
+        <div class="image"><img src="http://ap.rdcpix.com/976452741/a8da78418c8505089282daaf2a987f3el-m0xd-w640_h480_q80.jpg" /></div>
+        <figcaption>
+          <div class="date"><span class="day">5</span><span class="month"></span></div>
+          <h3>1452 Heatherdale Ave</h3>
+          <p>
+              4 beds  2 full baths 1,482 sq ft 1,482 sq ft
+          </p>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+
+      <figure class="snip1527">
+        <div class="image"><img src="http://ap.rdcpix.com/976452741/a8da78418c8505089282daaf2a987f3el-m0xd-w640_h480_q80.jpg" /></div>
+        <figcaption>
+          <div class="date"><span class="day">5</span><span class="month"></span></div>
+          <h3>1452 Heatherdale Ave</h3>
+          <p>
+              4 beds  2 full baths 1,482 sq ft 1,482 sq ft
+          </p>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+
   	</div>
   </div>
 </div>
+
+
+
+
 
 <script>
   function closePopUp(){
