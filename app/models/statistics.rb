@@ -73,10 +73,10 @@ class Statistics
       saved           = 0
       zip_code[:properties].each do |item|
         item[:data_points].each do |set|
-          most_viewed     += set[:views]
-          leads_submitted += set[:leads]
-          shared          += set[:shared]
-          saved           += set[:saved]
+          most_viewed     += set[:views].to_i
+          leads_submitted += set[:leads].to_i
+          shared          += set[:shared].to_i
+          saved           += set[:saved].to_i
         end
         zip_code[:most_viewed] = most_viewed
         zip_code[:leads_submitted] = leads_submitted

@@ -5,36 +5,6 @@
     "lat": 37.3484,
     "lng": -121.9536,
     "properties": [{
-      "mpr_id": 2271768559,
-      "lat": 37.272272,
-      "long": -121.752132,
-      "display_address": "Address",
-      "data_points": [{
-        "date": "10_17_2016",
-        "views": 20,
-        "leads": 8,
-        "saved": 10,
-        "shared": 3
-      }, {
-        "date": "10_16_2016",
-        "views": 90,
-        "leads": 15,
-        "saved": 4,
-        "shared": 7
-      }, {
-        "date": "10_15_2016",
-        "views": 10,
-        "leads": 3,
-        "saved": 1,
-        "shared": 1
-      }, {
-        "date": "10_14_2016",
-        "views": 150,
-        "leads": 20,
-        "saved": 89,
-        "shared": 90
-      }]
-    }, {
       "mpr_id": 1981194633,
       "lat": 37.277563,
       "long": -121.779046,
