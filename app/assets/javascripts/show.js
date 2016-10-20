@@ -16,7 +16,6 @@ $(document).ready(function() {
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
   document.body.appendChild(container);
-
   /*
     In initMap() function below steps happen
     1. Initializes camera, renderer, scene, light, group( which will group all geometries together and add to the scene at once).
