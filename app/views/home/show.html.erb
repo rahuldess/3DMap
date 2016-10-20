@@ -22,12 +22,15 @@
     type: "<%= @type %>"
   };
 
-  $('.logo-image-wrap').click(function(){
+  $('.logo-image-wrap').click(function(e){
     $('#box-bottom-left').toggleClass('active');
     $('#box-right').toggleClass('active');
   });
+  $('.logo-image-wrap').on('mouseleave',function(){
+    $('body').click();
+  })
 
-  $('#box-top .item').click(function(){
+  $('#box-top .item').click(function(e){
     $('#box-top .item').removeClass('selected');
     $(this).addClass('selected');
   })

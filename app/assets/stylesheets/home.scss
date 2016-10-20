@@ -77,13 +77,19 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
 }
 /***************** Right Box ************************/
 #box-right{
-  width: 250px;
+  width: 300px;
   height: 600px;
   top: $box-to-border;
   right: -300px;
+  padding: 10px;
   transition: right 0.5s ease;
   &.active{
     right: $box-to-border;
+  }
+  .list ul{
+    list-style: none;
+    padding:0;
+    margin:0;
   }
 }
 /***************** top Box ************************/
@@ -110,7 +116,7 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
     display: block;
     min-width: 145px;
     position: absolute;
-    transition: left 0.5s linear;
+    transition: left 0.5s ease;
     z-index: 10;
     left: -12px;
     &.selected {
@@ -133,7 +139,7 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
     margin: 0 auto;
     border: 1px solid #fff;
     box-shadow: $box-box-shadow;
-    transition: transform 1s ease;
+    transition: transform 0.5s ease;
     cursor: pointer;
 
     &:hover{
@@ -153,7 +159,85 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
   }
 }
 
+/***************** Property Cards ************************/
 
+.property-card{
+  position: relative;
+  .property-image{
+    width: 100%;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    transition: all 0.8s ease;
+    img{
+      position: absolute;
+      height: auto;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+  .back{
+    background: url(asset_path('property1.jpg')) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 50%;
+    height: 0;
+    top:0;
+    transform: rotateY(180deg);
+    transition: all 0.8s ease;
+    z-index: 1
+  }
+  .property-meta{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 40%;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.8);
+    .price{
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  .property-actions{
+    background-color: rgba(255,255,255,0.8);
+    position:absolute;
+    top: 60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding:0 10px;
+    .action{
+      font-size:16px;
+      cursor: pointer;
+    }
+  }
+  &:hover{
+    .property-image{
+      z-index:1;
+      transform:rotateY(180deg);
+    }
+    .back{
+      z-index:2;
+      transform: rotateY(0);
+    }
+  }
+}
+
+/***************** Others ************************/
 span#close-city-zoom {
   position: absolute;
   right: 10px;
@@ -162,3 +246,15 @@ span#close-city-zoom {
   padding: 5px;
   display: none;
 }
+
+//Helpers
+.extra-big-bold{
+  font-size: 22px;
+  font-weight: 600;
+}
+.big-bold{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.big{font-size: 18px;}
