@@ -215,6 +215,7 @@ $(document).ready(function() {
       var i, j, len, len1;
       var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
       x, toAdd, results = [];
+
       var thePaths = svgObject.paths;
       var theAmounts = 10;
       var theColors = svgObject.info;
