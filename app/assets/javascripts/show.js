@@ -141,7 +141,7 @@ $(document).ready(function() {
   function initMap() {
     // Sets the renderer, which basically renders (scene + camera) together
     renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor('#ececec');
+    renderer.setClearColor('#191919');
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -174,7 +174,7 @@ $(document).ready(function() {
     var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
     // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
     var planeMaterial = new THREE.MeshBasicMaterial({
-      // color: '#C0C0C0',
+      color: '#EE82EE',
       wireframe: true,
       // blending: THREE.NoBlending,
       side: THREE.DoubleSide
@@ -281,6 +281,8 @@ $(document).ready(function() {
       var city_object = getCenterPoint(intersects[0].object);
       controls.target.set(city_object.x, city_object.y, city_object.z);
       controls.dollyIn(4);
+
+      console.log(intersects[0].object);
 
       enableCloseZoomBtn();
     }
