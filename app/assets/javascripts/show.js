@@ -76,8 +76,44 @@ $(document).ready(function() {
       dataToPlot.push(plotData);
     }
 
-
     plotIn3dWorld(dataToPlot);
+    plotCone();
+  }
+
+  function plotCone() {
+    const Y_UNIT = 0.00268209219,
+      X_UNIT = 0.00935987756;
+
+    const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
+    const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+
+    var points = [
+      [37.3555465, -121.9586176],
+      [37.4480379, -121.8487399]
+    ];
+
+    for (var i = 0; i < points.length; i++) {
+      var lat = points[i][0];
+      var lng = points[i][1];
+
+      var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
+        100000
+      var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
+        100000
+
+      var coneGeometry = new THREE.ConeGeometry(28, 120, 60);
+      var coneMaterial = new THREE.MeshBasicMaterial({
+        color: "green"
+      });
+
+      var coneMesh = new THREE.Mesh(coneGeometry, coneMaterial);
+      coneMesh.rotation.x = -Math.PI / 2;
+      coneMesh.position.set(newX, newY, 0);
+      coneMesh.translateY(-150);
+      console.log(coneMesh);
+      group.add(coneMesh);
+    }
+
   }
 
   function plotIn3dWorld(geoPoints) {
@@ -98,9 +134,12 @@ $(document).ready(function() {
         100000
 
 
-      svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
-          newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX) +
-        "," + (newY+30) + ", L," + (newX) + "," + (newY);
+
+      svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," +
+        (
+          newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (
+          newX) +
+        "," + (newY + 30) + ", L," + (newX) + "," + (newY);
 
       path = $d3g.transformSVGPath(svgToPlot);
       // color = new THREE.Color( theColors[i] );
@@ -118,6 +157,7 @@ $(document).ready(function() {
       }
       mesh = new THREE.Mesh(shape3d, material);
       group.add(mesh)
+
       mesh.geoInfo = geoPoints[x];
       mesh.rotation.x = Math.PI;
       mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
