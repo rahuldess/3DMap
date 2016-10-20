@@ -10,7 +10,6 @@ class Statistics
   end
 
 
-
   private
 
   def hot_area
