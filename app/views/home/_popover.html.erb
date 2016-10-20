@@ -1,0 +1,41 @@
+<style>
+
+#popup1 {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  z-index: 2;
+  font-size: 150%;
+  width: 90%;
+  color: #BDBDBD;
+  background: rgba(0,0,0,0.5);
+  padding: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius : 10px;
+  border-color  : black;
+  border-style  : solid;
+  border-width  : 2px;
+}
+
+
+</style>
+
+<div id="infoPopUp" style="display: none; width: 290px; height: 90px;">
+  <div id="popup1" class="overlay">
+  	<div class="popup">
+  		<h2>Summary</h2>
+  		<a id="pop_over_button" class="close" onclick="closePopUp();">&times;</a>
+  		<div class="content">
+  			This is where the data will go.
+  		</div>
+  	</div>
+  </div>
+</div>
+
+<script>
+  function closePopUp(){
+    var element = document.querySelector('#infoPopUp');
+    element.style.display = 'none';
+  }
+</script>

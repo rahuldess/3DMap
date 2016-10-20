@@ -7,10 +7,8 @@ Rails.application.routes.draw do
 
   get '/load_city_data', to: 'svg#svg_path'
 
-
   # Examples:
   # http://localhost:3000/area_statistics?area=santa_clara&type=hot_area
   get '/area_statistics', to: 'statistics#area'
-
 
 end

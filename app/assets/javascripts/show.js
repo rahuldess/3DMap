@@ -1,4 +1,5 @@
 //= require ./geo_plotter
+//= require ./css3dobject
 
 $(document).ready(function() {
 
@@ -71,6 +72,7 @@ $(document).ready(function() {
         i]["leads_submitted"] + data.areas[i]["saved"] + data.areas[i][
         "shared"
       ];
+      plotData["properties"] = data.areas[i]["properties"];
       dataToPlot.push(plotData);
     }
 
@@ -117,6 +119,7 @@ $(document).ready(function() {
       }
       mesh = new THREE.Mesh(shape3d, material);
       group.add(mesh)
+      mesh.geoInfo = geoPoints[x];
       mesh.rotation.x = Math.PI;
       mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
       // mesh.scale.set(1, 1, 1);
@@ -166,8 +169,9 @@ $(document).ready(function() {
       90, 90);
     // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
     var planeMaterial = new THREE.MeshBasicMaterial({
-      color: '#C0C0C0',
+      // color: '#C0C0C0',
       wireframe: true,
+      // blending: THREE.NoBlending,
       side: THREE.DoubleSide
     });
     plane = new THREE.Mesh(planGeometry, planeMaterial);
@@ -265,7 +269,9 @@ $(document).ready(function() {
     renderer.render(scene, camera);
   };
 
+  // This is handling the mouse over thingy.
   function raycasting() {
+
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObjects(scene.children, true);
 
@@ -278,13 +284,20 @@ $(document).ready(function() {
 
         INTERSECTED = intersects[0].object;
 
-        if (INTERSECTED.info === undefined) {
-          INTERSECTED = null;
-          return;
+        // Follwoing MESH is a mess :()
+        if (INTERSECTED.geoInfo !== undefined) {
+          var currentGeoArea = INTERSECTED.geoInfo;
+          bindGeoDetails(currentGeoArea);
         } else {
-          console.log(INTERSECTED.info);
-          INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
-          INTERSECTED.material.color.setHex(0xff0000);
+          if (INTERSECTED.info === undefined) {
+            INTERSECTED = null;
+            return;
+          } else {
+            // console.log(INTERSECTED.info);
+            INTERSECTED = null;
+            // INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+            // INTERSECTED.material.color.setHex(0xff0000);
+          }
         }
       }
     } else {
@@ -292,6 +305,17 @@ $(document).ready(function() {
       INTERSECTED = null;
     }
   };
+
+
+  function bindGeoDetails(data) {
+    console.log(data);
+    var element = document.querySelector('#infoPopUp');
+    element.style.display = 'block';
+    var cssObject = new THREE.CSS3DObject(element);
+    cssObject.position = plane.position;
+    cssObject.rotation = plane.rotation;
+    scene.add(cssObject);
+  }
 
   // function addDensityData(data) {
   //   window.pos = [];
