@@ -119,6 +119,7 @@ $(document).ready(function() {
       }
       mesh = new THREE.Mesh(shape3d, material);
       group.add(mesh)
+      mesh.userData.info = {name: 'spike'}
       mesh.geoInfo = geoPoints[x];
       mesh.rotation.x = Math.PI;
       mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
@@ -188,6 +189,7 @@ $(document).ready(function() {
       side: THREE.DoubleSide
     });
     plane = new THREE.Mesh(planGeometry, planeMaterial);
+    plane.userData.info = {name: 'black-board'};
     group.add(plane);
 
     // Get the shapeGeometry from SVG path's
@@ -290,10 +292,21 @@ $(document).ready(function() {
       controls.target.set(city_object.x, city_object.y, city_object.z);
       controls.dollyIn(4);
 
-      console.log(intersects[0].object);
-
+      fadeOutOtherCities(intersects[0].object);
       enableCloseZoomBtn();
     }
+  };
+
+  function fadeOutOtherCities( selectedCity ) {
+    var cityName = selectedCity.userData.info.name;
+
+    scene.traverse(function( node ){
+      if ( node instanceof THREE.Mesh ) {
+        if ( node.userData.info.name !== cityName && node.userData.info.name !== 'black-board' ) {
+          node.material.color.setHex('black');
+        }
+      }
+    });
   };
 
   function enableCloseZoomBtn() {
