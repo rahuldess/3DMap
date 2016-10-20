@@ -7,6 +7,8 @@ $(document).ready(function() {
   var renderer, scene, camera, spotLight,
     plane, controls, group, loader, camBackup = {};
 
+  var clickCounter = 0;
+
   var mouse = new THREE.Vector2(),
     raycaster = new THREE.Raycaster(),
     raycaster2 = new THREE.Raycaster(),
@@ -146,12 +148,11 @@ $(document).ready(function() {
     // Creates a canvas, which gets attached to DIV element created above
     container.appendChild(renderer.domElement);
 
-
-
     // Sets the camera.
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.set(0, -700, 1500);
-    
+
+
     trackMovement();
 
     camBackup.position      = camera.position.clone();
@@ -267,17 +268,33 @@ $(document).ready(function() {
   function onDocumentMouseClick(event) {
     event.preventDefault();
     zoomToCity();
-    disableControls();
     zoomBack();
   }
 
-  function disableControls() {
+  function zoomToCity() {
+    raycaster2.setFromCamera(mouse, camera);
+    var intersects = raycaster2.intersectObjects(scene.children, true);
 
+    if ( clickCounter < 1 && intersects.length > 1) {
+      clickCounter += 1;
+
+      var city_object = getCenterPoint(intersects[0].object);
+      controls.target.set(city_object.x, city_object.y, city_object.z);
+      controls.dollyIn(4);
+
+      enableCloseZoomBtn();
+    }
+  };
+
+  function enableCloseZoomBtn() {
+    $('#close-city-zoom').show();
   };
 
   function zoomBack(){
     $('#close-city-zoom').on('click', function() {
       restoreCamera(camBackup.position, camBackup.rotation, camBackup.controlCenter);
+      $('#close-city-zoom').hide();
+      disableControls();
     });
   };
 
@@ -291,20 +308,8 @@ $(document).ready(function() {
     render();
   }
 
-  function zoomToCity() {
-    raycaster2.setFromCamera(mouse, camera);
-    var intersects = raycaster2.intersectObjects(scene.children, true);
-
-    if (intersects.length > 1) {
-      var city_object = getCenterPoint(intersects[0].object);
-      controls.target.set(city_object.x, city_object.y, city_object.z);
-      controls.dollyIn(4);
-      enableCloseZoomBtn();
-    }
-  };
-
-  function enableCloseZoomBtn() {
-    $('#close-city-zoom').show();
+  function disableControls() {
+    clickCounter = 0;
   };
 
   function getCenterPoint(mesh) {
