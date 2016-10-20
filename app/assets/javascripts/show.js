@@ -19,7 +19,6 @@ $(document).ready(function() {
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
   document.body.appendChild(container);
-
   /*
   In initMap() function below steps happen
   1. Initializes camera, renderer, scene, light, group( which will group all geometries together and add to the scene at once).
@@ -38,7 +37,7 @@ $(document).ready(function() {
   eventListeners();
 
   // Add pointsData
-  addDensityData("santa_clara", "hot_area");
+  addDensityData(SEARCHED_GEO.city, SEARCHED_GEO.type);
 
   function addDensityData(geo, dataType) {
     url = "area_statistics?area=" + geo + "&type=" + dataType;
@@ -65,6 +64,7 @@ $(document).ready(function() {
     for (var i = 0; i < data.areas.length; i++) {
       var plotData = {}
 
+      plotData["city"] = data.city;
       plotData["zip_code"] = data.areas[i]["zip_code"];
       plotData["lat_lng"] = [data.areas[i]["lat"], data.areas[i]["lng"]];
       plotData["most_viewed"] = data.areas[i]["most_viewed"];
@@ -73,65 +73,103 @@ $(document).ready(function() {
       plotData["shared"] = data.areas[i]["shared"];
       plotData["hotness_score"] = data.areas[i]["most_viewed"] + data.areas[
         i]["leads_submitted"] + data.areas[i]["saved"] + data.areas[i][
-          "shared"
-        ];
-        plotData["properties"] = data.areas[i]["properties"];
-        dataToPlot.push(plotData);
-      }
-
-
-      plotIn3dWorld(dataToPlot);
+        "shared"
+      ];
+      plotData["properties"] = data.areas[i]["properties"].slice(1, 4);
+      dataToPlot.push(plotData);
     }
 
-    function plotIn3dWorld(geoPoints) {
+    plotIn3dWorld(dataToPlot);
+    // plotCone();
+  }
 
-      for (var x = 0; x < geoPoints.length; x++) {
-        var lat = geoPoints[x]["lat_lng"][0];
-        var lng = geoPoints[x]["lat_lng"][1];
+  function plotCone() {
+    const Y_UNIT = 0.00268209219,
+      X_UNIT = 0.00935987756;
 
-        const Y_UNIT = 0.05268209219,
-        X_UNIT = 0.05235987756;
+    const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
+    const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
 
-        const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-        const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+    var points = [
+      [37.3555465, -121.9586176],
+      [37.4480379, -121.8487399]
+    ];
 
-        var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
+    for (var i = 0; i < points.length; i++) {
+      var lat = points[i][0];
+      var lng = points[i][1];
+
+      var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
         100000
-        var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
+      var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
         100000
 
+      var coneGeometry = new THREE.ConeGeometry(28, 120, 60);
+      var coneMaterial = new THREE.MeshBasicMaterial({
+        color: "green"
+      });
 
-        svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + ( newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX + 30) + "," + (newY) + ", L," + (newX + 30) + "," + (newY);
-
-        path = $d3g.transformSVGPath(svgToPlot);
-        // color = new THREE.Color( theColors[i] );
-        material = new THREE.MeshPhongMaterial({
-          color: "green"
-        });
-
-        simpleShapes = path.toShapes(true);
-        for (j = 0; j < simpleShapes.length; ++j) {
-          simpleShape = simpleShapes[j];
-          shape3d = simpleShape.extrude({
-            amount: 50,
-            bevelEnabled: false
-          });
-        }
-        mesh = new THREE.Mesh(shape3d, material);
-        group.add(mesh);
-        mesh.userData.info = {name: 'spike'}
-        mesh.geoInfo = geoPoints[x];
-        mesh.rotation.x = Math.PI;
-        mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
-        // mesh.scale.set(1, 1, 1);
-        mesh.translateZ(-80 - 1);
-        mesh.translateX(-600);
-        mesh.translateY(-150);
-      } // end of for Loop
-
-
-      return true;
+      var coneMesh = new THREE.Mesh(coneGeometry, coneMaterial);
+      coneMesh.rotation.x = -Math.PI / 2;
+      coneMesh.position.set(newX, newY, 0);
+      coneMesh.translateY(-150);
+      console.log(coneMesh);
+      group.add(coneMesh);
     }
+
+  }
+
+  function plotIn3dWorld(geoPoints) {
+
+     for (var x = 0; x < geoPoints.length; x++) {
+       var lat = geoPoints[x]["lat_lng"][0];
+       var lng = geoPoints[x]["lat_lng"][1];
+
+       const Y_UNIT = 0.05268209219,
+         X_UNIT = 0.05235987756;
+
+       const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
+       const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+
+       var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
+         100000
+       var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
+         100000
+
+
+       svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
+         newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX +
+         30) + "," + (newY) + ", L," + (newX + 30) + "," + (newY);
+
+       path = $d3g.transformSVGPath(svgToPlot);
+       // color = new THREE.Color( theColors[i] );
+       material = new THREE.MeshPhongMaterial({
+         color: "green"
+       });
+
+       simpleShapes = path.toShapes(true);
+       for (j = 0; j < simpleShapes.length; ++j) {
+         simpleShape = simpleShapes[j];
+         shape3d = simpleShape.extrude({
+           amount: 50,
+           bevelEnabled: false
+         });
+       }
+       mesh = new THREE.Mesh(shape3d, material);
+       group.add(mesh)
+
+       mesh.geoInfo = geoPoints[x];
+       mesh.rotation.x = Math.PI;
+       mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
+       // mesh.scale.set(1, 1, 1);
+       mesh.translateZ(-80 - 1);
+       mesh.translateX(-600);
+       mesh.translateY(-150);
+     } // end of for Loop
+
+
+     return true;
+   }
 
     function requestDataFromServer(url) {
       return $.ajax({
@@ -319,7 +357,6 @@ $(document).ready(function() {
       disableControls();
     });
 
-
     function restoreCityColors() {
       scene.traverse(function( node ){
         if ( node instanceof THREE.Mesh ) {
@@ -408,14 +445,31 @@ $(document).ready(function() {
     };
 
 
-    function bindGeoDetails(data) {
-      console.log(data);
-      var element = document.querySelector('#infoPopUp');
-      element.style.display = 'block';
-      var cssObject = new THREE.CSS3DObject(element);
-      cssObject.position = plane.position;
-      cssObject.rotation = plane.rotation;
-      scene.add(cssObject);
+  function bindGeoDetails(data) {
+    console.log(data);
+
+    var container = $("#property_card_list");
+    container.html("");
+
+    // Bind the JS template
+    var compiled = _.template($('#property_card_slider').html());
+
+    for (var i = 0; i < data.properties.length; i++) {
+      var parsedHtml = compiled({
+        data: data.properties[i]
+      });
+
+      container = $("#property_card_list");
+      container.append(parsedHtml);
     }
+
+    // bind the city naem
+    var titleSection = $("#city_div");
+    titleSection.html(data.city);
+
+
+    $('#box-bottom-left').toggleClass('active');
+    $('#box-right').toggleClass('active');
+  }
 
   });

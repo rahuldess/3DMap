@@ -1,95 +1,38 @@
 {
-  html_attributions: [],
-  results: [{
-    formatted_address: "51 N Central Ave, Campbell, CA 95008, United States",
-    geometry: {
-      location: {
-        lat: 37.28769829999999,
-        lng: -121.9438084
-      },
-      viewport: {
-        northeast: {
-          lat: 37.28773684999999,
-          lng: -121.94346475
-        },
-        southwest: {
-          lat: 37.28768544999999,
-          lng: -121.94392295
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-    id: "e1cfe231baa49fb539300199d710c11900052764",
-    name: "Campbell Historical Museum",
-    place_id: "ChIJrX3s7940joARk_4y4We6zys",
-    rating: 4.2,
-    reference: "CmRRAAAAhWjj7RCK2-bghBxPfCFmI4GOiBZgmHNlUNhrt9wUPUQd8G33BA7WCZAtKbbUq9C7hYSzpw8Hlvx3z_5YOcBc3d1v6NZxw6BonYpHbDknVFS9I6-YQ_yiIOwWNDrL07itEhAsEcMiZr0HEX0woeTQmw-pGhSf-hUumVFVqZ13isp280e2-C4bew",
-    types: [
-      "museum",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "1500 E Hamilton Ave #210, Campbell, CA 95008, United States",
-    geometry: {
-      location: {
-        lat: 37.2936989,
-        lng: -121.923375
-      },
-      viewport: {
-        northeast: {
-          lat: 37.2945884,
-          lng: -121.923375
-        },
-        southwest: {
-          lat: 37.29340239999999,
-          lng: -121.923375
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "59a6d9d2cdddb9adb541ea2c40f92c130a3a7f90",
-    name: "Common Interest Management Services",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    photos: [{
-      height: 315,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/109413089850216296692/photos">Common Interest Management Services</a>"
-      ],
-      photo_reference: "CoQBcwAAAEDvt48dZFrCK3Xx924YpQHII7HrDwGrhl63QSA0y0Jbo_wczch743D99wm02QbdP7MtcWNEzmdiKsUrgtJChqG3I71PAd2vbp3vhr0MlsmjIl0XKa0BkRSW_4j1rt3aFedjUYrnSqGCK4qJf7TBTXloH_6nVgfUJpBHVO9JLLcuEhDlvNTWTpX3qUlRQS4Hvt1rGhS0uqhcx8oUf9SQEO8_ouuZA6yiQA",
-      width: 851
-    }],
-    place_id: "ChIJhWVxcr80joARgSuHEzBJzeM",
-    reference: "CmRSAAAAJJlJQyTiLbBlRFWPhvKSDLMqkxt46NOM6YaBAN7ZNSAZNQJojjkNABhxbZC5jIsdZQp6RSBokSLPvEoyMNI3j0nnLrWjhxqiT-joxrltJN96aZuAPAFNhC71grzeWABGEhDk8TqHkc5lNPxrwFB7CxrKGhQdFG-kq0WawGf_L0uXEfRfxtHlpg",
-    types: [
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "267 East Campbell Avenue Suite C, Campbell, CA 95008, United States",
-    geometry: {
-      location: {
-        lat: 37.2873949,
-        lng: -121.9450656
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/civic_building-71.png",
-    id: "f2fb92bf6138cbe776399e74becfb432257f9d35",
-    name: "Campbell Chamber of Commerce",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    place_id: "ChIJpTn1JDg1joARAUpWPkvYRrE",
-    reference: "CmRSAAAARkEOqbxM_e7Z_3XQ6uKIHOIEjLtIoJ4qXzgrPVGLr4GFXDXo-llmArQocRltzwrtfsFjflPw6O8PX0crSaTJ503orh01rbYh9oGC4YnlJY2tOTaCE1Rqy9uqu0XfpyRTEhAY0Zb_zxC4pwSsPCPRptfQGhShwBHCcvU37CnYJUZX4QK1hjs_Fg",
-    types: [
-      "point_of_interest",
-      "establishment"
-    ]
-  }],
-  status: "OK"
+  "city": "Campbell",
+  "poi": [{
+      "formatted_address": "51 N Central Ave, Campbell, CA 95008, United States",
+      "lat": 37.28769829999999,
+      "lng": -121.9438084,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+      "name": "Campbell Historical Museum",
+      "rating": 4.2,
+      "types": [
+        "museum",
+        "point_of_interest",
+        "establishment"
+      ]
+    }, {
+      "formatted_address": "1500 E Hamilton Ave #210, Campbell, CA 95008, United States",
+      "lat": 37.2936989,
+      "lng": -121.923375,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+      "name": "Common Interest Management Services",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    }, {
+      "formatted_address": "267 East Campbell Avenue Suite C, Campbell, CA 95008, United States",
+      "lat": 37.2873949,
+      "lng": -121.9450656,
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/civic_building-71.png",
+      "name": "Campbell Chamber of Commerce",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+
+  ]
 }

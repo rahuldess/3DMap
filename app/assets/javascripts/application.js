@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lodash
+//= require underscore.string
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require three.min
 //= require tween.min
 //= require stats.min

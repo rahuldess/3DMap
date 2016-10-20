@@ -1,619 +1,93 @@
 {
-  html_attributions: [],
-  results: [{
-    formatted_address: "1850 Warburton Ave, Santa Clara, CA 95050, United States",
-    geometry: {
-      location: {
-        lat: 37.3555465,
-        lng: -121.9586176
-      },
-      viewport: {
-        northeast: {
-          lat: 37.35593545,
-          lng: -121.95859825
-        },
-        southwest: {
-          lat: 37.35541684999999,
-          lng: -121.95862685
-        }
-      }
+  "city": "santa_clara",
+  "pot": [{
+    "formatted_address": "1850 Warburton Ave, Santa Clara, CA 95050, United States",
+    "lat": 37.3555465,
+    "lng": -121.9586176,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/civic_building-71.png",
+    "name": "Santa Clara Chamber Of Commerce and Convention-Visitors Bureau",
+    "photo_url": "https://lh4.googleusercontent.com/-DtKWHndFkn4/VNHw8mjdwMI/AAAAAAAAAAo/3GzMbFYxuR8TSkTiQg4-IE024OpMq7KaQ/w565-h302-p-k-no/",
+    "photos": {
+      "height": 1536,
+      "link": "",
+      "photo_reference": "CoQBcwAAAIo01LjS3owsLMcALepA2OceeTy0I9ptjYHuRxB97Wg57EE0UZTu0DE_tlm3cxAg4v9OU05Ik6K-0GfMsnXBOT06MhvYqIZuTVXzCJWkQE3V_emMgAYZW47wMY67coQCECBMWyro4Eovf6uZ-3DicjcBgvrca5cCRqHFFFlVncaBEhBZUZx9gGYWfO_mgglAWyvvGhS6UyG3bbqnNgVV6HgSmwk2JXszXQ",
+      "width": 2048
     },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/civic_building-71.png",
-    id: "65866bb3da0a883557938d67728d69a93970d114",
-    name: "Santa Clara Chamber Of Commerce and Convention-Visitors Bureau",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    photos: [{
-      height: 1536,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/108288649018175423879/photos">Santa Clara Chamber Of Commerce and Convention-Visitors Bureau</a>"
-      ],
-      photo_reference: "CoQBcwAAAIo01LjS3owsLMcALepA2OceeTy0I9ptjYHuRxB97Wg57EE0UZTu0DE_tlm3cxAg4v9OU05Ik6K-0GfMsnXBOT06MhvYqIZuTVXzCJWkQE3V_emMgAYZW47wMY67coQCECBMWyro4Eovf6uZ-3DicjcBgvrca5cCRqHFFFlVncaBEhBZUZx9gGYWfO_mgglAWyvvGhS6UyG3bbqnNgVV6HgSmwk2JXszXQ",
-      width: 2048
-    }],
-    place_id: "ChIJRXs7dkjKj4ARgdDgub0z9Iw",
-    reference: "CmRSAAAAfL92SIUM7nuOZYICvgiu6h4FbmdAk7kPIYWODJQmdW0AtlgGYBl3Xnj5Pbk_UMYcyQQ_MLdaDj3RR_Ou0EU4-a18y5VAK2BcSrhPx5j3DKldB5yh2IeDdXqGNnHKqTbQEhCqmfSYEElSula36NtxVcTzGhRIhVSMyNfajEJyldQP4FjISA-DUw",
-    types: [
+    "types": [
       "travel_agency",
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "4901 Lick Mill Blvd, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.4055901,
-        lng: -121.9551321
-      },
-      viewport: {
-        northeast: {
-          lat: 37.4058722,
-          lng: -121.95453205
-        },
-        southwest: {
-          lat: 37.40474380000001,
-          lng: -121.95693225
-        }
-      }
+    "formatted_address": "4901 Lick Mill Blvd, Santa Clara, CA 95054, United States",
+    "lat": 37.4055901,
+    "lng": -121.9551321,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+    "name": "Ulistac Natural Area",
+    "photos": {
+      "height": 533,
+      "html_attributions": "<a href=https://maps.google.com/maps/contrib/106655823948698010001/photos>lu lu</a>",
+      "photo_reference": "CoQBcwAAANA4cmElIAtdu9bKt_MdGbBXzIdCOHpZgkV7ef741J66j9FKNkwNdcPAAJowTbbqNwBEaMz9KUIBb2LG1SB2sprVpNkaBc9e1uyHl2EHoEmHKhi8b8uNRhtYJdM6lNtCTrZnGIdkIeqbqCLVGubfLi44BibL7ONt9tK4UfgJoqXHEhC3VSZmkJAesmE5eSi_kteiGhSqXMLoivW691xkag4ew0CRi2lyEA",
+      "width": 800
     },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "8a782db2caed4755165c5f0c50bfb1e80c25001e",
-    name: "Ulistac Natural Area",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    photos: [{
-      height: 533,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/106655823948698010001/photos">lu lu</a>"
-      ],
-      photo_reference: "CoQBcwAAANA4cmElIAtdu9bKt_MdGbBXzIdCOHpZgkV7ef741J66j9FKNkwNdcPAAJowTbbqNwBEaMz9KUIBb2LG1SB2sprVpNkaBc9e1uyHl2EHoEmHKhi8b8uNRhtYJdM6lNtCTrZnGIdkIeqbqCLVGubfLi44BibL7ONt9tK4UfgJoqXHEhC3VSZmkJAesmE5eSi_kteiGhSqXMLoivW691xkag4ew0CRi2lyEA",
-      width: 800
-    }],
-    place_id: "ChIJeYW8j6_Jj4ARq4ABm4R7Z70",
-    rating: 4.3,
-    reference: "CmRSAAAAE4cMaNKhHjj7S-jOc-JCUsKyNkJtTn_qSxfw3q59UCeSkd_kgun_5skyYijA9CcAd9Z9FVSNEA9z_xjh6LIpvbznl6sQRBcBzlhf3gzfku6iLY4j7-GjLrK1mh6PehIDEhCc2k5TKOBw_ZQYgnD7IvJhGhTHxXA4yexRfgi_UQFaKPpq82IAuw",
-    types: [
+    "rating": 4.3,
+    "types": [
       "park",
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "2200 Mission College Blvd, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.3875237,
-        lng: -121.9636595
-      },
-      viewport: {
-        northeast: {
-          lat: 37.38922995,
-          lng: -121.96337915
-        },
-        southwest: {
-          lat: 37.38695495,
-          lng: -121.96375295
-        }
-      }
+    "formatted_address": "2200 Mission College Blvd, Santa Clara, CA 95054, United States",
+    "lat": 37.3875237,
+    "lng": -121.9636595,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+    "name": "Intel Museum",
+    "photos": {
+      "height": 2968,
+      "html_attributions": "<a href=https://maps.google.com/maps/contrib/110171932238566208341/photos>Keith Achorn</a>",
+      "photo_reference": "CoQBdwAAAOdKfY_cHUPMSf41qI7Jf_11j0EpxWo9BxRfTKopkKTrydQW4wPdGbXUgUmoRS6KiSSrrnF1wYHgIFnBR7KekX0LuZxSwR2oxiByXE5WEGm1dtZGDpRdGx4Z6JIme5wDEdxrB-pisGtceWPY9Vi1vk4KEMVfn1oC0cslFkYOtMX5EhDDUvui8BhZ-ziVcFLknq-qGhRqBqQyndaruRny7uGGPTaTGlNWNg",
+      "width": 3874
     },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-    id: "fbf01de2de6e8be161bef8564101720994b67873",
-    name: "Intel Museum",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    photos: [{
-      height: 2968,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/110171932238566208341/photos">Keith Achorn</a>"
-      ],
-      photo_reference: "CoQBdwAAAOdKfY_cHUPMSf41qI7Jf_11j0EpxWo9BxRfTKopkKTrydQW4wPdGbXUgUmoRS6KiSSrrnF1wYHgIFnBR7KekX0LuZxSwR2oxiByXE5WEGm1dtZGDpRdGx4Z6JIme5wDEdxrB-pisGtceWPY9Vi1vk4KEMVfn1oC0cslFkYOtMX5EhDDUvui8BhZ-ziVcFLknq-qGhRqBqQyndaruRny7uGGPTaTGlNWNg",
-      width: 3874
-    }],
-    place_id: "ChIJi0P5bJHJj4ARlze0BLmnRHY",
-    rating: 4.4,
-    reference: "CmRRAAAA58gSQ8y2hlXObO89p9VP03pCU1rPUkING4fyMc2tODmaOGWv8zCEwOZHs8Dha2pZTobkX9jy1qyGccwryJ8fR-91snEjM0dFovzQoar23981OLdeiUPqMaWxhiL93BjsEhBaeKeWvGNK5CoIOGdrGebfGhQiUolB_H0xaX5vyJlG6FHyWHGflg",
-    types: [
+    "rating": 4.4,
+    "types": [
       "museum",
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "5001 Great America Pkwy, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.4046706,
-        lng: -121.9752469
-      }
+    "formatted_address": "5001 Great America Pkwy, Santa Clara, CA 95054, United States",
+    "lat": 37.4046706,
+    "lng": -121.9752469,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+
+    "name": "Santa Clara Convention Center",
+    "photos": {
+      "height": 1395,
+      "html_attributions": "<a href=https://maps.google.com/maps/contrib/112453007571345405216/photos>Andre Speek</a>",
+      "width": 2100
     },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "a3b60237dc49e181b6c6917b5fe23a439f850cb2",
-    name: "Santa Clara Convention Center",
-    photos: [{
-      height: 1395,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/112453007571345405216/photos">Andre Speek</a>"
-      ],
-      photo_reference: "CoQBdwAAAM4B4tHmIgaWVMIj-Hvho99YmiqG2TCK8yjygSexNNN6sCPSZd1BzxahLjv99JUAUS5AwR5zCaPkRzdyDnD-Hz1CkAa5D-DcsMnoQ1ssR741cAznwY6KG3J07x0zTuPIKqsprKiazMeROSgTiryU1vPKXnJEdJObD9Ci0B83MrvaEhBcBluoin5LwkqDr1J1D9pcGhRLc942dA9IMV00iKBU7YD_xVGq7w",
-      width: 2100
-    }],
-    place_id: "ChIJuVD6TcnJj4AR5NJwB-b368E",
-    rating: 4,
-    reference: "CmRSAAAAmGmEYpc_K_d2EZfgm-ckszy0bMjmEkVZkTUtpF4eePTnk838CC2mStqy6ETydkSowAJ94qru6pDgZmuQY-yCE5HxskxTudWPMglE3foQOFaL_AnVLbupel24Mcq_VpIpEhAV69sFM8xj-c_xDEd6hxMAGhS4kEIGqE6D7_KG1StT3KiFU70Q_g",
-    types: [
+    "rating": 4,
+    "types": [
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "Dana Ave & Naglee Ave, San Jose, CA 95112, United States",
-    geometry: {
-      location: {
-        lat: 37.3318809,
-        lng: -121.9286119
-      },
-      viewport: {
-        northeast: {
-          lat: 37.33290345,
-          lng: -121.92724225
-        },
-        southwest: {
-          lat: 37.33154005000001,
-          lng: -121.92906845
-        }
-      }
+    "formatted_address": "Dana Ave & Naglee Ave, San Jose, CA 95112, United States",
+
+    "lat": 37.3318809,
+    "lng": -121.9286119,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+    "name": "Municipal Rose Garden",
+    "photos": {
+      "height": 2752,
+      "html_attributions": "<a href=https://maps.google.com/maps/contrib/117995335416437278187/photos>Joe G</a>",
+      "width": 4896
     },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "962a2ab19299f8e69829d3763c896878fb1a9fdc",
-    name: "Municipal Rose Garden",
-    photos: [{
-      height: 2752,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/117995335416437278187/photos">Joe G</a>"
-      ],
-      photo_reference: "CoQBdwAAAC4Xkx0l5YgLTRlp_ie98xW6QMR-8LRN7ElxUX18fnd09XT9e36nD8ikrQNf7zIWocp5-gARUq7fMD7GWq_cM0kL2PAcjqHccgO4vAGnJxd_FGnBaqFoZfR6u0B8wTm07iRSGVnOU2irjdSLJ4km2PiVBK-xd5ttRZs9NJUI1EzaEhBuRCl7PrVubciiYQQV-Au3GhTEsCJ4oCrqft1FMjMpw-SZ-B0kfg",
-      width: 4896
-    }],
-    place_id: "ChIJb5KWbRTLj4AR1iYBl5vpNf8",
-    rating: 4.6,
-    reference: "CmRSAAAAZEJRNmDBQCnuVeGkDgLKoHlwXbe1pT8MWmGIy4Ub-NstSawSMBVdNvxYHhL3ZO6OcflyiavMnlbmKrCm0loP3Of6YyKqqexp0ubFDczOR8OiFroX6EvoT_jzlnJ58PO2EhAnu6-cIxknyVl05XcoqJU0GhRmnDS44GAYEBMEO3TjGKH2oKXvqA",
-    types: [
+    "rating": 4.6,
+    "types": [
       "park",
       "point_of_interest",
       "establishment"
     ]
-  }, {
-    formatted_address: "500 El Camino Real, Santa Clara, CA 95050, United States",
-    geometry: {
-      location: {
-        lat: 37.3499295,
-        lng: -121.9406569
-      },
-      viewport: {
-        northeast: {
-          lat: 37.35013785,
-          lng: -121.94038175
-        },
-        southwest: {
-          lat: 37.34930445,
-          lng: -121.94148235
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-    id: "9067dd7a91e4c7654f7d52e0cbdc8f382321c971",
-    name: "De Saisset Museum",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    place_id: "ChIJUVuaM6zLj4ARoQSjNyb1ebQ",
-    rating: 4.2,
-    reference: "CmRSAAAAMSU5IcxB6lGNwXuWIM3iL9PYMMRsKBPMOi5o_Cmoltz2P2X8DFaLUBBSW51S7IdZlnbcolESdzY9ivnz-uxmqsKGZNkfPXAdB8v6Da7okLzcR8UZUZXERDHpI66jVUeUEhD1Ny7znX4ewIh8awHml_BCGhQRpqOWm0z74slgFRy3cEtUEn3ybw",
-    types: [
-      "museum",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "2855 Stevens Creek Blvd, Santa Clara, CA 95050, United States",
-    geometry: {
-      location: {
-        lat: 37.326029,
-        lng: -121.943526
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-    id: "1a05143ba5a12620e8d4ccebeab277f5c2ce9435",
-    name: "Things Remembered",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    place_id: "ChIJ6Y6x5R7Lj4ARsK1t1CzmGYs",
-    price_level: 2,
-    reference: "CmRSAAAAmo-uJUZNUIk4xYFFX1BnTVtfELVVLjcCv9brfqS2ZPkS_zLXgiM4XYubks4xliIhYB5orHq3V0ymhuB0lrX61YL3ICqPy6TKkra6uCRVbPxApcAUPdN-Zvg1RmRPiLLGEhDmrRmqm_TQ9w-sRV2dkjlxGhR11XOHIuJrW8vwkhE5_O_rotT16Q",
-    types: [
-      "store",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "4949 Great America Pkwy, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.4027846,
-        lng: -121.9770478
-      },
-      viewport: {
-        northeast: {
-          lat: 37.40279965000001,
-          lng: -121.97702395
-        },
-        southwest: {
-          lat: 37.40276264999999,
-          lng: -121.97711935
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "c45975688a780579dad3df21aea2ee9144ff6e83",
-    name: "Hilton Santa Clara",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 900,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/105655753983144928797/photos">Arkadi Avagyan</a>"
-      ],
-      photo_reference: "CoQBdwAAACqN_5YHdUoW9viu0bCbwlvBlYl5vu594vmMwainA0FdeZZsLQdgk2jIamSW6N-_8xKq0D_iZJa-7VFQl-vPTaEIhmOk72wRjfX9ESfCzeLWMzAb7Stjj2SjYgGeiHhV9H6qM7zuoAq6gjBHOt3gQoEGVNx68ZkUI-QGjA895oMVEhDeHMNsiRDZozQVomL8lw3nGhSm6lRLYkhVOoxa1aZfhNLptR2k3w",
-      width: 1600
-    }],
-    place_id: "ChIJy3dl287Jj4ARq4yV_OvOu9w",
-    rating: 4.3,
-    reference: "CmRSAAAAGS_KiF76EIi7L1hMRUbtHIif4QtvJl80ImIFBPclMBa5QzJ89wHc0RHy5xQlOe_lNTfxQkQo22wiVujO5bJYKGkHfT3V5ExmA_aJBNSo-g8QK6c7IuKl2eXQKHoruVKvEhB3E4o4dgiDVQIM514fNVKhGhSMClHU6xl4s6fYrjdIBiIU5nFSow",
-    types: [
-      "lodging",
-      "restaurant",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "525 S Winchester Blvd, San Jose, CA 95128, United States",
-    geometry: {
-      location: {
-        lat: 37.3183318,
-        lng: -121.9510491
-      },
-      viewport: {
-        northeast: {
-          lat: 37.3192651,
-          lng: -121.9496727
-        },
-        southwest: {
-          lat: 37.3180207,
-          lng: -121.9519171
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "5679b6ea60042431416a8fcf83ffa1a8b6c39c64",
-    name: "Winchester Mystery House",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    photos: [{
-      height: 2988,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/103851586053926081424/photos">GirlieGirl 1979</a>"
-      ],
-      photo_reference: "CoQBdwAAAC-OuBP8ZZ7gX79qc1T3FaFMgyARxPGleXmGST-74Qwl2C8OIS-YX08MHuF3rX-N2BLM761XZpdhv9YPBfmO1lm4tncTOIv5hAc54kVqauvW9X89JJr2viW9GPpOMYXgRixNQXczoZp86pfGLRUtrKaW5MLCmIk6_XJVv35MP2oSEhCKhegQnh6dwrr5I8aNMj8FGhR-WpERAMq8e2gPsfj7D7IOno5vPg",
-      width: 5312
-    }],
-    place_id: "ChIJjzp2WN7Kj4ARZu9lBAGmS2Q",
-    rating: 3.9,
-    reference: "CmRRAAAAH_KP1laMr2JfY94Vbe06Cqyq3R7JpsYH9fbExDJX2jfmgPHYxjJeKlhZZ2h2XX-C-uAmbV5aBk7xNTGP2PKkEVNDxjv89K7lKVv_SGHiNm-AFYn8MVG9eqKN5jlbrL76EhDX345EUGErEiR9tZEJ5SrOGhQlBPkHNg89J-YPcow40Kl1wmDp9A",
-    types: [
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "1505 Warburton Ave, Santa Clara, CA 95050, United States",
-    geometry: {
-      location: {
-        lat: 37.35610820000001,
-        lng: -121.9552176
-      },
-      viewport: {
-        northeast: {
-          lat: 37.35622615,
-          lng: -121.9551812
-        },
-        southwest: {
-          lat: 37.35575435,
-          lng: -121.9553268
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-    id: "9a753c6283aee4382e13a95e6f0cb2e088eaadbd",
-    name: "Triton Museum of Art",
-    opening_hours: {
-      open_now: false,
-      weekday_text: []
-    },
-    photos: [{
-      height: 1536,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/103860491688292424790/photos">Triton Museum of Art</a>"
-      ],
-      photo_reference: "CoQBcwAAAIBtXdQ7CHN7VouoKNSJTlRKochmF3dO0znwZWk0qLHPStYTd_lG2lvIqOtQyBO2c5rWhbZjwMGh0wUwYhKQkL6MR4dw5sKvd5JjJ3WNlNfYLVYGWIPPVUdXXUvHFNbiMTMGQFJZ01uvR11MJZon77P7rVTwpxQFq1LV-tcRGB3cEhBIj8C3B9s_eTKDn8yZ8AP7GhSP01zrdxeicxC59fuIsI26ZaWr8A",
-      width: 2048
-    }],
-    place_id: "ChIJGWxtr0nKj4ARGHKbY2HbPUw",
-    rating: 4.4,
-    reference: "CmRRAAAAI_ccMqzYozZ7Q_phjT-Ay5sdIC5vxC61KnBEvY402jmwNF2tJmh-GSOMQIEJTcs1T1fPYSnRUnyuq7Xc54RkBs-2CGXeOFrI3hPSMPOXtbJE804kLCW31Mf6vq2wr7idEhAojgDvva1rCAhKdojtZG-YGhQTKb2Ay2uSiSushNodE4zgEa5wBQ",
-    types: [
-      "museum",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "4701 Great America Pkwy, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.399928,
-        lng: -121.976765
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-    id: "64da3e553288d4af509aebc8062fa9b07d50f0e6",
-    name: "California's Great America",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 1346,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/107694835237977837801/photos">California&#39;s Great America</a>"
-      ],
-      photo_reference: "CoQBdwAAABxAPI-uo362Kf7TxG5ToPWnB9APlio2IUd3eQqhVNilYJIIzaQN27rmjMe0idOevl_t4xnUiJvetvVMTIhx1CZ-8CsUT8j0O1YJJaSv14yvgHHB7K3NCC5jhsNBwVQsDn1t-PtXzacSF2dHyutJaeCWkAoM-2KW6MFhj-6SIY7OEhCDHSA1tK2679D26IcaP3_wGhS4xxzrLibD1Ju0nSQY3PDbxB8qmA",
-      width: 1347
-    }],
-    place_id: "ChIJq7iF28bJj4ARdWUD6DQUr3I",
-    rating: 4.3,
-    reference: "CmRRAAAAg5XOjK1S_Vp8pxeQXMwUuMMeW5Q6tOuH4ALikjuP4aMuYngNHGv2bznslTgYYgSxNhJthXL_x7mdVWJKjZl8OAEWiTvNMYQj7bV8YxOaHq26GneatUVcaf1gQK61Ppv9EhC3r4HreApZyRjVWJOLWoW9GhTrS1rxGM4QLeUwc3PZXATLgqMZZg",
-    types: [
-      "amusement_park",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "3915 Rivermark Plaza, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.394519,
-        lng: -121.94456
-      },
-      viewport: {
-        northeast: {
-          lat: 37.39479935,
-          lng: -121.9444232
-        },
-        southwest: {
-          lat: 37.39442554999999,
-          lng: -121.9449704
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "5f776358593bc6bc8f1dd950c614c2c1d7795fd3",
-    name: "Hyatt House Santa Clara",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 2334,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/110171932238566208341/photos">Keith Achorn</a>"
-      ],
-      photo_reference: "CoQBcwAAAECF3dwOFOBfbKZROP2mzSz5V4mm1nXJ2561G9o9_yC6r2ajSW8K6jEjNdjwW3_CsJ8gF50WN5hHBr7hRNo-SICiyJfnxK30VcI0jJj7cHfeAWxcx0qOD8ovKc9JUeWh0AvPR41OjzmKRMJyEC_dJ8I921VZINRQfHS3mfi5f1FpEhDocX4c0eRxEgtUdRgiPxflGhRLJnttzsrpjwDDtfz56Y6jqxK4tA",
-      width: 3812
-    }],
-    place_id: "ChIJgT44eXbJj4ARQG3LRSTBq5Q",
-    rating: 4.3,
-    reference: "CmRSAAAAFak1XhNf9cFFx8j4JCC0qI_vgKpwXs5iJoXiSUxjDHAB4q1hHRAGX1jBwLvISCL7pJonnpZpoGQFh1eN-nt23EfQtTVd_mmbiUwFedhfOQZTvGm44muK0eMisTa05f7pEhCkDsSSwl0Du7ojV9GhnX54GhQ_kYtpI2OIMxKawh6M4gAwmJnm0A",
-    types: [
-      "lodging",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "1655 El Camino Real, Santa Clara, CA 95050, United States",
-    geometry: {
-      location: {
-        lat: 37.3530081,
-        lng: -121.9558114
-      },
-      viewport: {
-        northeast: {
-          lat: 37.35328819999999,
-          lng: -121.9557979
-        },
-        southwest: {
-          lat: 37.3521678,
-          lng: -121.9558159
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-    id: "d960bc5f0ce2c92e4f0f5bb867501a4ae29363b8",
-    name: "Best Western University Inn Santa Clara",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 484,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/113297219972264351703/photos">Best Western University Inn Santa Clara</a>"
-      ],
-      photo_reference: "CoQBdwAAALuTLzDFmICBjE6UhBjLDk9FbTWYXkaIPdK1F6_0NncPejUvi2b1r2uUSDUZXnZyFVfTYPTyVUOU4aNEOCimDaTFj7Hu5BAXKmK3zi_OZaw6C26uoRJofa9KpI7xRtvMDgTsBxZY2RKpMPcPW36Bxzm7YEoTu3w7Es7N_wEySX88EhDj0IidbXNkFyceNDJTxQNDGhSDPnmgRG_GVk9mEntiN5QnDwz8NQ",
-      width: 796
-    }],
-    place_id: "ChIJl4tj2k7Kj4AR9gni4mv3SZ8",
-    rating: 4.5,
-    reference: "CmRSAAAAw2vfbW8BCruxprqIIghOaf-oHXFRsn66BP_3faqpfYeRohZlsSfwstb90h188pQ91sdXbCgKFLttK7DU3NMOBZzUCusljAAIRprN6u_KEU8vgtzT_EWNSvIiQAPvGSJSEhCRouazQ3uGEAKh4ys4HMb9GhQF6hq2Fwc1PYrSYSbbTyeOZMj-MA",
-    types: [
-      "lodging",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "2855 Stevens Creek Blvd, Santa Clara, CA 95050, United States",
-    geometry: {
-      location: {
-        lat: 37.3257127,
-        lng: -121.9456095
-      },
-      viewport: {
-        northeast: {
-          lat: 37.32862969999999,
-          lng: -121.942698
-        },
-        southwest: {
-          lat: 37.32177290000001,
-          lng: -121.9525308
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-    id: "35a995986d9e632fd14347b9d07dd5c9e8cb89b8",
-    name: "Westfield Valley Fair",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 750,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/104838689650701611582/photos">Westfield Valley Fair</a>"
-      ],
-      photo_reference: "CoQBcwAAAPCiqIi8Xdk9p9TKIYgZa1pQA12UwdDSK0iIpq8G3In_qzZRgxHyA4YCAw5ueTt8UNoXEEAr2QRGujwgpE83vLyUnbGAM15KAr3OqN41hwFcyGmtXCnReN66SThaPPpLAGubyVsW53lfM3FWW0cY_-r-Ev8VGmB6ctMjtvgoPEetEhChe9WT_hS2bXw4j24CQ1ATGhSWVltHsuN7fdT_RSBc4bSPY22zvg",
-      width: 760
-    }],
-    place_id: "ChIJgexMlR_Lj4ARSvwSxukOgys",
-    rating: 4.3,
-    reference: "CmRRAAAAu811BXTOQA9DKwPUmn3Zuj8G2IRxtqBOH-10M4Zwl4CnERIpX7iiEGrmLt6PPeQgmLXof8WdR4aUE9pTR6Q_DNY-fqu2Yg3yCz7F88ErRAXlHX6mAhKn0Ew6wAuyrepmEhAt6RJs_4K9NiQ5hdmYbW73GhTEuEt33kdASKewCXCJUENQYJdihQ",
-    types: [
-      "shopping_mall",
-      "department_store",
-      "shoe_store",
-      "restaurant",
-      "food",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "4900 Marie P. DeBartolo Way, Santa Clara, CA 95054, United States",
-    geometry: {
-      location: {
-        lat: 37.40319879999999,
-        lng: -121.9698393
-      },
-      viewport: {
-        northeast: {
-          lat: 37.40752969999999,
-          lng: -121.9658702
-        },
-        southwest: {
-          lat: 37.3973897,
-          lng: -121.9803342
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "ce36e47113db005471a6117909a3df3e56181c5b",
-    name: "Levi's Stadium",
-    photos: [{
-      height: 2988,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/115644254301804865803/photos">Doug Maclaughlin</a>"
-      ],
-      photo_reference: "CoQBdwAAADidJLIvMu1QLQ9n_SIn-2ofznx9iN5gjpe5xW-c64k2UfPHzVAlTLmHnH5IvyNwfbp7-Hiv5_WKtD5nQ78t-BiHtznqDsv14yFPTP7C3Z3SlquRBZkDoMSNN_1jApr1Gq6xo6O_in_oezWAhHtMdDjMXD627uIsrrLQKfs1yc5CEhCIYYFXo8NBBQqFw6_LzA2uGhQgWrv_GtHBLfzBS1N_GDoNPk1TPg",
-      width: 5312
-    }],
-    place_id: "ChIJ3_DFJ8jJj4ARGH0fLjdaRRE",
-    rating: 4.2,
-    reference: "CmRRAAAAtJ5qRc6SXi_8FuFsUkIlWIngF5rO81Rl3drUgLIUivf6V8FFDHbwOX4xOZHxobhcrlLPKYU2P2BldgatOnws0TlAumW3IGwjJBbP9vqyPG7FlkVLWex2XNbtHY6Zhi8pEhBb32Kj4dO-Kr7qzkpHpf7YGhRHOPDdOhRc9n02sTwvQlqfCBpJmA",
-    types: [
-      "stadium",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "500 El Camino Real, Santa Clara, CA 95053, United States",
-    geometry: {
-      location: {
-        lat: 37.34964180000001,
-        lng: -121.9389875
-      },
-      viewport: {
-        northeast: {
-          lat: 37.35318119999999,
-          lng: -121.9365767
-        },
-        southwest: {
-          lat: 37.348462,
-          lng: -121.9397911
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
-    id: "ed2ff3dc7fd175ffb7e6b994bf8c5a647a8b7b11",
-    name: "Santa Clara University",
-    photos: [{
-      height: 2368,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/114036542540659656883/photos">Anthony Uong</a>"
-      ],
-      photo_reference: "CoQBdwAAAF1NoTDCkgZ278DbrlPuxrp8JDAr-HMHCDxw3Eczme6xMcBv3MMzKBh9TBcX9anp6sBunkhyl3XyP8Q2NNQhsv4WCZgoOW2elsNZ8g61EOdEu2NVjswYquo8D4QRcNY6G8_AX-3uCsmiD_ee9BKUtzdGfHBn-aK3vh1uEHzgR6WxEhDzO4pOswkUdIuGJAMblOKqGhR8RaFvUPqBg4KhtRl-HrSAUR5mYA",
-      width: 4096
-    }],
-    place_id: "ChIJwz4wNq_Lj4ARR-PU9hShHFY",
-    rating: 4.2,
-    reference: "CmRRAAAAkohOzgpG-SmN1EOZJb0iyNL5j2uNAAiDP27V8HffGQ1ycTBJvlP1uidA1RCkGP_LJqGwfoHbr8T-cqdCMcHTAjudV1_EofJMe85kWCxgzKOY4PScm37ANnHspEOVFL5JEhAs9VeIP49C5brPQqlIcuM0GhSGmX5ZYiCPdGp_Zo1HnUSAFwoSJQ",
-    types: [
-      "university",
-      "point_of_interest",
-      "establishment"
-    ]
-  }],
-  status: "OK"
+  }]
 }

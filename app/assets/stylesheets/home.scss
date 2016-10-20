@@ -1,0 +1,260 @@
+// @import url(https://fon/ts.googleapis.com/css?family=Lato);
+// @import url(https://fonts.googleapis.com/css?family=Oswald);
+// @import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font-family: Monospace;
+  background-color: 'grey';
+  margin: 0px;
+  overflow: hidden;
+}
+
+
+
+/***************** Variables ************************/
+$box-color-background:    rgba(255, 255, 255, 0.8);
+$box-radius:              7px;
+$box-to-border:           10px;
+$box-box-shadow:          0 1px 1px rgba(0,0,0,0.25);
+$hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
+
+// Mixin
+@mixin myItem-static($idx) {
+    &.item-#{$idx} {
+      $px: $idx *4-30;
+      $z: 10-$idx;
+      left:  #{$px+'px'};
+      z-index: #{$z};
+    }
+}
+@mixin myItem($idx) {
+    .item.item-#{$idx} {
+      $px: $idx * 140-140;
+
+      left:  #{$px+'px'};
+
+    }
+}
+
+/***************** Hover Box ************************/
+.hoverbox{
+  position: fixed;
+  border-radius: $box-radius;
+  background-color: $box-color-background;
+  box-shadow: $box-box-shadow;
+}
+
+/***************** Top Left Box ************************/
+#box-top-left{
+  width:250px;
+  height:100px;
+  top: $box-to-border;
+  left: $box-to-border;
+
+  .logo-image-wrap{
+    width:100%;
+  }
+  .logo-image{
+    width:80%;
+    margin: 5px 10%;
+  }
+  .search-wrap{
+    padding:10px 10px 5px;
+  }
+}
+/***************** Left Box ************************/
+#box-bottom-left{
+  width: 250px;
+  height: 500px;
+  top: 120px;
+  left: -300px;
+  transition: left 0.5s ease;
+  &.active{
+    left: $box-to-border;
+  }
+}
+/***************** Right Box ************************/
+#box-right{
+  width: 300px;
+  height: 600px;
+  top: $box-to-border;
+  right: -300px;
+  padding: 10px;
+  transition: right 0.5s ease;
+  &.active{
+    right: $box-to-border;
+  }
+  .list ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+  }
+}
+/***************** top Box ************************/
+#box-top{
+  height: 100px;
+  top: $box-to-border;
+  left: 270px;
+  transition: all 0.5s ease;
+  background-color: $box-color-background;
+  box-shadow: $box-box-shadow;
+  width: 120px;
+  &:hover{
+    width: 600px;
+    .text{
+      visibility: visible;
+    }
+    @include myItem(1);
+    @include myItem(2);
+    @include myItem(3);
+    @include myItem(4);
+  }
+  .item{
+    padding:10px;
+    display: block;
+    min-width: 145px;
+    position: absolute;
+    transition: left 0.5s ease;
+    z-index: 10;
+    left: -12px;
+    &.selected {
+      z-index: 11;
+      .icon{
+        // transform: scale(1.1);
+
+      }
+      .text{
+        visibility: visible;
+      }
+    }
+  }
+
+  .icon{
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    background-color:#d92228;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    box-shadow: $box-box-shadow;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+
+    &:hover{
+      box-shadow: $hover-box-shadow;
+      transform: rotateY(180deg);
+    }
+    .glyphicon{
+      font-size: 30px;
+      color: white;
+      top: 14px;
+      left: 14px;
+    }
+  }
+  .text{
+    text-align: center;
+    visibility: hidden;
+  }
+}
+
+/***************** Property Cards ************************/
+
+.property-card{
+  position: relative;
+  .property-image{
+    width: 100%;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    transition: all 0.8s ease;
+    img{
+      position: absolute;
+      height: auto;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+  .back{
+    background: url(asset_path('property1.jpg')) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 50%;
+    height: 0;
+    top:0;
+    transform: rotateY(180deg);
+    transition: all 0.8s ease;
+    z-index: 1
+  }
+  .property-meta{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 40%;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.8);
+    .price{
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  .property-actions{
+    background-color: rgba(255,255,255,0.8);
+    position:absolute;
+    top: 60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding:0 10px;
+    .action{
+      font-size:16px;
+      cursor: pointer;
+    }
+  }
+  &:hover{
+    .property-image{
+      z-index:1;
+      transform:rotateY(180deg);
+    }
+    .back{
+      z-index:2;
+      transform: rotateY(0);
+    }
+  }
+}
+
+/***************** Others ************************/
+span#close-city-zoom {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  border: 1px solid grey;
+  padding: 5px;
+  display: none;
+}
+
+//Helpers
+.extra-big-bold{
+  font-size: 22px;
+  font-weight: 600;
+}
+.big-bold{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.big{font-size: 18px;}
