@@ -1,3 +1,30 @@
-<div id="box-bottom-left" class="hoverbox">
+<div id="box-bottom-left" class="hoverbox text-center">
+  <div class="title extra-big-bold"> San Jose, CA</div>
 
+  <div class="meta">
+    <div class="meta-hot">
+      <div class='meta-circle'><span class="glyphicon glyphicon-fire" aria-hidden="true"></span></div>
+      <div>9.5</div>
+    </div>
+    <div class="meta-median">
+      <div class='meta-circle'><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></div>
+      <div>575K</div>
+    </div>
+    <div class="meta-population">
+      <div class='meta-circle'><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+      <div>3.4M</div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="btn btn-danger">1,234 Homes for sale</div>
+    <div class="btn btn-info">234 Homes for rent</div>
+  </div>
+  <div class="poi">
+    <div class="meta-circle">
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    </div>
+    <%= render partial: 'shared/poi_item' %>
+    <%= render partial: 'shared/poi_item' %>
+    <%= render partial: 'shared/poi_item' %>
+  </div>
 </div>

@@ -67,20 +67,49 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
 /***************** Left Box ************************/
 #box-bottom-left{
   width: 250px;
-  height: 500px;
+  bottom: 10px
   top: 120px;
   left: -300px;
   transition: left 0.5s ease;
+  padding: 10px;
   &.active{
     left: $box-to-border;
+  }
+  .title{
+    margin-bottom: 15px;
+  }
+  .meta{
+    >div{
+      width: 33%;
+      float: left;
+      text-align: center;
+
+    }
+  }
+  .meta-circle{
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    background-color:#d92228;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    .glyphicon{
+        color:white;
+        font-size: 20px;
+        top: 12px;
+    }
+  }
+  .actions{
+    margin:5px 0;
+    .btn{margin:5px 0;}
   }
 }
 /***************** Right Box ************************/
 #box-right{
   width: 300px;
-  height: 600px;
   top: $box-to-border;
   right: -300px;
+  bottom: 10px;
   padding: 10px;
   transition: right 0.5s ease;
   &.active{
@@ -122,7 +151,6 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
     &.selected {
       z-index: 11;
       .icon{
-        // transform: scale(1.1);
 
       }
       .text{
@@ -160,7 +188,6 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
 }
 
 /***************** Property Cards ************************/
-
 .property-card{
   position: relative;
   .property-image{
@@ -237,6 +264,37 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
   }
 }
 
+/***************** Point of Interest ************************/
+.poi-item{
+  padding-left: 50px;
+  padding-right: 10px;
+  height: 50px;
+  position: relative;
+  .icon{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width:50px;
+    height:50px;
+    img{
+      width:100%;
+      height:auto;
+    }
+  }
+  .name{
+    padding-top: 5px;
+    display: block;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+  .rating{
+    .glyphicon{color:#d92228;}
+  }
+
+}
+
 /***************** Others ************************/
 span#close-city-zoom {
   position: absolute;
@@ -258,3 +316,9 @@ span#close-city-zoom {
 }
 
 .big{font-size: 18px;}
+
+.small {font-size: 12px; }
+.extra-smaill {
+  font-size: 10px;
+  font-weight:300;
+}
