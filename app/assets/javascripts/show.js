@@ -4,7 +4,7 @@
 $(document).ready(function() {
 
   // Initializing variables
-  var renderer, scene, camera, spotLight,
+  var renderer, scene, camera, spotLight, directionLightLeft, directionLightRight,
     plane, controls, group, loader, camBackup = {};
 
   var clickCounter = 0;
@@ -141,7 +141,7 @@ $(document).ready(function() {
   function initMap() {
     // Sets the renderer, which basically renders (scene + camera) together
     renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor('#ececec');
+    renderer.setClearColor('#191919');
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -166,15 +166,23 @@ $(document).ready(function() {
     group = new THREE.Group();
     scene.add(group);
 
-    spotLight = new THREE.SpotLight(0xffffff);
-    spotLight.position.set(0, 0, 1300);
+    spotLight = new THREE.SpotLight(0x99CC66);
+    spotLight.position.set(0, 0, 1500);
     scene.add(spotLight);
+
+    directionLightLeft = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionLightLeft.position.set(-500, 0, 100);
+    scene.add(directionLightLeft);
+
+    directionLightRight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionLightRight.position.set(500, 0, 100);
+    scene.add(directionLightRight);
 
     // This is for big plane which is at back of all our city geometries.
     var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
     // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
     var planeMaterial = new THREE.MeshBasicMaterial({
-      // color: '#C0C0C0',
+      color: '#EE82EE',
       wireframe: true,
       // blending: THREE.NoBlending,
       side: THREE.DoubleSide
@@ -281,6 +289,8 @@ $(document).ready(function() {
       var city_object = getCenterPoint(intersects[0].object);
       controls.target.set(city_object.x, city_object.y, city_object.z);
       controls.dollyIn(4);
+
+      console.log(intersects[0].object);
 
       enableCloseZoomBtn();
     }
