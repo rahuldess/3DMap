@@ -206,7 +206,7 @@ $(document).ready(function() {
     var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
       x, toAdd, results = [];
     var thePaths = svgObject.paths;
-    var theAmounts = svgObject.amounts;
+    var theAmounts = 10;
     var theColors = svgObject.colors;
     var theCenter = svgObject.center;
     var theInfo = svgObject.info;
@@ -220,7 +220,7 @@ $(document).ready(function() {
         color: color
       });
 
-      amount = theAmounts[i];
+      amount = 50;
       simpleShapes = path.toShapes(true);
       len1 = simpleShapes.length;
       for (j = 0; j < len1; ++j) {
@@ -233,7 +233,7 @@ $(document).ready(function() {
         mesh.userData.info = theInfo[i];
         mesh.rotation.x = Math.PI;
         mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
-        mesh.translateZ(-amount - 1);
+        mesh.translateZ(-50);
         mesh.translateX(-theCenter.x);
         mesh.translateY(-theCenter.y);
         group.add(mesh);

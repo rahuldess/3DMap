@@ -1,0 +1,553 @@
+{
+  html_attributions: [],
+  results: [{
+    formatted_address: "60 Railroad Pl, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.08165,
+        lng: -73.78767800000001
+      },
+      viewport: {
+        northeast: {
+          lat: 43.08192854999999,
+          lng: -73.78756855
+        },
+        southwest: {
+          lat: 43.08155715,
+          lng: -73.78800634999999
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "b452624bb3c393d6b4b1670f50016a18aa7f6b16",
+    name: "Saratoga Convention and Tourism Bureau",
+    opening_hours: {
+      open_now: false,
+      weekday_text: []
+    },
+    photos: [{
+      height: 823,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/101429153060342362310/photos">Saratoga Convention and Tourism Bureau</a>"
+      ],
+      photo_reference: "CoQBdwAAAAI7Wfmb1bDI66IZUl2XdYQECokVdQZqXn6Wo2Y5rJz-EHSzQpd3rDtXir7chftnscj8AE6nAr2p8mpQK84mWHIJTbebcjylFgoSqPht0980eJzVEdrVuYtqpUl4_9W3qpFU2ik5OGtiopkyj5VK0kNFEBMJmYtbpHmLxJYGj6GDEhAYmOWIB6wLiWtWxXkmvCS6GhR8EIm0k8LIvA34WBX4hyqj7Px6FQ",
+      width: 823
+    }],
+    place_id: "ChIJQ1DsS9E53okRg1VqvUIzSEE",
+    reference: "CmRRAAAALxTD8mr-zcKqxPbIMHJQ3jPcGDOkhZ8kZ6cE-O7Fq7LQ95VD6X0QqfRmUb3kY9K59x27PZm2E2a5J-5LN7qNkJ3UYO_P1cwwOuttVzDgeEubmzHhVXBlWEIrDew14UjxEhBOsVVIl2WGdyVPBP2hpxJsGhQ1nSuSlXezAMeFlnkpHHxQl0fLBw",
+    types: [
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "19 Roosevelt Dr, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0552133,
+        lng: -73.80205389999999
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+    id: "4d0a1fb12b74d23b00d1f4a7dafde4f88ba0728a",
+    name: "Saratoga Park",
+    photos: [{
+      height: 2166,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/111575515219635483210/photos">Joe Calabrese</a>"
+      ],
+      photo_reference: "CoQBdwAAAEw16gNJirdtaRhLtFy9CqPrEqL2O8PtN_aC6p_nCwv1kRpIXWOgsMVnLZfqu1wxsUnZlgQTIcj0NuQWbCQvGUF3Whw5dg7wJEQwzpdIsqrgdx_d9lTIiKyFe48nNUhcBRZ79B3JLQbVCz8QN-M8ho-3Gd1-2eXIqTLjfvWcpywQEhCX7OsHRVvVMgtzFlE2VLp5GhS9EpZjaPgzcEm4j3LRDVCRl7kL1g",
+      width: 3909
+    }],
+    place_id: "ChIJ5a6LmmxcwokRFMXvPYed2zc",
+    rating: 4.4,
+    reference: "CmRRAAAA3ra-49mZJ_JoB1u5uxBzKljyKuEtYwLpt0bp4jsHikEbbU0lgKBkXeTNUopzan4MB-v0dxDX9wdEsa_kmYIZLW6hdWfyw2rVPd1rfXEY99iM49y2UgfGFvCMzG38g_LBEhAS-BXQN1DVkolw74S5VgCkGhTmg6gU6GA3MdnOwGZT-61hB3YwIg",
+    types: [
+      "park",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "297 Broadway, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0782976,
+        lng: -73.78665389999999
+      },
+      viewport: {
+        northeast: {
+          lat: 43.07840635,
+          lng: -73.78589100000002
+        },
+        southwest: {
+          lat: 43.07826135000001,
+          lng: -73.78690819999998
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "8c4f6dc388313e44919cb7980e87caf07c56f17f",
+    name: "Saratoga Springs Visitor Center",
+    photos: [{
+      height: 578,
+      html_attributions: [
+        "From a Google User"
+      ],
+      photo_reference: "CoQBcwAAAIQHlv8_ZaYNsqK6C1H5Q_Ct_-oJC5aanFqCZDWvfLoHY0E8nRhB3wqqlGLTinrcC9F_Qm51B2O1rJ9CMldAXx7J8JIUr58GEd2VZiyPif4gFwk1b6TUebbYYXQyiRHzoG0iG3CSTtuRHEK4G1Z54xI_kkIAQUzYebqU9zM7y9-jEhAuFrf5wmWkypJsYXTf6b7FGhRyfJ6U_WcL3JnGigFdwHMMU5jm6A",
+      width: 800
+    }],
+    place_id: "ChIJ2Z7Jt9E53okRy5evaxamX88",
+    rating: 4.2,
+    reference: "CmRSAAAA0b0PHh--DZTvjCv4nsAqc5Aan_EAOjk6RtRC9sSnpymsYFR_vcKnmZukQ9DheueUm38uK6ap8J9zON-Mos7IOvNe_mFtdaRvTaVmVXdh3mcmghUWFWdi7n0MDpjDchAKEhBKKzmBa2b4V2KHmFBz_v8XGhRaf-umbdERGvi5uBgR_ccE_7TFMw",
+    types: [
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "1459 NY-9P, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0523032,
+        lng: -73.7216407
+      },
+      viewport: {
+        northeast: {
+          lat: 43.05232235,
+          lng: -73.72100664999999
+        },
+        southwest: {
+          lat: 43.05224575,
+          lng: -73.72185205000001
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "19e89c8f65f09ad739f80095ea616d70b286183f",
+    name: "Point Breeze Marine",
+    opening_hours: {
+      open_now: false,
+      weekday_text: []
+    },
+    photos: [{
+      height: 2988,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/104652709691757484679/photos">Sharon Amadio</a>"
+      ],
+      photo_reference: "CoQBdwAAALm1qvwKF3Js5DvKO5qgOQ2qSNGb3YsLk9gbXipbvyQwMIyD3zcnqMajDXtJc8H9K7aVxgQrqBNOZLKike7Oices7HTGjdHQs2CCIr6zmVygWxIbpyTFfYaqD2tKr1o_ksXP_ecOiO9O4bB5_aRRBKr5W5Av6nQ8FXbsKGqnv4LbEhA4qAFQVqsqhTCofiPqdOAtGhRtALEsVKY3bKIjUrYNbLAFTSDX_Q",
+      width: 5312
+    }],
+    place_id: "ChIJwarXYfE73okR6YtHzfvck5k",
+    rating: 2.1,
+    reference: "CmRSAAAAWtZ-5pginA5jTa9Z6glT-z1dkovwpGrc6QX8hQ7xu1jhIvuZDVScg2Xid9CqQanQpU3rSMzadExicrhhXaeyDBS1_RwLxYyEcoq7A4K6-9cotuHU4UW-bPGW8wmumLXeEhAlJrn_eVLWVk3Zzy_uj01EGhRTjQCCZrc88KyQmbiTNbd3NoYp6A",
+    types: [
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "69 Caroline St, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0816687,
+        lng: -73.7818927
+      },
+      viewport: {
+        northeast: {
+          lat: 43.08171185000001,
+          lng: -73.78187525
+        },
+        southwest: {
+          lat: 43.08153924999999,
+          lng: -73.78194504999999
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+    id: "ef147d4461c7bae56270979e60da72880c61ad17",
+    name: "Children's Museum at Saratoga",
+    opening_hours: {
+      open_now: false,
+      weekday_text: []
+    },
+    photos: [{
+      height: 3024,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/110902460096716919071/photos">Andrew McKelvey</a>"
+      ],
+      photo_reference: "CoQBdwAAAKKksMIHxy_3th_73QQYIZep02XPcAjMaBlGXhwwfEzVtqsOZZRJHYjBE47VbKtxwRNrbI9EzKFepDbXldom1cAN_NC4hFhhV8vBKheaV4papEPhFdtB4sI9CS1HxYqSP4wDY8qSGpxnbfys2MoBBKslWXcm_HdyKR89ogeHa190EhCeyxdOfSlm25aqTS3hQd6yGhQ9xRkz-bv5iXH1Ya7Ka3brcX7sDA",
+      width: 4032
+    }],
+    place_id: "ChIJQXGZ7dk53okRexjr7LOncik",
+    rating: 4.3,
+    reference: "CmRRAAAAqNuTRCirLyRFN2u9zfxcuA_xYBuEKvKLC57qjqR9M5RR-ZP4M5LhlXngKz7pI5vG4LL940IoeN7a8WyXMrRZibUcHZa7_M2o_trsvH8VkS52Nzjnp-D-v2kmZUHuGYzfEhBnHPaHsOYa-XflkTf9yWkAGhSGFeOCOEAujSrdBl65wneHiIgIPg",
+    types: [
+      "museum",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "E Congress St, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0781356,
+        lng: -73.7840509
+      },
+      viewport: {
+        northeast: {
+          lat: 43.07818605000001,
+          lng: -73.7840308
+        },
+        southwest: {
+          lat: 43.07798424999999,
+          lng: -73.7841112
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "0b5d8eb9561114ca1ada38b50671e4592e253f82",
+    name: "Canfield Casino",
+    photos: [{
+      height: 2448,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/100901484718774480957/photos">Steven Kiehl</a>"
+      ],
+      photo_reference: "CoQBdwAAAAETP_huBabOWT6Yqs41kb_mudFsTZiBuvJ3Veqb_2qw7QQboBR8KB75c41TuW1v07bfh3iDEJ2Koyiu-dOLG8jNB43vBQLZJoum1cHkcm2Y47a2KERwHDHogqJrWaAs8WWIYFPQUnVlP6yWzLVNIVX7hXrFEZDf5zmHYviNzp4FEhCb-x4FTKPj2yi3mLp-f_YcGhSI9MJY632zEakg2dCnN4zf4ew1Ow",
+      width: 3264
+    }],
+    place_id: "ChIJ35etb9A53okRivzeHSevEbU",
+    rating: 4.1,
+    reference: "CmRSAAAAVH3Ftg4VWX3-n4ywblQF4yCpkAQI10LUR7KjvynB0JutoVI9oPbdPgx8-Z7GKBTApF6-4QEB-Py-X96Vk81EEuFhcsjvoZIVgJBfsDqLiRXj9Yd1uFxFCxYqOGiZVs_rEhB27xA1EFH1bF_lYVkBsHRkGhSUlMjzOYADt4lC1lVDvSpqQsnOSQ",
+    types: [
+      "casino",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "108 Avenue of the Pines, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.055419,
+        lng: -73.805927
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "dceeb3d0efcfae809a3bcbf31ff9412c243d3387",
+    name: "Saratoga Performing Arts Center",
+    photos: [{
+      height: 2368,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/100847507882771335677/photos">Evan Whitaker</a>"
+      ],
+      photo_reference: "CoQBdwAAACKOsed-DQnZIL0ZM0ei2o0R0mEzK_UkJR7noovp992cIDorezXNlshFaeXGPpzCZjOe4q2cXoCa3cb6TvNNI39kpNYTVlrx-W562iEZiBZAWJUw_3dBH_7K5pMnIK4pyLJOpGC_YnnCcwtzxUtapLVVllUS39IzsVKoCxKr5PgWEhADMnWd_ZYY9fx43O_XoF9DGhQ-WVdYNlo0EhWiLV9WpFVnehds3g",
+      width: 3200
+    }],
+    place_id: "ChIJayFbLlc43okRiFrhzwWyT4k",
+    rating: 4.2,
+    reference: "CmRSAAAA1BhvA4Gnr7qoBO5IxVAZsurjN0ub3zHbwwtjKRpEnCrpOyfmEXZ9-o7j2bGVPnD9flxxB1hOwSdVT_RX7vrSWBOkPT2N4HkIZ6l3f8rsQ9cJmpy4mEUZSZZuK4Xzib_jEhBDohWrMZXcNbnQ4QpAsJMvGhSKJS3k8oFlfK1Gulw6DHF43H2rWw",
+    types: [
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "320 Broadway # 1, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.07941350000001,
+        lng: -73.7853665
+      },
+      viewport: {
+        northeast: {
+          lat: 43.07945595,
+          lng: -73.78509720000001
+        },
+        southwest: {
+          lat: 43.07939935000001,
+          lng: -73.7861744
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "49b4762bb2e369af6c14e933487552e773248599",
+    name: "Saratoga County Arts Council",
+    photos: [{
+      height: 2448,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/100543129400075145394/photos">Riley Walz</a>"
+      ],
+      photo_reference: "CoQBdwAAAK6zKsxenbAc-6-nukDbMDU_wBCoMFZTogZQC4fBRD-5zCdGC74LDZm7KWlBZN8rZI1clnWKn8usf1FMQ-49zrQV_kxz83Firx0oOKc5xY2WosTCZtwmnOwMaGCKBFASM4YCvibG5UqGldtk0dL3__pACVDF2KTuK5J22QLcz4QEEhDkmq1pkgoAWMSa4RdtPx38GhQx-vI4zqze6XEpYTZVXW-4fpw_ww",
+      width: 3264
+    }],
+    place_id: "ChIJMynN-NA53okRGB8deqk5_hI",
+    reference: "CmRRAAAABpuz7WykWrIc65iE2Py_mjf72SWPE_Iql1iMO9-cLLuMyDJAgcQqPal7_2o3Wvay27yETskcQXsnF3GI1znlFS8ld-FaY7dqlTzi7U7RqbXO_FTcOPXP7KOX4VtIqelIEhDyM7SsFZIUygBTjsVkC1JAGhRDZYDTN587HGJ6HIqDovMJLwNy_A",
+    types: [
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "462 NY-29, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0746228,
+        lng: -73.8634872
+      },
+      viewport: {
+        northeast: {
+          lat: 43.07495025000001,
+          lng: -73.86346904999999
+        },
+        southwest: {
+          lat: 43.07451365,
+          lng: -73.86354165
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+    id: "225b191ca022e44a4969da06722b0fc621860485",
+    name: "The Saratoga Winery",
+    opening_hours: {
+      open_now: false,
+      weekday_text: []
+    },
+    photos: [{
+      height: 5312,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/116489195482231104047/photos">Jason Candido</a>"
+      ],
+      photo_reference: "CoQBdwAAADhAv6oJ5ZbUJu_ZtiC-Km_w-poS6nGIjQlBpOBoBRMYzPKa5T7GGQThW8aYvwDip-ciI0bPbh44v64bfbwpZc8ODJml88Qojli7WTVDj-FVpDbvgvDBFWM2umYN6trM2PIK_JZ8iez75UP3LPSobVnJsvClYaht8bjqThIffUMjEhCsDJgBgSUX92rKkoeVx9H2GhRoKTgEjR7eSKaBlxwnKEQ9FoUevg",
+      width: 2988
+    }],
+    place_id: "ChIJP29paqsw3okRknvMj3rjdQI",
+    rating: 4.5,
+    reference: "CmRRAAAAL5Qv8Tee1RAkQekYn6AGSURPxLIxhLE_5dI6QNK02qEUnrNGaCPyfiOY1W0b_S0uqA9U4Cp9cMu6PJQYd4GKNUQGSsYIpENRsT87fuxBW9tcUbnItXsblJ0HbqnQT0lYEhAZj8jP9J-W6U_UHq1yceqxGhRgFwJAyHDxmprZad0TFK_IwY2TdA",
+    types: [
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "3071 NY-50, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.10599879999999,
+        lng: -73.73772559999999
+      },
+      viewport: {
+        northeast: {
+          lat: 43.1072231,
+          lng: -73.73718614999999
+        },
+        southwest: {
+          lat: 43.10559069999999,
+          lng: -73.73934394999999
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "5f2cc114564cc8b3694de88cb3cd3b058a89345e",
+    name: "Saratoga Mini Golf",
+    photos: [{
+      height: 2048,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/111780818371354763942/photos">James MacPherson</a>"
+      ],
+      photo_reference: "CoQBcwAAAG4l1J_2WgQKx6zesT-6UyqspwHfxV7cRhoYrfcpm2cQos3dndD7yePGLGgHUMMXAbDHw2bHsew0uFSScH7rwpOIcU-a2Qp-NDS3WNDxsJmyeu4uLhMhCPwvjdo41fHiBgcZqCuCuqvk7N6tWXbPATbZvqYc6zuqSYUp0gcISJLzEhBxNjnppuZdeSEED_-klfgqGhR-El6Vc6YeyxZw4_RviqQv_trAww",
+      width: 1361
+    }],
+    place_id: "ChIJHflV884w3okROAGVoNvf-7o",
+    reference: "CmRSAAAAcGnLbXGYMLKcu2eB0iGL8TlcGzUOhosnAzJlmV9oAbLGC5qu-9Amw5PlLpD0eKdMcz7V31S284nuFbQD_-dhzeVB8ulrlKWW2Z4jpoW4zmdf0IGOnufCAX8sCKa-bjWKEhCiODHWmW7Ju-FnDWVolHtJGhQUlzk0lWFw-wuF8Ir9TJP4XgpqMQ",
+    types: [
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "5 Case St, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.07730399999999,
+        lng: -73.7722629
+      },
+      viewport: {
+        northeast: {
+          lat: 43.07740375000001,
+          lng: -73.7719353
+        },
+        southwest: {
+          lat: 43.07727074999999,
+          lng: -73.7723721
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "ad56a4e9c42308f2c77931fd97826493f43f2cfa",
+    name: "Saratoga.com - Guide to Saratoga Springs NY",
+    place_id: "ChIJV8Osgt053okR0x9IBMP_pHg",
+    reference: "CmRRAAAAY1_lrL9b_kgwe6I_uWhIaOTkHGjErrD0I42ehIP0Zm3OHZXhXQmSbehQpT99eh6uw_-jPyolQDtQZUPic8GTJTtMjvSt4kbpGQbdHmZC_PoQk3-iXlLm5LWNFLksHQ2wEhAzgmk6Wto7s_9HDkS4FUD3GhQHPuinwJLsvYxlG6EsSXV6tFuL-w",
+    types: [
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "99 S Broadway, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0660975,
+        lng: -73.7902522
+      },
+      viewport: {
+        northeast: {
+          lat: 43.06622214999999,
+          lng: -73.78829634999998
+        },
+        southwest: {
+          lat: 43.06605595000001,
+          lng: -73.79090415
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+    id: "c1856322c998270a12a03df5fd8b79b6dae139f4",
+    name: "NATIONAL MUSEUM OF DANCE",
+    opening_hours: {
+      open_now: false,
+      weekday_text: []
+    },
+    photos: [{
+      height: 900,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/110336521068260629545/photos">NATIONAL MUSEUM OF DANCE</a>"
+      ],
+      photo_reference: "CoQBcwAAAKGGq_pidhqGg7_AGersmpu9MwjyI0lmw-skoa0sjRzMLpG6Plw0DUc6Mb0gIxn6i6YDGeZ-t3-BdXJVbZ9zTEUOact2Er_VRWfzNmYLQGwMtdc9RGs-vE0A6rQQ6JG8R-oDdsDZdJ9wTbiwnerkycNkj1uFMlNQjLHi0ARCX2DtEhAmZnDqWl7VNn36ujsCxjntGhQd4gRa-yIinqilKd1Fe_bIbx1T3Q",
+      width: 1200
+    }],
+    place_id: "ChIJAVGoS7Q53okR4m9v4x5NKC0",
+    rating: 4.6,
+    reference: "CmRRAAAA3jjxleO8b4yWi4BoSicOyxGV-NH7OGHdiSLdtQxiiG8knckxTLyO_l1WJpEnLsk7vfsmfpP5EnRxCVYVRvpjQDsUdkkdkwzBWGa9swHO4k0SxxfUZElB6Qmp2SYYtNElEhAORXCb3VRbGCVV3cYOseszGhR69ZFCbd2YJ70vny8elN968uTe0g",
+    types: [
+      "museum",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "497 Broadway, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.08401199999999,
+        lng: -73.78460799999999
+      },
+      viewport: {
+        northeast: {
+          lat: 43.0840289,
+          lng: -73.78438735
+        },
+        southwest: {
+          lat: 43.0839613,
+          lng: -73.78468154999999
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+    id: "625283a6f13f0c4cceaec29b54626fd35cc42959",
+    name: "Saratoga Arms",
+    opening_hours: {
+      open_now: true,
+      weekday_text: []
+    },
+    photos: [{
+      height: 1700,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/101547607260385954606/photos">Aubrey Backscheider</a>"
+      ],
+      photo_reference: "CoQBdwAAAHXfYRgkY3fmFjo5g9lKsX4fZFmG3s-WwR6PRSGJn4QgSy8OVvYdPKdyhH7eU07bzkS1ajd9BJ82BOvnCJqXuXHC7nHzmN4Bv8nIdO7TqlqjrjNeriRoJOic8ErvLFGsv_axBNDR64EUMuCywzugr-qikAfLG0T6nxwpfq2Qvv7zEhD7HbWHAGybooUz1rE8mIojGhTABxEd0i4RNw4H0OEcTbsI3AkBYw",
+      width: 1120
+    }],
+    place_id: "ChIJ0V09oNc53okRgTr6UWP7FYc",
+    rating: 4.8,
+    reference: "CmRSAAAAu_JIjZ0j3xdG9ehEg7_Vwa9qDVSj8qPC9mV-cbftcQAsSqXIffRDNKxIIj5flxcLywmgu-g39S8NstFMEcL16euhONwi6CRoeKpDvaeP2QHDlwlSPnNJSly84f4IWuDcEhBKq604EtQVXT5mk9D1wRMUGhSRMoySsEswre2n-uMT02iQ9s3mSw",
+    types: [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0964412,
+        lng: -73.7242486
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    id: "4c59d061e87c62691052f3247090bbb41a0e45a2",
+    name: "Saratoga Springs, NY",
+    photos: [{
+      height: 1536,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/103913447233324634045/photos">Saratoga Springs, NY</a>"
+      ],
+      photo_reference: "CoQBcwAAAJJCYmZfFKZ275rVfEGDZumudw9OfE6jnJcC5NiCeIPXgEmgN9tEvJHxI6VAhKuzotByS7QCzuZ-9O-FVPkxDL4SM9tRp23ywlIwLfqzwTufiw9ZrCK9NCfGGdxnwRiyv2Yz8NU12EKfYrRfeJjque4J2UQyhlOMDrpuM374K_nSEhC35vRJhQZYU51fZX7IXsDnGhQVTmvZqc1yqSFJ1YSNCEQjb6TQ2A",
+      width: 2048
+    }],
+    place_id: "ChIJqYg0AMs53okRkeK24QSbw_M",
+    reference: "CmRSAAAA8slrbPYsTXxHyuY4pOaQtM2bP__1Zi626XLpgIjdITkCFXGZ7Ib3EJW3pUMkl7q2-ZQ9eyWCXCMc2PAa0AcB8kn6HDBq0s_FgXESgD0xSWoo79GjYXq1_Uaqt_9GStKKEhC7srZI8juefFMiR2nzmZgdGhQX3qkSWSggNY5Jt6CVOiFU3KDGuA",
+    types: [
+      "natural_feature",
+      "point_of_interest",
+      "establishment"
+    ]
+  }, {
+    formatted_address: "30 Lake Ave, Saratoga Springs, NY 12866, United States",
+    geometry: {
+      location: {
+        lat: 43.0825834,
+        lng: -73.78295039999999
+      },
+      viewport: {
+        northeast: {
+          lat: 43.0829377,
+          lng: -73.78261515
+        },
+        southwest: {
+          lat: 43.0824653,
+          lng: -73.78306214999998
+        }
+      }
+    },
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+    id: "59002557c3d1dbb14423df297e117d62dd526b9b",
+    name: "Pavilion Grand Hotel",
+    opening_hours: {
+      open_now: true,
+      weekday_text: []
+    },
+    photos: [{
+      height: 391,
+      html_attributions: [
+        "<a href="
+        https: //maps.google.com/maps/contrib/107674587835973816163/photos">Pavilion Grand Hotel</a>"
+      ],
+      photo_reference: "CoQBdwAAAB46yD4tPCAVJ7gnRv-MDjZumDYYA2H3Ue5p76zMdXoYV65mAXAIKEq5-3FTgt_jK2PEIyBe7pnmhLoPgAyxFvDtHx0rk7XpJT8huSOQ5z4b3c9B-DtiHYYVPy_O1rBentOgIcxShYxxaOrHNql4hWGAn5KnwpRZj9v5wNrC8CruEhDfH4MjQK4gbQ9gUd0Ud-EAGhTxYZQvcZVsD19h3a6LkOEuxUuprg",
+      width: 391
+    }],
+    place_id: "ChIJf3A-3tk53okRz-Iq4ZpDrog",
+    rating: 4.7,
+    reference: "CmRSAAAALA-zn9GIPosV9vKG-yimeq3sADVDUGpdYSr2CXDEBuh_Vn1uvp7EohrOfo-BUf6c6FUFVgvmOFo_hKHzb0-ZbSY_fWbxEVvIzBjbPx0Kp8GUBKRJw57XhmXMcSrGE2uIEhCMseemTcSBIal4shaBTTAfGhTQ8a926PdKnlAz-HevdvwKaJnlYw",
+    types: [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  }],
+  status: "OK"
+}
