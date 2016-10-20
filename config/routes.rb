@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # http://localhost:3000/area_statistics?area=santa_clara&type=hot_area
   get '/area_statistics', to: 'statistics#area'
 
+  get '/poi', to: 'statistics#poi'
 end

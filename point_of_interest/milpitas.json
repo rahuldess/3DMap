@@ -1,243 +1,53 @@
 {
-  results: [{
-    formatted_address: "3100 Calaveras Rd, Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.4480379,
-        lng: -121.8487399
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "282eed7b310595be535677abf192ab5ac08f32d1",
-    name: "Ed Levin County Park",
-    photos: [{
-      height: 2988,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/114490063173075885645/photos">tahir</a>"
-      ],
-      photo_reference: "CoQBdwAAAGpKdIzC7mABPhnEQm_1q6mv3BQ-eMuFoesGvBVIT5F1loIUHlJ9q-9g9aDbG8U49iHLdUEiBhOvMsZaRbhTtsEaLPhPK69wKq_XbspPlhWVAgiWh5ppJ9l4A4308ebPGDnp2LHXMOK6cnXjmWAdqC2eQ9ODnEA3PJqo9l9dNWMmEhANrMq7mwQgPoYKIDQq_i1TGhS_LZFSLWEELq14Z29jP1QQHVp04Q",
-      width: 5312
-    }],
-    place_id: "ChIJrY0JMwbPj4AR2EP1nd_AO9U",
-    rating: 4.3,
-    reference: "CmRSAAAArMpg5lYZuwwgmOlP801vY450csEFqexBzXtAwrQ0ENKPTEtoMO3mXQLo7UwngqmujC3mSsU3nm6c0WPgG2sVmToKp6ARHm8Vk_08ugk7H9EyHkPNyuq5i2JVzzwYjHxmEhAMHYJnacWnOCQN-qxK2DdMGhRIaxbtV4ZmOn_p1qKTw3scwoqmMQ",
-    types: [
+  "city": "milpitas",
+  "poi": [{
+
+    "formatted_address": "3100 Calaveras Rd, Milpitas, CA 95035, United States",
+    "lat": 37.4480379,
+    "lng": -121.8487399,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+    "name": "Ed Levin County Park",
+    "rating": 4.3,
+    "types": [
       "park",
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.4410835,
-        lng: -121.9047183
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
-    id: "e5506dc350d265971e7eb150e079782dc8f9e209",
-    name: "Hidden Lake Park",
-    photos: [{
-      height: 2160,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/107713498304008159275/photos">Rohit Sharma</a>"
-      ],
-      photo_reference: "CoQBdwAAABYxfb158ItmJgkNhtIIJ7Of_LLhGmdfktoZAyd8Qi0A92q-la5BaVsvSlsXhzXZ8NZDCyZSI358oO0VXVkP226wBBchcHtlQBXEifN9dVwG-yz301MEIyQieF2hf1Ulgtge6Hyakw0CE8TrAD8O6SwYtvliDWLZKstDN2XaY97-EhDwMP-OgB3A54-hunpndF-uGhRougsW_UdfqhE4sqhSK_-YXNw2MQ",
-      width: 3840
-    }],
-    place_id: "ChIJ_54NdNLIj4ARy4v1x7Ut6Ts",
-    rating: 4.1,
-    reference: "CmRRAAAA0PoH3hERJka7ZXuevy8Xjtmt63PA8KDBQTyxXl4jXWxcECethNnIr3Njg-Gv5h9vSS86JvCfDEWyRgTffAMPGs3QCDqXI4o7hpbsxz3FGYlZIHmGbXvRVWFj5sDU3cfCEhD-qhZ2G0PG3lTojn8HWhI0GhSY-_zZbyer0GlkdZ3u0fGx0C3xMw",
-    types: [
+
+    "formatted_address": "Milpitas, CA 95035, United States",
+    "lat": 37.4410835,
+    "lng": -121.9047183,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+    "name": "Hidden Lake Park",
+    "rating": 4.1,
+    "types": [
       "park",
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "1500 Country Club Dr, Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.4551858,
-        lng: -121.8815248
-      },
-      viewport: {
-        northeast: {
-          lat: 37.45585750000001,
-          lng: -121.88114755
-        },
-        southwest: {
-          lat: 37.45496189999999,
-          lng: -121.88165055
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "34fcb53c85330fb85c519bc46101b09efedb535c",
-    name: "Summitpointe Golf Club",
-    photos: [{
-      height: 625,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/116062755498841238809/photos">Summitpointe Golf Club</a>"
-      ],
-      photo_reference: "CoQBcwAAAHAOuACzKdQyy5vmKyiLdP468rUR_0jpFj6sIccTRBgiFBmqU0XmtcUeWUnqaUfa2zKaa0vw90gFl-PQAGMrQjyiJBdJSFxqpzbBHG-anrCpCNHy0vugfGsuP-kbZ-OkGZW08fTaLo2zcP1MRjpWQswb2jScYAuCIhEz9O-vbWPSEhChpSNb2EWL147klTD03sKUGhQ_8CXqBOq3KODyeD1EByFkDhgIRQ",
-      width: 626
-    }],
-    place_id: "ChIJyaHccRXPj4ARFMS2AsjfhME",
-    rating: 3.8,
-    reference: "CmRSAAAAh_668147MUYfdIz2sg32NK1DnNj5fVLE7TRv1O6rgfzN1SqAkz_jCtwcf5FfVhOIHkzQDBmdUSBIRuk0_lckhgiWra6o44Om9gj5XyqeDiot-jOwzStlHS5NMkrs714AEhBdisUtqAW8UViBjt-oBzSOGhTvFYw6dP4ZBzjo_S9JVg7a6NhHaA",
-    types: [
+    "formatted_address": "1500 Country Club Dr, Milpitas, CA 95035, United States",
+    "lat": 37.4551858,
+    "lng": -121.8815248,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+    "name": "Summitpointe Golf Club",
+    "rating": 3.8,
+    "types": [
       "point_of_interest",
       "establishment"
     ]
   }, {
-    formatted_address: "164 N Abel St, Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.4325576,
-        lng: -121.9091527
-      },
-      viewport: {
-        northeast: {
-          lat: 37.43265704999998,
-          lng: -121.90895435
-        },
-        southwest: {
-          lat: 37.43252445,
-          lng: -121.90974775
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "ba3a89786d28cfcea401cf0b07849ff751dfb3ae",
-    name: "Pump It Up of Milpitas, CA",
-    photos: [{
-      height: 485,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/116906494888428657347/photos">Pump It Up of Milpitas, CA</a>"
-      ],
-      photo_reference: "CoQBdwAAANO6lt90bhfuGabwUv0EQDMlwWQtrX8Bg7Cl5Fy3-N387A3Qs-4tZ-feRClZBxwTAe54SaJ040uZptwPclIJQ2iteR4ixebL6ayO2c6xGESebwyj-mTE5f3blTAHqBiHmfyaUV073DoYW-Rch9D-CFWWUc770XISs-V5blvlN3mwEhAU4g6rQ_xbcL2aW9X7W_tXGhQ_RPyQNsZE5f1imne6CyvdLuPiKA",
-      width: 485
-    }],
-    place_id: "ChIJ6QpX89bIj4ARjVe-lauem5c",
-    rating: 3.8,
-    reference: "CmRSAAAAjlxlgBCtJb46QuvrM3BUVkrZl2yvsCHzzOgOGa2FC2Cba6xa0ilqJjAwkeDw5R_tFTyf9Xtk4U-pt5vRhYlp6R6_aVVWKrDRFTnFIyVyg0_FN7bBfbFv5gkk0Qds9zo_EhD1hg2cVREBb67gxEQNhewGGhQWxQiZkHTnrZOXMtXPvx3L7vD5cg",
-    types: [
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "447 Great Mall Dr, Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.41572329999999,
-        lng: -121.8975535
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-    id: "24639ed8277dd7388ac8ad34740df0b4c3db2f24",
-    name: "Great Mall",
-    opening_hours: {
-      open_now: true,
-      weekday_text: []
-    },
-    photos: [{
-      height: 2964,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/106147316764498333608/photos">Thomas Kuo</a>"
-      ],
-      photo_reference: "CoQBdwAAAPi7ZifLM34wn68vYiRitBQWyQINLGkmB_OmYMAqusonu52PyYbVulpR47xMHmzPDyHLmgNsnRi94Ocs5jWizpGHVQdoW2Imxh6pMIJD-uXybmWrdWLqheoGoz0pokKP-zBkCSuUwPlj3HsN0PM6TdzqK7FZakLdMBXqMOa_Yy1AEhCXbjGSHLMjD9LyPMEc-NV6GhRaLecvh2c8-eoINSp4U-SBsiDa3Q",
-      width: 3952
-    }],
-    place_id: "ChIJcROz_crOj4AR3blv_XtAWJM",
-    rating: 4.1,
-    reference: "CmRSAAAASzL6tv-Vg54nB-d8_tefIVP5tQZGr7FiwsHGyEteQ5cY_egDLLu3S5wc7qz8ASeJq3O7ZsgjwVr6OF3y-vre7_3_rkneRCiXnY3GbmErksSKa4-pGmlrlmLQRuu8kAztEhAsGh-J4FC09B8VV1_sYa32GhQQyFpi4E0OTu2KjpXYINJ-92-ziA",
-    types: [
+    "formatted_address": "447 Great Mall Dr, Milpitas, CA 95035, United States",
+    "lat": 37.41572329999999,
+    "lng": -121.8975535,
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+    "name": "Great Mall",
+    "rating": 4.1,
+    "types": [
       "shopping_mall",
       "point_of_interest",
       "establishment"
     ]
-  }, {
-    formatted_address: "1010 Great Mall Dr, Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.4182081,
-        lng: -121.8991391
-      },
-      viewport: {
-        northeast: {
-          lat: 37.41917529999999,
-          lng: -121.8989958
-        },
-        southwest: {
-          lat: 37.4178857,
-          lng: -121.899569
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
-    id: "7f2b236addd4d7a9b634222aae7b179b6bd9a639",
-    name: "Cinemark 20 Great Mall",
-    photos: [{
-      height: 2245,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/106147316764498333608/photos">Thomas Kuo</a>"
-      ],
-      photo_reference: "CoQBdwAAAL1HRwoJPsZXpDaBXXSB-6kXBBSXSnTDqA7xBwtlEKejKnkBOuwr242tyS7BAeROf89mXlAslu18bcHI_hsO7zpviJMgmxfXHTvOfaNj-sHL8cpOX_DBntq7Ahnw6VnVqsCVxX7qosVV15dmlXOLNMOBczTWyicKYR3F7z24gxUJEhBmt069GyXl99ZBe4q65qw7GhRXZQt7jYVpx14j7DSj6LgSYHghpg",
-      width: 3737
-    }],
-    place_id: "ChIJx1qYeMvOj4ARFI_EBvRG0Rw",
-    rating: 4,
-    reference: "CmRRAAAAoaereVoIl48bf88mtztkdzBs_uTyRgBtllWVGDpKpIPuX5hHSoL1AnMfvfmWIq0cbK7kQ7cMSGprvHf4PIJtdB8h0PibTb-d4k0VdlfYx0aDhGNakzh3A0LIDfewVxiaEhDKXaO2hZL4OrnRPEcDBv5sGhRLp7PLkYDqktq1bIJu2oW2tM9zQw",
-    types: [
-      "movie_theater",
-      "point_of_interest",
-      "establishment"
-    ]
-  }, {
-    formatted_address: "616 S Main St, Milpitas, CA 95035, United States",
-    geometry: {
-      location: {
-        lat: 37.4217411,
-        lng: -121.9041483
-      },
-      viewport: {
-        northeast: {
-          lat: 37.4217775,
-          lng: -121.9039228
-        },
-        southwest: {
-          lat: 37.4216319,
-          lng: -121.9048248
-        }
-      }
-    },
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-    id: "bb4ed3fb921480fc36066a941024bf9c0874f1b8",
-    name: "Great Jump Sports",
-    permanently_closed: true,
-    photos: [{
-      height: 602,
-      html_attributions: [
-        "<a href="
-        https: //maps.google.com/maps/contrib/105068456866691719073/photos">Great Jump Sports</a>"
-      ],
-      photo_reference: "CoQBcwAAAC2JwrWpj7cbscvgVITuKhJjDSUJYBcLNhzbpgNzSHaGssffQP3kWEVMiQQXj1zCSI7n3bHdpARb2EKWHqbVbcmCJhltArRflYvnvQwhZt4hMOPpdIMX9gvw03I5XcbfGe2rhPemEbdhWIEDAI8UmQdwjqnhdn8JHxacjFNOyk23EhDvcQWkt-rSYdpnlZiD7mtZGhTFhU-rC3o3_s0QoMlFuc-D0dP_8g",
-      width: 400
-    }],
-    place_id: "ChIJnXE3gDLJj4ARyQsAGNgvkl0",
-    rating: 4.4,
-    reference: "CmRRAAAA1Moj2htJxdk81dYhAEo7C0WRHz-YUfD34yIpuuBOw0szqXqUrv7wCPZ-qUAOAb-Kj_ccLEUbMzLuaqcSdq_CkmCPrpgsdG3MJTdhtkhmwF63DEvWuXVAmvF3UXOM8haLEhBgYKwJR8mzEjY0Zqie7QvrGhS8calC2Zyr9mZA8XQquKL6FiwVTg",
-    types: [
-      "amusement_park",
-      "point_of_interest",
-      "establishment"
-    ]
-  }],
-  status: "OK"
+  }]
 }

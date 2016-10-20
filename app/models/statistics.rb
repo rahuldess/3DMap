@@ -9,6 +9,16 @@ class Statistics
     self.send(@module)
   end
 
+  def get_poi
+    area_collection = []
+    Dir.glob("#{Rails.root}/point_of_interest/*.json") do |file|
+      file_ref    = File.open(file).read
+      parsed_data = JSON.parse(file_ref, symbolize_names: true)
+      area_collection << parsed_data
+    end
+    area_collection
+  end
+
 
   private
 
