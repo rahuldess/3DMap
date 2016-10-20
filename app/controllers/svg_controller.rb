@@ -10,6 +10,7 @@ class SvgController < ApplicationController
       hash = {}
       city_name         =  method.to_s.split('_')[0..-2].join(" ").split.map(&:capitalize).join(' ')
       zip_code          =  method.to_s.split('_').last
+
       hash["city_name"] = city_name
       hash["zip_code"]  = zip_code
       hash["path"]      = City.send(method)
@@ -22,14 +23,15 @@ class SvgController < ApplicationController
 
   def color_match
     {
-      "Santa Clara"   => "#ffcccc",
-      "Santa Jose"    => "#ff4c4c",
-      "Mountain View" => "#ff7f7f",
-      "Cupertino"     => "#ff9999",
-      "Campbell"      => "#ffe5e5",
-      "Los Altos"     => "#ffb2b2",
-      "Palo Alto"     => "yelow",
-      "Saratoga"      => "green"
+      "Santa Clara"   => "red",
+      "Santa Jose"    => "yellow",
+      "Mountain View" => "blue",
+      "Cupertino"     => "green",
+      "Campbell"      => "purple",
+      "Los Altos"     => "brown",
+      "Palo Alto"     => "black",
+      "Saratoga"      => "white",
+      "Sunnyvale"     => "gold"
     }
   end
 

@@ -216,20 +216,20 @@ $(document).ready(function() {
       var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
       x, toAdd, results = [];
 
-      var thePaths = svgObject.paths;
-      var theAmounts = 10;
-      var theColors = svgObject.info;
-      var theCenter = svgObject.center;
-      var theInfo = svgObject.info;
-      len = thePaths.length;
+      // var thePaths = svgObject.paths;
+      // var theAmounts = 10;
+      // var theColors = svgObject.info;
+      // var theCenter = svgObject.center;
+      // var theInfo = svgObject.info;
+      len = svgObject.length;
 
       for (i = 0; i < len; ++i) {
-        path = $d3g.transformSVGPath(thePaths[i]);
+        path = $d3g.transformSVGPath(svgObject[i].path);
 
-        color = new THREE.Color(theColors[i].color);
+        color = new THREE.Color(svgObject[i].color);
         material = new THREE.MeshPhongMaterial({ color: color });
 
-        amount = thePaths[i];
+        amount = 50;
         simpleShapes = path.toShapes(true);
         len1 = simpleShapes.length;
         for (j = 0; j < len1; ++j) {
@@ -239,12 +239,12 @@ $(document).ready(function() {
             bevelEnabled: false
           });
           mesh = new THREE.Mesh(shape3d, material);
-          mesh.userData.info = theInfo[i];
+          mesh.userData.info = svgObject[i];
           mesh.rotation.x = Math.PI;
           mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
           mesh.translateZ(-50);
-          mesh.translateX(-theCenter.x);
-          mesh.translateY(-theCenter.y);
+          mesh.translateX(-600);
+          mesh.translateY(-1000);
           group.add(mesh);
         }
       }
