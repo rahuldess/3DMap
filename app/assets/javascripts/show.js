@@ -35,7 +35,7 @@ $(document).ready(function() {
   eventListeners();
 
   // Add pointsData
-  addDensityData("santa_clara", "hot_area");
+  addDensityData(SEARCHED_GEO.city, SEARCHED_GEO.type);
 
   function addDensityData(geo, dataType) {
     url = "area_statistics?area=" + geo + "&type=" + dataType;
