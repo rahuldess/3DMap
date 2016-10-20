@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section id="open-gl-container"></section>
 
 <section>
@@ -9,9 +10,20 @@
 </section>
 
 <%# Fix element on map%>
+<span id="close-city-zoom">
+  X CLOSE
+</span>
+
 <%= render partial: 'popover' %>
+<%= render partial: 'selection_bar' %>
+<%= render partial: 'js_templates/area_info' %>
 
 <script type="text/javascript">
+  SEARCHED_GEO = {
+    city: "<%= @geo %>",
+    type: "<%= @type %>"
+  };
+
   $('.logo-image-wrap').click(function(){
     $('#box-bottom-left').toggleClass('active');
     $('#box-right').toggleClass('active');
@@ -21,4 +33,7 @@
     $('#box-top .item').removeClass('selected');
     $(this).addClass('selected');
   })
+
+
+
 </script>
