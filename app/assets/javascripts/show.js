@@ -9,6 +9,7 @@ $(document).ready(function() {
 
   var mouse = new THREE.Vector2(),
     raycaster = new THREE.Raycaster(),
+    raycaster2 = new THREE.Raycaster(),
     radius = 100,
     theta = 0,
     INTERSECTED;
@@ -263,12 +264,29 @@ $(document).ready(function() {
 
   function onDocumentMouseClick(event) {
     event.preventDefault();
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-    raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(scene.children, true);
+    raycaster2.setFromCamera(mouse, camera);
+    var intersects = raycaster2.intersectObjects(scene.children, true);
+    if (intersects.length > 1) {
+      var city_object = getCenterPoint(intersects[0].object);
+      controls.target.set(city_object.x, city_object.y, city_object.z);
+      controls.dollyIn(4);
+    }
   }
+
+  function getCenterPoint(mesh) {
+    var middle = new THREE.Vector3();
+    var geometry = mesh.geometry;
+
+    geometry.computeBoundingBox();
+
+    middle.x = (geometry.boundingBox.max.x + geometry.boundingBox.min.x) / 2;
+    middle.y = (geometry.boundingBox.max.y + geometry.boundingBox.min.y) / 2;
+    middle.z = (geometry.boundingBox.max.z + geometry.boundingBox.min.z) / 2;
+
+    mesh.localToWorld( middle );
+    return middle;
+  };
 
 
   function animate() {
