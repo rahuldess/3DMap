@@ -1,1 +1,24 @@
+<section id="open-gl-container"></section>
+
+<section>
+  <%# Hover Over Container%>
+  <%= render partial: 'home/hover/top_left_box' %>
+  <%= render partial: 'home/hover/bottom_left_box' %>
+  <%= render partial: 'home/hover/right_box' %>
+  <%= render partial: 'home/hover/top_box' %>
+</section>
+
+<%# Fix element on map%>
 <%= render partial: 'popover' %>
+
+<script type="text/javascript">
+  $('.logo-image-wrap').click(function(){
+    $('#box-bottom-left').toggleClass('active');
+    $('#box-right').toggleClass('active');
+  });
+
+  $('#box-top .item').click(function(){
+    $('#box-top .item').removeClass('selected');
+    $(this).addClass('selected');
+  })
+</script>
