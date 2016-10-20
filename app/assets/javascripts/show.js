@@ -65,6 +65,7 @@ $(document).ready(function() {
     for (var i = 0; i < data.areas.length; i++) {
       var plotData = {}
 
+      plotData["city"] = data.city;
       plotData["zip_code"] = data.areas[i]["zip_code"];
       plotData["lat_lng"] = [data.areas[i]["lat"], data.areas[i]["lng"]];
       plotData["most_viewed"] = data.areas[i]["most_viewed"];
@@ -432,6 +433,18 @@ $(document).ready(function() {
     console.log(data);
     var element = document.querySelector('#infoPopUp');
     element.style.display = 'block';
+
+
+
+    // Bind the JS template
+    var compiled = _.template($('#area_info_pop_up').html());
+    var parsedHtml = compiled({
+      data: data
+    });
+
+    var container = $("#areaInfoSection");
+    container.html(parsedHtml);
+
     var cssObject = new THREE.CSS3DObject(element);
     cssObject.position = plane.position;
     cssObject.rotation = plane.rotation;
