@@ -76,12 +76,12 @@ $(document).ready(function() {
         i]["leads_submitted"] + data.areas[i]["saved"] + data.areas[i][
         "shared"
       ];
-      plotData["properties"] = data.areas[i]["properties"];
+      plotData["properties"] = data.areas[i]["properties"].slice(1, 4);
       dataToPlot.push(plotData);
     }
 
     plotIn3dWorld(dataToPlot);
-    plotCone();
+    // plotCone();
   }
 
   function plotCone() {
@@ -431,24 +431,29 @@ $(document).ready(function() {
 
   function bindGeoDetails(data) {
     console.log(data);
-    var element = document.querySelector('#infoPopUp');
-    element.style.display = 'block';
 
-
+    var container = $("#property_card_list");
+    container.html("");
 
     // Bind the JS template
-    var compiled = _.template($('#area_info_pop_up').html());
-    var parsedHtml = compiled({
-      data: data
-    });
+    var compiled = _.template($('#property_card_slider').html());
 
-    var container = $("#areaInfoSection");
-    container.html(parsedHtml);
+    for (var i = 0; i < data.properties.length; i++) {
+      var parsedHtml = compiled({
+        data: data.properties[i]
+      });
 
-    var cssObject = new THREE.CSS3DObject(element);
-    cssObject.position = plane.position;
-    cssObject.rotation = plane.rotation;
-    scene.add(cssObject);
+      container = $("#property_card_list");
+      container.append(parsedHtml);
+    }
+
+    // bind the city naem
+    var titleSection = $("#city_div");
+    titleSection.html(data.city);
+
+
+    $('#box-bottom-left').toggleClass('active');
+    $('#box-right').toggleClass('active');
   }
 
 });
