@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   // Initializing variables
   var renderer, scene, camera, spotLight,
-    plane, controls, group, loader;
+    plane, controls, group, loader, camBackup = {};
 
   var mouse = new THREE.Vector2(),
     raycaster = new THREE.Raycaster(),
@@ -24,10 +24,10 @@ $(document).ready(function() {
     2. Converts SVG path to Shape geometries
     3. Adds all City Geometries to the group
   */
+
   initMap();
 
   // This handles the way we rotate our scene. Basically it rotates camera instead of 3D object
-  trackMovement();
 
   // function which runs infinitely to render 3D movements
   animate();
@@ -99,10 +99,7 @@ $(document).ready(function() {
         100000
 
 
-      svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
-          newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX +
-          30) +
-        "," + (newY) + ", L," + (newX + 30) + "," + (newY);
+      svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + ( newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX + 30) + "," + (newY) + ", L," + (newX + 30) + "," + (newY);
 
       path = $d3g.transformSVGPath(svgToPlot);
       // color = new THREE.Color( theColors[i] );
@@ -149,10 +146,17 @@ $(document).ready(function() {
     // Creates a canvas, which gets attached to DIV element created above
     container.appendChild(renderer.domElement);
 
+
+
     // Sets the camera.
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
-      1, 10000);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.set(0, -700, 1500);
+    
+    trackMovement();
+
+    camBackup.position      = camera.position.clone();
+    camBackup.rotation      = camera.rotation.clone();
+    camBackup.controlCenter = controls.center.clone();
 
     // Sets the Scene
     scene = new THREE.Scene();
@@ -166,8 +170,7 @@ $(document).ready(function() {
     scene.add(spotLight);
 
     // This is for big plane which is at back of all our city geometries.
-    var planGeometry = new THREE.PlaneGeometry(3000, 1500,
-      90, 90);
+    var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
     // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
     var planeMaterial = new THREE.MeshBasicMaterial({
       // color: '#C0C0C0',
@@ -226,7 +229,7 @@ $(document).ready(function() {
           bevelEnabled: false
         });
         mesh = new THREE.Mesh(shape3d, material);
-        mesh.info = theInfo[i];
+        mesh.userData.info = theInfo[i];
         mesh.rotation.x = Math.PI;
         mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
         mesh.translateZ(-amount - 1);
@@ -243,7 +246,6 @@ $(document).ready(function() {
 
     // check if hovered over cities
     window.addEventListener('mousemove', onDocumentMouseMove, true);
-
     window.addEventListener('mousedown', onDocumentMouseClick, true);
   };
 
@@ -264,15 +266,46 @@ $(document).ready(function() {
 
   function onDocumentMouseClick(event) {
     event.preventDefault();
+    zoomToCity();
+    disableControls();
+    zoomBack();
+  }
 
+  function disableControls() {
+
+  };
+
+  function zoomBack(){
+    $('#close-city-zoom').on('click', function() {
+      restoreCamera(camBackup.position, camBackup.rotation, camBackup.controlCenter);
+    });
+  };
+
+  function restoreCamera(position, rotation, controlCenter){
+    camera.position.set(position.x, position.y, position.z);
+    camera.rotation.set(rotation.x, rotation.y, rotation.z);
+
+    controls.center.set(controlCenter.x, controlCenter.y, controlCenter.z);
+    controls.update();
+
+    render();
+  }
+
+  function zoomToCity() {
     raycaster2.setFromCamera(mouse, camera);
     var intersects = raycaster2.intersectObjects(scene.children, true);
+
     if (intersects.length > 1) {
       var city_object = getCenterPoint(intersects[0].object);
       controls.target.set(city_object.x, city_object.y, city_object.z);
       controls.dollyIn(4);
+      enableCloseZoomBtn();
     }
-  }
+  };
+
+  function enableCloseZoomBtn() {
+    $('#close-city-zoom').show();
+  };
 
   function getCenterPoint(mesh) {
     var middle = new THREE.Vector3();
@@ -346,71 +379,5 @@ $(document).ready(function() {
     cssObject.rotation = plane.rotation;
     scene.add(cssObject);
   }
-
-  // function addDensityData(data) {
-  //   window.pos = [];
-  //   var geom = new THREE.Geometry();
-  //
-  //   var cubeMat = new THREE.MeshLambertMaterial({
-  //     color: 0x000000,
-  //     opacity: 0.6,
-  //     emissive: 0xffffff
-  //   });
-  //
-  //   for (var i = 0; i < data.length; i++) {
-  //
-  //     // var x = data[i][0] * (Math.PI / 180);
-  //     // var y = data[i][1] * (Math.PI / 180);
-  //     var x = data[i][0];
-  //     var y = data[i][1];
-  //     // var position = latLongToVector3(x, y);
-  //     var postion = latLngToPointXY(x, y)
-  //
-  //   }
-  // }
-  //
-  // function latLngToPointXY(lat, lng) {
-  //   // [37.38122, -121.98051]
-  //   // per 0.00001 in svg
-  //   const Y_UNIT = 0.05268209219,
-  //     X_UNIT = 0.05235987756;
-  //   const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-  //   const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
-  //
-  //   // var newY = (lat - PIVOT_POINT[0]) * Y_UNIT * 100000
-  //   // var newX = (lng - PIVOT_POINT[1]) * X_UNIT * 100000
-  //   var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
-  //     100000
-  //   var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
-  //     100000
-  //
-  //   // console.log(newX)
-  //   // console.log(newY)
-  //
-  //   svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 20) + "," + (
-  //       newY) + ", L," + (newX + 20) + "," + (newY + 20) + ", L," + (newX) +
-  //     "," + (newY) + ", L," + (newX) + "," + (newY);
-  //   path = $d3g.transformSVGPath(svgToPlot);
-  //   // color = new THREE.Color( theColors[i] );
-  //   material = new THREE.MeshPhongMaterial({
-  //     color: "green"
-  //   });
-  //   simpleShapes = path.toShapes(true);
-  //   for (j = 0; j < simpleShapes.length; ++j) {
-  //     simpleShape = simpleShapes[j];
-  //     shape3d = simpleShape.extrude({
-  //       amount: 200,
-  //       bevelEnabled: false
-  //     });
-  //   }
-  //   mesh = new THREE.Mesh(shape3d, material);
-  //   group.add(mesh)
-  //   mesh.rotation.x = Math.PI;
-  //   mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
-  //   mesh.translateZ(-80 - 1);
-  //   mesh.translateX(-600);
-  //   mesh.translateY(-150);
-  //   return true;
-  // }
 
 });

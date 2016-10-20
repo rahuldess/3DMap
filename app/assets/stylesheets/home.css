@@ -8,3 +8,12 @@ body {
   margin: 0px;
   overflow: hidden;
 }
+
+span#close-city-zoom {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  border: 1px solid grey;
+  padding: 5px;
+  display: none;
+}
