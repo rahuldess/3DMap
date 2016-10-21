@@ -67,7 +67,7 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
 /***************** Left Box ************************/
 #box-bottom-left{
   width: 250px;
-  bottom: 10px;
+  bottom: 85px;
   top: 120px;
   left: -300px;
   transition: left 0.5s ease;
@@ -109,7 +109,7 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
   width: 300px;
   top: $box-to-border;
   right: -300px;
-  bottom: 10px;
+  bottom: 85px;
   padding: 10px;
   transition: right 0.5s ease;
   &.active{
@@ -127,8 +127,8 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
   top: $box-to-border;
   left: 270px;
   transition: all 0.5s ease;
-  background-color: $box-color-background;
-  box-shadow: $box-box-shadow;
+  background:transparent;
+  box-shadow: none;
   width: 600px;
   @include myItem(1);
   @include myItem(2);
@@ -143,14 +143,16 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
     transition: left 0.5s ease;
     z-index: 10;
     left: -12px;
-
+    &.selected .icon{
+      background-color:#d92228;
+    }
   }
 
   .icon{
     border-radius:50%;
     width:60px;
     height:60px;
-    background-color:#d92228;
+    background-color:#B88686;
     margin: 0 auto;
     border: 1px solid #fff;
     box-shadow: $box-box-shadow;
@@ -170,14 +172,15 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
   }
   .text{
     text-align: center;
+    color:white;
   }
 }
 /***************** Bottom Box ************************/
 #box-bottom{
   height: 65px;
   bottom: $box-to-border;
-  left: 270px;
-  right:320px;
+  left: $box-to-border;
+  right:$box-to-border;
   padding:15px;
   input{display: none;}
   label{

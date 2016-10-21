@@ -232,7 +232,7 @@ $(document).ready(function() {
     // Sets the camera.
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
       1, 20000);
-    camera.position.set(0, -1400, 1400);
+    camera.position.set(0, -800, 1200);
 
 
     trackMovement();
@@ -437,14 +437,14 @@ $(document).ready(function() {
     var loader = new THREE.FontLoader();
     loader.load('/font.json', function(font) {
       var textGeo = new THREE.TextGeometry(name, {
-        size: 20,
+        size: 24,
         height: 2,
         curveSegments: 16,
         font: font
       });
 
       var color = new THREE.Color();
-      color.setRGB(200, 250, 250);
+      color.setStyle('#eeeeee');
       var textMaterial = new THREE.MeshBasicMaterial({
         color: color
       });
