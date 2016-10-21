@@ -23,15 +23,47 @@ $(document).ready(function() {
     INTERSECTED;
 
 
-  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 170, x: -648.3606705576177 , y: 147.91763526434431 },
-    { name: 'Santa Clara', amount: 330, x: -486.96295786323947, y: 40.636799934262626 },
-    { name: 'San Jose', amount: 100, x: -30.01751928943986, y: -157.82504742736774 },
-    { name: 'Saratoga', amount: 150, x: -402.12370864348713, y: -171.24960490474427 },
-    { name: 'Montain View', amount: 130, x: -838.3606705576177 , y: 187.91763526434431 },
-    { name: 'Campbell', amount: 170, x: -692.6379782657775, y: -248.47880165292645 },
-    { name: 'Curtepino', amount: 180, x: -800.6379782657775, y: -108.47880165292645 },
-    { name: 'Los Gatos', amount: 125, x: -950.6379782657775, y: 58.47880165292645 }
-  ];
+  const CITY_POINTS = [{
+    name: 'Sunnyvale',
+    amount: 170,
+    x: -648.3606705576177,
+    y: 147.91763526434431
+  }, {
+    name: 'Santa Clara',
+    amount: 330,
+    x: -486.96295786323947,
+    y: 40.636799934262626
+  }, {
+    name: 'San Jose',
+    amount: 100,
+    x: -30.01751928943986,
+    y: -157.82504742736774
+  }, {
+    name: 'Saratoga',
+    amount: 150,
+    x: -402.12370864348713,
+    y: -171.24960490474427
+  }, {
+    name: 'Montain View',
+    amount: 130,
+    x: -838.3606705576177,
+    y: 187.91763526434431
+  }, {
+    name: 'Campbell',
+    amount: 170,
+    x: -692.6379782657775,
+    y: -248.47880165292645
+  }, {
+    name: 'Curtepino',
+    amount: 180,
+    x: -800.6379782657775,
+    y: -108.47880165292645
+  }, {
+    name: 'Los Gatos',
+    amount: 125,
+    x: -950.6379782657775,
+    y: 58.47880165292645
+  }];
 
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
@@ -270,24 +302,46 @@ $(document).ready(function() {
     });
   };
 
-  cityCollection = [];
+
   $('.city-checkbox').on('click', function() {
-    var cityName = $(this)[0].value;
-    if ($(this)[0].checked) {
-      cityCollection.push(cityName);
-    } else {
-      cityCollection.pop(cityName);
+    var cityCollection = [];
+    // var cityName = $(this)[0].value;
+    var chk = $('.city-checkbox');
+    var len = chk.length;
+
+    for (var i = 0; i < len; i++) {
+      if (chk[i].checked) {
+        cityCollection.push(chk[i].value);
+      }
     }
 
-    for (var i = 0; i < cityCollection.length; i++) {
-      addDensityData(cityCollection[i], SEARCHED_GEO.type);
-    }
+    addGeoObject(group, InitialSVGData, "", {}, false, cityCollection);
 
+    // for (var i = 0; i < cityCollection.length; i++) {
+    //   addDensityData(cityCollection[i], SEARCHED_GEO.type);
+    // }
   });
+
+  function clearPlane() {
+    group.children = [];
+    var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
+    // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
+    var planeMaterial = new THREE.MeshBasicMaterial({
+      color: '#EE82EE',
+      wireframe: true,
+      // blending: THREE.NoBlending,
+      side: THREE.DoubleSide
+    });
+    plane = new THREE.Mesh(planGeometry, planeMaterial);
+    plane.userData.info = {
+      city_name: 'black-board'
+    };
+    group.add(plane);
+  }
 
   // Add the Shape Geometries with properties to the group
   function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {},
-    medianPrice = false) {
+    medianPrice = false, cityToAdd = []) {
     // window.geoDataToBind = geoDataToBind
     // console.log(group);
     window.group = group;
@@ -301,24 +355,13 @@ $(document).ready(function() {
 
     len = svgObject.length;
 
-    if (medianPrice) {
-      group.children = [];
-      var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
-      // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
-      var planeMaterial = new THREE.MeshBasicMaterial({
-        color: '#EE82EE',
-        wireframe: true,
-        // blending: THREE.NoBlending,
-        side: THREE.DoubleSide
-      });
-      plane = new THREE.Mesh(planGeometry, planeMaterial);
-      plane.userData.info = {
-        city_name: 'black-board'
-      };
-      group.add(plane);
+    if (medianPrice || cityToAdd.length > 0) {
+      clearPlane();
     }
 
     for (i = 0; i < len - 1; ++i) {
+      var flag = 1;
+
       // console.log(svgObject[i].zip_code);
       path = $d3g.transformSVGPath(svgObject[i].path);
 
@@ -331,16 +374,28 @@ $(document).ready(function() {
       simpleShapes = path.toShapes(true);
       len1 = simpleShapes.length;
 
+      console.log(cityToAdd);
       for (j = 0; j < len1; ++j) {
 
         var baseValue = 0;
+
         if (medianPrice) {
           baseValue = svgObject[i].median_price_base;
         } else {
-          baseValue = svgObject[i].geo_base;
+
+          if (cityToAdd.length > 0) {
+            if (!_.contains(cityToAdd, svgObject[i].city_name)) {
+              baseValue = 0;
+              flag = 0;
+            } else {
+              baseValue = svgObject[i].geo_base;
+            }
+          } else {
+            baseValue = svgObject[i].geo_base;
+          }
         }
 
-        var bevelAmount = Math.floor(Math.random() * 40) + baseValue;
+        var bevelAmount = Math.floor(Math.random() * 40 * flag) + baseValue;
 
         // if (svgObject[i].city_name === cityName) {
         //   bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
@@ -395,7 +450,7 @@ $(document).ready(function() {
       });
       var text = new THREE.Mesh(textGeo, textMaterial);
       text.rotation.x = Math.PI / 4
-      // text.translateZ(amount);
+        // text.translateZ(amount);
       text.translateX(-600);
       text.translateY(-1000);
       group.add(text);
