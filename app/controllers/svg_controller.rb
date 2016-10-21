@@ -16,6 +16,7 @@ class SvgController < ApplicationController
       hash["path"]      = City.send(method)
       hash["color"]     = color_match[city_name]
       hash["geo_base"]  = geo_amt_base[city_name]
+      hash["median_price_base"] = median_price_base[city_name]
       array.push(hash)
     end
 
@@ -31,6 +32,22 @@ class SvgController < ApplicationController
       "Campbell"      => 100,
       "Los Altos"     => 65,
       "Palo Alto"     => 160,
+      "Saratoga"      => 70,
+      "Sunnyvale"     => 100,
+      "Alviso"        => 10
+    }
+  end
+
+
+  def median_price_base
+    {
+      "Santa Clara"   => 30,
+      "San Jose"      => 10,
+      "Mountain View" => 160,
+      "Cupertino"     => 120,
+      "Campbell"      => 100,
+      "Los Altos"     => 65,
+      "Palo Alto"     => 250,
       "Saratoga"      => 70,
       "Sunnyvale"     => 100,
       "Alviso"        => 10

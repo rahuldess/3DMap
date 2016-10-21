@@ -22,6 +22,7 @@ $(document).ready(function() {
     theta = 0,
     INTERSECTED;
 
+
   const CITY_POINTS = [{ name: 'Sunnyvale', amount: 170, x: -648.3606705576177 , y: 147.91763526434431 },
     { name: 'Santa Clara', amount: 330, x: -486.96295786323947, y: 40.636799934262626 },
     { name: 'San Jose', amount: 100, x: -30.01751928943986, y: -157.82504742736774 },
@@ -30,7 +31,6 @@ $(document).ready(function() {
     { name: 'Campbell', amount: 170, x: -692.6379782657775, y: -248.47880165292645 },
     { name: 'Curtepino', amount: 180, x: -800.6379782657775, y: -108.47880165292645 },
     { name: 'Los Gatos', amount: 125, x: -950.6379782657775, y: 58.47880165292645 }
-
   ];
 
   // Canvas will be attached to this DIV element created
@@ -247,7 +247,7 @@ $(document).ready(function() {
     });
     plane = new THREE.Mesh(planGeometry, planeMaterial);
     plane.userData.info = {
-      name: 'black-board'
+      city_name: 'black-board'
     };
     group.add(plane);
 
@@ -286,8 +286,10 @@ $(document).ready(function() {
   });
 
   // Add the Shape Geometries with properties to the group
-  function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {}) {
+  function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {},
+    medianPrice = false) {
     // window.geoDataToBind = geoDataToBind
+    // console.log(group);
     window.group = group;
     window.svgObject = svgObject;
 
@@ -298,6 +300,23 @@ $(document).ready(function() {
     var cityName = geoArr.trim().replace("_", " ").toProperCase();
 
     len = svgObject.length;
+
+    if (medianPrice) {
+      group.children = [];
+      var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
+      // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
+      var planeMaterial = new THREE.MeshBasicMaterial({
+        color: '#EE82EE',
+        wireframe: true,
+        // blending: THREE.NoBlending,
+        side: THREE.DoubleSide
+      });
+      plane = new THREE.Mesh(planGeometry, planeMaterial);
+      plane.userData.info = {
+        city_name: 'black-board'
+      };
+      group.add(plane);
+    }
 
     for (i = 0; i < len - 1; ++i) {
       // console.log(svgObject[i].zip_code);
@@ -313,7 +332,15 @@ $(document).ready(function() {
       len1 = simpleShapes.length;
 
       for (j = 0; j < len1; ++j) {
-        var bevelAmount = Math.floor(Math.random() * 40) + svgObject[i].geo_base;
+
+        var baseValue = 0;
+        if (medianPrice) {
+          baseValue = svgObject[i].median_price_base;
+        } else {
+          baseValue = svgObject[i].geo_base;
+        }
+
+        var bevelAmount = Math.floor(Math.random() * 40) + baseValue;
 
         // if (svgObject[i].city_name === cityName) {
         //   bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
@@ -343,35 +370,37 @@ $(document).ready(function() {
     }
 
     $.each(CITY_POINTS, function(i, obj) {
-      if ( obj.name !== undefined ) {
+      if (obj.name !== undefined) {
         showCityName(obj.name, obj.amount, obj.x, obj.y);
       }
     });
   };
 
-    // obj = {name: name, amount: amount}
-    function showCityName(name,amount,x,y) {
-      console.log(amount)
-      var loader = new THREE.FontLoader();
-      loader.load( '/font.json', function ( font ) {
-        var  textGeo = new THREE.TextGeometry(name, {
-          size: 20,
-          height: 2,
-          curveSegments: 16,
-          font: font
-        });
 
-        var  color = new THREE.Color();
-        color.setRGB(200, 250, 250);
-        var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
-        var  text = new THREE.Mesh(textGeo , textMaterial);
-        text.rotation.x = Math.PI/4
-        text.translateZ(0);
-        text.translateX(-600);
-        text.translateY(-1000);
-        group.add(text);
-        text.position.set(x, y, amount);
+  // obj = {name: name, amount: amount}
+  function showCityName(name, amount, x, y) {
+    var loader = new THREE.FontLoader();
+    loader.load('/font.json', function(font) {
+      var textGeo = new THREE.TextGeometry(name, {
+        size: 20,
+        height: 2,
+        curveSegments: 16,
+        font: font
       });
+
+      var color = new THREE.Color();
+      color.setRGB(200, 250, 250);
+      var textMaterial = new THREE.MeshBasicMaterial({
+        color: color
+      });
+      var text = new THREE.Mesh(textGeo, textMaterial);
+      text.rotation.x = Math.PI / 4
+      // text.translateZ(amount);
+      text.translateX(-600);
+      text.translateY(-1000);
+      group.add(text);
+      text.position.set(x, y, amount);
+    });
   };
 
   function eventListeners() {
@@ -408,7 +437,7 @@ $(document).ready(function() {
     if (intersects.length > 1) {
       $('#box-bottom-left').addClass('active');
       $('#box-right').addClass('active');
-    } else if(intersects.length < 1) {
+    } else if (intersects.length < 1) {
       $('#box-bottom-left').removeClass('active');
       $('#box-right').removeClass('active');
     }
@@ -439,6 +468,16 @@ $(document).ready(function() {
       }
     });
   };
+
+
+
+  $("#median_price_header").on('click', function() {
+    addGeoObject(group, InitialSVGData, "", {}, true);
+  });
+
+  $("#hot_areas_header").on('click', function() {
+    addGeoObject(group, InitialSVGData, "", {}, false);
+  });
 
 
   function enableCloseZoomBtn() {
