@@ -15,14 +15,26 @@ class SvgController < ApplicationController
       hash["zip_code"]  = zip_code
       hash["path"]      = City.send(method)
       hash["color"]     = color_match[city_name]
+      hash["geo_base"]  = geo_amt_base[city_name]
       array.push(hash)
     end
 
     return array
   end
 
-  def geo_height
-    
+  def geo_amt_base
+    {
+      "Santa Clara"   => 70,
+      "San Jose"      => 80,
+      "Mountain View" => 40,
+      "Cupertino"     => 20,
+      "Campbell"      => 10,
+      "Los Altos"     => 65,
+      "Palo Alto"     => 45,
+      "Saratoga"      => 70,
+      "Sunnyvale"     => 100,
+      "Alviso"        => 10
+    }
   end
 
   def color_match

@@ -2,6 +2,11 @@
 //= require ./css3dobject
 
 $(document).ready(function() {
+  String.prototype.toProperCase = function() {
+    return this.replace(/\w\S*/g, function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  };
 
   // Initializing variables
   var renderer, scene, camera, spotLight, directionLightLeft,
@@ -238,7 +243,7 @@ $(document).ready(function() {
 
     // Get the shapeGeometry from SVG path's
     initSVGObject().done(function(data) {
-      addGeoObject(group, data);
+      addGeoObject(group, data, SEARCHED_GEO.city);
     });
   };
 
@@ -255,19 +260,17 @@ $(document).ready(function() {
   };
 
   // Add the Shape Geometries with properties to the group
-  function addGeoObject(group, svgObject, geoArr = []) {
+  function addGeoObject(group, svgObject, geoArr = "") {
     window.group = group;
     window.svgObject = svgObject;
+
 
     var i, j, len, len1;
     var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
       x, toAdd, results = [];
 
-    // var thePaths = svgObject.paths;
-    // var theAmounts = 10;
-    // var theColors = svgObject.info;
-    // var theCenter = svgObject.center;
-    // var theInfo = svgObject.info;
+    var cityName = geoArr.replace("_", " ").toProperCase();
+
     len = svgObject.length;
 
     for (i = 0; i < len - 1; ++i) {
@@ -284,11 +287,11 @@ $(document).ready(function() {
 
       for (j = 0; j < len1; ++j) {
         var bevelAmount = 0;
-        //
-        if (svgObject[i].city_name === "Sunnyvale") {
-          bevelAmount = Math.floor(Math.random() * 250) + 20;
+        if (svgObject[i].city_name === cityName) {
+          bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
+            20;
         }
-        // bevelAmount = Math.floor(Math.random() * 250) + 20;
+
         simpleShape = simpleShapes[j];
         shape3d = simpleShape.extrude({
           amount: bevelAmount,
