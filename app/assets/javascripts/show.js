@@ -366,14 +366,6 @@ $(document).ready(function() {
         group.add(text);
         text.position.set(x, y, 100);
       });
-      var text = new THREE.Mesh(textGeo, textMaterial);
-      text.rotation.x = Math.PI / 4
-      text.translateZ(150);
-      text.translateX(-600);
-      text.translateY(-1000);
-      group.add(text);
-      text.position.set(-598.3606705576177, 117.9176352643443, 100);
-    });
   };
 
   function eventListeners() {
