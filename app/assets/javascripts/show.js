@@ -2,19 +2,25 @@
 //= require ./css3dobject
 
 $(document).ready(function() {
+  String.prototype.toProperCase = function() {
+    return this.replace(/\w\S*/g, function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  };
 
   // Initializing variables
-  var renderer, scene, camera, spotLight, directionLightLeft, directionLightRight,
-  plane, controls, group, loader, camBackup = {};
+  var renderer, scene, camera, spotLight, directionLightLeft,
+    directionLightRight,
+    plane, controls, group, loader, camBackup = {};
 
   var clickCounter = 0;
 
   var mouse = new THREE.Vector2(),
-  raycaster = new THREE.Raycaster(),
-  raycaster2 = new THREE.Raycaster(),
-  radius = 100,
-  theta = 0,
-  INTERSECTED;
+    raycaster = new THREE.Raycaster(),
+    raycaster2 = new THREE.Raycaster(),
+    radius = 100,
+    theta = 0,
+    INTERSECTED;
 
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
@@ -79,16 +85,16 @@ $(document).ready(function() {
       dataToPlot.push(plotData);
     }
 
-    plotIn3dWorld(dataToPlot);
+    // plotIn3dWorld(dataToPlot);
     // plotCone();
   }
 
   function plotCone() {
-    const Y_UNIT = 0.00268209219,
-      X_UNIT = 0.00935987756;
+    const Y_UNIT = 5.3898302533,
+      X_UNIT = 5.3823801302;
 
-    const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-    const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+    const PIVOT_POINT = [37.34072, -121.93221]; // (y , x)
+    const POVOT_POINT_SVG = [484.378916507, 1756.57331242]; //(x, y)
 
     var points = [
       [37.3555465, -121.9586176],
@@ -100,9 +106,9 @@ $(document).ready(function() {
       var lng = points[i][1];
 
       var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
-        100000
+        1000
       var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
-        100000
+        1000
 
       var coneGeometry = new THREE.ConeGeometry(28, 120, 60);
       var coneMaterial = new THREE.MeshBasicMaterial({
@@ -121,173 +127,204 @@ $(document).ready(function() {
 
   function plotIn3dWorld(geoPoints) {
 
-     for (var x = 0; x < geoPoints.length; x++) {
-       var lat = geoPoints[x]["lat_lng"][0];
-       var lng = geoPoints[x]["lat_lng"][1];
+    for (var x = 0; x < geoPoints.length; x++) {
+      var lat = geoPoints[x]["lat_lng"][0];
+      var lng = geoPoints[x]["lat_lng"][1];
 
-       const Y_UNIT = 0.05268209219,
-         X_UNIT = 0.05235987756;
+      const Y_UNIT = 5.3898302533,
+        X_UNIT = 5.3823801302;
 
-       const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-       const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+      const PIVOT_POINT = [37.34072, -121.93221]; // (y , x)
+      const POVOT_POINT_SVG = [484.378916507, 1756.57331242]; //(x, y)
 
-       var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
-         100000
-       var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
-         100000
-
-
-       svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
-         newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX +
-         30) + "," + (newY) + ", L," + (newX + 30) + "," + (newY);
-
-       path = $d3g.transformSVGPath(svgToPlot);
-       // color = new THREE.Color( theColors[i] );
-       material = new THREE.MeshPhongMaterial({
-         color: "green"
-       });
-
-       simpleShapes = path.toShapes(true);
-       for (j = 0; j < simpleShapes.length; ++j) {
-         simpleShape = simpleShapes[j];
-         shape3d = simpleShape.extrude({
-           amount: 50,
-           bevelEnabled: false
-         });
-       }
-       mesh = new THREE.Mesh(shape3d, material);
-       group.add(mesh)
-
-       mesh.geoInfo = geoPoints[x];
-       mesh.rotation.x = Math.PI;
-       mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
-       // mesh.scale.set(1, 1, 1);
-       mesh.translateZ(-80 - 1);
-       mesh.translateX(-600);
-       mesh.translateY(-150);
-     } // end of for Loop
+      var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
+        1000
+      var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
+        1000
 
 
-     return true;
-   }
 
-    function requestDataFromServer(url) {
-      return $.ajax({
-        url: url
+      svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
+        newY) + ", L," + (newX + 30) + "," + (newY + 30) + ", L," + (newX +
+        30) + "," + (newY) + ", L," + (newX + 30) + "," + (newY);
+
+      path = $d3g.transformSVGPath(svgToPlot);
+      // color = new THREE.Color( theColors[i] );
+      material = new THREE.MeshPhongMaterial({
+        color: "green"
       });
+
+      simpleShapes = path.toShapes(true);
+      for (j = 0; j < simpleShapes.length; ++j) {
+        simpleShape = simpleShapes[j];
+        shape3d = simpleShape.extrude({
+          amount: 100,
+          bevelEnabled: false
+        });
+      }
+      mesh = new THREE.Mesh(shape3d, material);
+      group.add(mesh)
+
+      mesh.geoInfo = geoPoints[x];
+      mesh.rotation.x = Math.PI;
+      mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
+      mesh.translateZ(-100);
+      mesh.translateX(-600);
+      mesh.translateY(-1000);
+    } // end of for Loop
+
+
+    return true;
+  }
+
+  function requestDataFromServer(url) {
+    return $.ajax({
+      url: url
+    });
+  }
+
+  function initMap() {
+    // Sets the renderer, which basically renders (scene + camera) together
+    renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor('#191919');
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // Creates a canvas, which gets attached to DIV element created above
+    container.appendChild(renderer.domElement);
+
+    // Sets the camera.
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
+      1, 20000);
+    camera.position.set(0, -1300, 1500);
+
+
+    trackMovement();
+
+    camBackup.position = camera.position.clone();
+    camBackup.rotation = camera.rotation.clone();
+    camBackup.controlCenter = controls.center.clone();
+
+    // Sets the Scene
+    scene = new THREE.Scene();
+
+    // Create a group
+    group = new THREE.Group();
+    scene.add(group);
+
+    spotLight = new THREE.SpotLight('white');
+    spotLight.position.set(0, 0, 1500);
+    scene.add(spotLight);
+
+    directionLightLeft = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionLightLeft.position.set(-500, 0, 100);
+    scene.add(directionLightLeft);
+
+    directionLightRight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionLightRight.position.set(500, 0, 100);
+    scene.add(directionLightRight);
+
+    // This is for big plane which is at back of all our city geometries.
+    var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
+    // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
+    var planeMaterial = new THREE.MeshBasicMaterial({
+      color: '#EE82EE',
+      wireframe: true,
+      // blending: THREE.NoBlending,
+      side: THREE.DoubleSide
+    });
+    plane = new THREE.Mesh(planGeometry, planeMaterial);
+    plane.userData.info = {
+      name: 'black-board'
+    };
+    group.add(plane);
+
+    // Get the shapeGeometry from SVG path's
+    initSVGObject().done(function(data) {
+      InitialSVGData = data;
+      addGeoObject(group, data, SEARCHED_GEO.city.trim().replace("_",
+        " ").toProperCase());
+    });
+  };
+
+  function trackMovement() {
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.addEventListener('change', render);
+    controls.enableZoom = false;
+  };
+
+  function initSVGObject() {
+    return $.ajax({
+      url: 'load_city_data'
+    });
+  };
+
+  cityCollection = [];
+  $('.city-checkbox').on('click', function() {
+    var cityName = $(this)[0].value;
+    if ($(this)[0].checked) {
+      cityCollection.push(cityName);
+    } else {
+      cityCollection.pop(cityName);
     }
 
-    function initMap() {
-      // Sets the renderer, which basically renders (scene + camera) together
-      renderer = new THREE.WebGLRenderer();
-      renderer.setClearColor('#191919');
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(window.innerWidth, window.innerHeight);
+    for (var i = 0; i < cityCollection.length; i++) {
+      addGeoObject(group, InitialSVGData, cityCollection[i]);
+    }
 
-      // Creates a canvas, which gets attached to DIV element created above
-      container.appendChild(renderer.domElement);
+  });
 
-      // Sets the camera.
-      camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
-      camera.position.set(0, -700, 1500);
+  // Add the Shape Geometries with properties to the group
+  function addGeoObject(group, svgObject, geoArr = "") {
 
+    window.group = group;
+    window.svgObject = svgObject;
 
-      trackMovement();
-
-      camBackup.position      = camera.position.clone();
-      camBackup.rotation      = camera.rotation.clone();
-      camBackup.controlCenter = controls.center.clone();
-
-      // Sets the Scene
-      scene = new THREE.Scene();
-
-      // Create a group
-      group = new THREE.Group();
-      scene.add(group);
-
-      spotLight = new THREE.SpotLight('white');
-      spotLight.position.set(0, 0, 1500);
-      scene.add(spotLight);
-
-      directionLightLeft = new THREE.DirectionalLight( 0xffffff, 0.5 );
-      directionLightLeft.position.set(-500, 0, 100);
-      scene.add(directionLightLeft);
-
-      directionLightRight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-      directionLightRight.position.set(500, 0, 100);
-      scene.add(directionLightRight);
-
-      // This is for big plane which is at back of all our city geometries.
-      var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
-      // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
-      var planeMaterial = new THREE.MeshBasicMaterial({
-        color: '#EE82EE',
-        wireframe: true,
-        // blending: THREE.NoBlending,
-        side: THREE.DoubleSide
-      });
-      plane = new THREE.Mesh(planGeometry, planeMaterial);
-      plane.userData.info = {name: 'black-board'};
-      group.add(plane);
-
-      // Get the shapeGeometry from SVG path's
-      initSVGObject().done(function(data) {
-        addGeoObject(group, data);
-      });
-    };
-
-    function trackMovement() {
-      controls = new THREE.OrbitControls(camera, renderer.domElement);
-      controls.addEventListener('change', render);
-      controls.enableZoom = false;
-    };
-
-    function initSVGObject() {
-      return $.ajax({
-        url: 'load_city_data'
-      });
-    };
-
-    // Add the Shape Geometries with properties to the group
-    function addGeoObject(group, svgObject) {
-      var i, j, len, len1;
-      var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
+    var i, j, len, len1;
+    var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
       x, toAdd, results = [];
 
-      // var thePaths = svgObject.paths;
-      // var theAmounts = 10;
-      // var theColors = svgObject.info;
-      // var theCenter = svgObject.center;
-      // var theInfo = svgObject.info;
-      len = svgObject.length;
+    var cityName = geoArr.trim().replace("_", " ").toProperCase();
 
-      for (i = 0; i < len; ++i) {
-        path = $d3g.transformSVGPath(svgObject[i].path);
+    len = svgObject.length;
 
-        color = new THREE.Color(svgObject[i].color);
-        material = new THREE.MeshPhongMaterial({ color: color });
+    for (i = 0; i < len - 1; ++i) {
+      path = $d3g.transformSVGPath(svgObject[i].path);
 
-        amount = 50;
-        simpleShapes = path.toShapes(true);
-        len1 = simpleShapes.length;
-        for (j = 0; j < len1; ++j) {
-          simpleShape = simpleShapes[j];
-          shape3d = simpleShape.extrude({
-            amount: 50,
-            bevelEnabled: false
-          });
+      color = new THREE.Color(svgObject[i].color);
+      material = new THREE.MeshPhongMaterial({
+        color: color,
+      });
 
-          mesh = new THREE.Mesh(shape3d, material);
-          mesh.userData.info = svgObject[i];
-          mesh.rotation.x = Math.PI;
-          mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
-          mesh.translateZ(-50);
-          mesh.translateX(-600);
-          mesh.translateY(-1000);
-          group.add(mesh);
+      amount = 0;
+      simpleShapes = path.toShapes(true);
+      len1 = simpleShapes.length;
+
+      for (j = 0; j < len1; ++j) {
+        var bevelAmount = 0;
+        if (svgObject[i].city_name === cityName) {
+          bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
+            20;
         }
+
+        simpleShape = simpleShapes[j];
+        shape3d = simpleShape.extrude({
+          amount: bevelAmount,
+          bevelEnabled: false,
+          bevelThickness: bevelAmount
+        });
+
+        mesh = new THREE.Mesh(shape3d, material);
+        mesh.userData.info = svgObject[i];
+        mesh.rotation.x = Math.PI;
+        mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
+        mesh.translateZ(-bevelAmount);
+        mesh.translateX(-600);
+        mesh.translateY(-1000);
+        group.add(mesh);
       }
-    };
+    }
+  };
 
     // obj = {name: name, amount: amount}
     function showCityName(name,amount,x,y) {
@@ -313,33 +350,33 @@ $(document).ready(function() {
       });
     };
 
-    function eventListeners() {
-      window.addEventListener('resize', onWindowResize, false);
+  function eventListeners() {
+    window.addEventListener('resize', onWindowResize, false);
 
-      // check if hovered over cities
-      window.addEventListener('mousemove', onDocumentMouseMove, true);
-      window.addEventListener('mousedown', onDocumentMouseClick, true);
-    };
+    // check if hovered over cities
+    window.addEventListener('mousemove', onDocumentMouseMove, true);
+    window.addEventListener('mousedown', onDocumentMouseClick, true);
+  };
 
 
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  };
 
-    function onDocumentMouseMove(event) {
-      event.preventDefault();
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  function onDocumentMouseMove(event) {
+    event.preventDefault();
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-      raycasting();
-    };
+    raycasting();
+  };
 
-    function onDocumentMouseClick(event) {
-      event.preventDefault();
-      zoomToCity();
-    }
+  function onDocumentMouseClick(event) {
+    event.preventDefault();
+    zoomToCity();
+  }
 
     function zoomToCity() {
       raycaster2.setFromCamera(mouse, camera);
@@ -352,107 +389,118 @@ $(document).ready(function() {
         console.log(city_object);
         console.log(intersects[0].object.userData.info.city_name);
 
-        controls.target.set(city_object.x, city_object.y, city_object.z);
-        controls.dollyIn(4);
+      controls.target.set(city_object.x, city_object.y, city_object.z);
+      controls.dollyIn(4);
 
-        fadeOutOtherCities(intersects[0].object);
-        enableCloseZoomBtn();
-      }
-    };
-
-    function fadeOutOtherCities( selectedCity ) {
-      var cityName = selectedCity.userData.info.city_name;
-
-      scene.traverse(function( node ){
-        if ( node instanceof THREE.Mesh ) {
-          if ( node.userData.info.city_name !== cityName && node.userData.info.city_name !== 'black-board' ) {
-            node.material.color.setHex('#000000');
-          }
-        }
-      });
-    };
-
-    function enableCloseZoomBtn() {
-      $('#close-city-zoom').show();
-    };
-
-    // On Close Button Click
-    $('#close-city-zoom').on('click', function() {
-      restoreCityColors();
-      restoreCamera(camBackup.position, camBackup.rotation, camBackup.controlCenter);
-      $('#close-city-zoom').hide();
-      disableControls();
-    });
-
-    function restoreCityColors() {
-      scene.traverse(function( node ){
-        if ( node instanceof THREE.Mesh ) {
-          // node.material.color.setHex(new THREE.Color(node.material.color));
-          if ( node.userData.info.city_name !== 'black-board' ) {
-            node.material.color.setStyle(node.userData.info.color);
-          }
-        }
-      });
-    };
-
-    function restoreCamera(position, rotation, controlCenter){
-      camera.position.set(position.x, position.y, position.z);
-      camera.rotation.set(rotation.x, rotation.y, rotation.z);
-
-      controls.center.set(controlCenter.x, controlCenter.y, controlCenter.z);
-      controls.update();
-
-      render();
+      fadeOutOtherCities(intersects[0].object);
+      enableCloseZoomBtn();
     }
+  };
 
-    function disableControls() {
-      clickCounter = 0;
-    };
+  function fadeOutOtherCities(selectedCity) {
+    var cityName = selectedCity.userData.info.city_name;
 
-    function getCenterPoint(mesh) {
-      var middle = new THREE.Vector3();
-      var geometry = mesh.geometry;
-
-      geometry.computeBoundingBox();
-
-      middle.x = (geometry.boundingBox.max.x + geometry.boundingBox.min.x) / 2;
-      middle.y = (geometry.boundingBox.max.y + geometry.boundingBox.min.y) / 2;
-      middle.z = (geometry.boundingBox.max.z + geometry.boundingBox.min.z) / 2;
-
-      mesh.localToWorld( middle );
-      return middle;
-    };
+    scene.traverse(function(node) {
+      if (node instanceof THREE.Mesh) {
+        if (node.userData.info.city_name !== cityName && node.userData.info
+          .city_name !== 'black-board') {
+          node.material.color.setHex('#000000');
+        }
+      }
+    });
+  };
 
 
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
-      render();
-    };
+  function enableCloseZoomBtn() {
+    $('#close-city-zoom').show();
+  };
 
-    function render() {
-      renderer.render(scene, camera);
-    };
+  // On Close Button Click
+  $('#close-city-zoom').on('click', function() {
+    restoreCityColors();
+    restoreCamera(camBackup.position, camBackup.rotation, camBackup.controlCenter);
+    $('#close-city-zoom').hide();
+    disableControls();
+  });
 
-    // This is handling the mouse over thingy.
-    function raycasting() {
 
-      raycaster.setFromCamera(mouse, camera);
-      var intersects = raycaster.intersectObjects(scene.children, true);
 
-      if (intersects.length > 0) {
-        if (INTERSECTED != intersects[0].object) {
+  function restoreCityColors() {
+    scene.traverse(function(node) {
+      if (node instanceof THREE.Mesh) {
+        // node.material.color.setHex(new THREE.Color(node.material.color));
+        if (node.userData.info.city_name !== 'black-board') {
+          node.material.color.setStyle(node.userData.info.color);
+        }
+      }
+    });
+  };
 
-          if (INTERSECTED) {
-            INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
-          }
+  function restoreCamera(position, rotation, controlCenter) {
+    camera.position.set(position.x, position.y, position.z);
+    camera.rotation.set(rotation.x, rotation.y, rotation.z);
 
-          INTERSECTED = intersects[0].object;
+    controls.center.set(controlCenter.x, controlCenter.y, controlCenter.z);
+    controls.update();
 
-          // Follwoing MESH is a mess :()
-          if (INTERSECTED.geoInfo !== undefined) {
-            var currentGeoArea = INTERSECTED.geoInfo;
-            bindGeoDetails(currentGeoArea);
+    render();
+  }
+
+  function disableControls() {
+    clickCounter = 0;
+  };
+
+  function getCenterPoint(mesh) {
+    var middle = new THREE.Vector3();
+    var geometry = mesh.geometry;
+
+    geometry.computeBoundingBox();
+
+    middle.x = (geometry.boundingBox.max.x + geometry.boundingBox.min.x) /
+      2;
+    middle.y = (geometry.boundingBox.max.y + geometry.boundingBox.min.y) /
+      2;
+    middle.z = (geometry.boundingBox.max.z + geometry.boundingBox.min.z) /
+      2;
+
+    mesh.localToWorld(middle);
+    return middle;
+  };
+
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    render();
+  };
+
+  function render() {
+    renderer.render(scene, camera);
+  };
+
+  // This is handling the mouse over thingy.
+  function raycasting() {
+
+    raycaster.setFromCamera(mouse, camera);
+    var intersects = raycaster.intersectObjects(scene.children, true);
+
+    if (intersects.length > 0) {
+      if (INTERSECTED != intersects[0].object) {
+
+        if (INTERSECTED) {
+          INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+        }
+
+        INTERSECTED = intersects[0].object;
+
+        // Follwoing MESH is a mess :()
+        if (INTERSECTED.geoInfo !== undefined) {
+          var currentGeoArea = INTERSECTED.geoInfo;
+          bindGeoDetails(currentGeoArea);
+        } else {
+          if (INTERSECTED.info === undefined) {
+            INTERSECTED = null;
+            return;
           } else {
             if (INTERSECTED.info === undefined) {
               INTERSECTED = null;
@@ -464,11 +512,12 @@ $(document).ready(function() {
             }
           }
         }
-      } else {
-        if (INTERSECTED) INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
-        INTERSECTED = null;
       }
-    };
+    } else {
+      if (INTERSECTED) INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+      INTERSECTED = null;
+    }
+  };
 
 
   function bindGeoDetails(data) {
@@ -498,4 +547,4 @@ $(document).ready(function() {
     $('#box-right').toggleClass('active');
   }
 
-  });
+});
