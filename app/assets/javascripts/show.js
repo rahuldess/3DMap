@@ -51,30 +51,25 @@ $(document).ready(function() {
   addDensityData(SEARCHED_GEO.city, SEARCHED_GEO.type);
 
   function addDensityData(geo, dataType) {
+    console.log("addDensityData alled with ");
+    console.log(geo);
     url = "area_statistics?area=" + geo + "&type=" + dataType;
 
     requestDataFromServer(url).done(function(data) {
-      plotGeoDataPoints(data);
+      var newDataPoints = plotGeoDataPoints(data);
+      addGeoObject(group, InitialSVGData, geo,
+        newDataPoints);
     });
   }
 
   function plotGeoDataPoints(data) {
-    // var obj = new GeoPlotter(data).plot();
-    window.geoData = data;
-    var geom = new THREE.Geometry();
-    var dataToPlot = [];
-    // var latLongCollection = [];
 
-    var cubeMat = new THREE.MeshLambertMaterial({
-      color: 0x000000,
-      opacity: 0.6,
-      emissive: 0xffffff
-    });
+    window.geoData = data;
+    var dataToPlot = [];
 
     // Loop through the Zip codes and grab one lat/long per zip Code for future plotting.
     for (var i = 0; i < data.areas.length; i++) {
       var plotData = {}
-
       plotData["city"] = data.city;
       plotData["zip_code"] = data.areas[i]["zip_code"];
       plotData["lat_lng"] = [data.areas[i]["lat"], data.areas[i]["lng"]];
@@ -89,9 +84,7 @@ $(document).ready(function() {
       plotData["properties"] = data.areas[i]["properties"].slice(1, 4);
       dataToPlot.push(plotData);
     }
-
-    // plotIn3dWorld(dataToPlot);
-    // plotCone();
+    return dataToPlot;
   }
 
   function plotCone() {
@@ -247,8 +240,7 @@ $(document).ready(function() {
     // Get the shapeGeometry from SVG path's
     initSVGObject().done(function(data) {
       InitialSVGData = data;
-      addGeoObject(group, data, SEARCHED_GEO.city.trim().replace("_",
-        " ").toProperCase());
+      // addGeoObject(group, data, SEARCHED_GEO.city, objData);
     });
   };
 
@@ -274,14 +266,14 @@ $(document).ready(function() {
     }
 
     for (var i = 0; i < cityCollection.length; i++) {
-      addGeoObject(group, InitialSVGData, cityCollection[i]);
+      addDensityData(cityCollection[i], SEARCHED_GEO.type);
     }
 
   });
 
   // Add the Shape Geometries with properties to the group
-  function addGeoObject(group, svgObject, geoArr = "") {
-
+  function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {}) {
+    // window.geoDataToBind = geoDataToBind
     window.group = group;
     window.svgObject = svgObject;
 
@@ -294,6 +286,7 @@ $(document).ready(function() {
     len = svgObject.length;
 
     for (i = 0; i < len - 1; ++i) {
+      // console.log(svgObject[i].zip_code);
       path = $d3g.transformSVGPath(svgObject[i].path);
 
       color = new THREE.Color(svgObject[i].color);
@@ -320,6 +313,10 @@ $(document).ready(function() {
         });
 
         mesh = new THREE.Mesh(shape3d, material);
+
+        if (svgObject[i].city_name === cityName) {
+          mesh.geoInfo = geoDataToBind;
+        }
         mesh.userData.info = svgObject[i];
         mesh.rotation.x = Math.PI;
         mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
@@ -506,6 +503,8 @@ $(document).ready(function() {
 
         // Follwoing MESH is a mess :()
         if (INTERSECTED.geoInfo !== undefined) {
+          console.log(INTERSECTED.geoInfo);
+
           var currentGeoArea = INTERSECTED.geoInfo;
           bindGeoDetails(currentGeoArea);
         } else {
@@ -531,9 +530,17 @@ $(document).ready(function() {
   };
 
 
-  function bindGeoDetails(data) {
-    console.log(data);
+  function bindGeoDetails(dataToBind) {
+    // console.log(data);
 
+    console.log(dataToBind);
+    if (_.isUndefined(dataToBind) || dataToBind.length < 1) {
+      console.log("returning");
+      return;
+    }
+    var data = dataToBind[0];
+
+    console.log("starting rendering");
     var container = $("#property_card_list");
     container.html("");
 
@@ -541,6 +548,7 @@ $(document).ready(function() {
     var compiled = _.template($('#property_card_slider').html());
 
     for (var i = 0; i < data.properties.length; i++) {
+
       var parsedHtml = compiled({
         data: data.properties[i]
       });
