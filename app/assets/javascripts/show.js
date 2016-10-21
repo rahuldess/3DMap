@@ -276,6 +276,7 @@ $(document).ready(function() {
             amount: 50,
             bevelEnabled: false
           });
+
           mesh = new THREE.Mesh(shape3d, material);
           mesh.userData.info = svgObject[i];
           mesh.rotation.x = Math.PI;
@@ -288,6 +289,29 @@ $(document).ready(function() {
       }
     };
 
+    // obj = {name: name, amount: amount}
+    function showCityName(name,amount,x,y) {
+      var loader = new THREE.FontLoader();
+      loader.load( '/font.json', function ( font ) {
+        var  textGeo = new THREE.TextGeometry(name, {
+          size: 10,
+          height: 2,
+          curveSegments: 6,
+          font: font
+        });
+
+        var  color = new THREE.Color();
+        color.setRGB(200, 250, 250);
+        var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
+        var  text = new THREE.Mesh(textGeo , textMaterial);
+        text.rotation.x = Math.PI/4
+        text.translateZ(150);
+        text.translateX(-600);
+        text.translateY(-1000);
+        group.add(text);
+        text.position.set(-598.3606705576177, 117.9176352643443, 100);
+      });
+    };
 
     function eventListeners() {
       window.addEventListener('resize', onWindowResize, false);
@@ -320,11 +344,12 @@ $(document).ready(function() {
     function zoomToCity() {
       raycaster2.setFromCamera(mouse, camera);
       var intersects = raycaster2.intersectObjects(scene.children, true);
-
+      console.log(intersects[0].object)
       if ( clickCounter < 1 && intersects.length > 1) {
         clickCounter += 1;
 
         var city_object = getCenterPoint(intersects[0].object);
+        console.log(city_object);
         console.log(intersects[0].object.userData.info.city_name);
 
         controls.target.set(city_object.x, city_object.y, city_object.z);
