@@ -46,25 +46,29 @@ $(document).ready(function() {
   addDensityData(SEARCHED_GEO.city, SEARCHED_GEO.type);
 
   function addDensityData(geo, dataType) {
+    console.log("addDensityData alled with ");
+    console.log(geo);
     url = "area_statistics?area=" + geo + "&type=" + dataType;
 
     requestDataFromServer(url).done(function(data) {
-      plotGeoDataPoints(data);
+      var newDataPoints = plotGeoDataPoints(data);
+      addGeoObject(group, InitialSVGData, geo,
+        newDataPoints);
     });
   }
 
   function plotGeoDataPoints(data) {
     // var obj = new GeoPlotter(data).plot();
     window.geoData = data;
-    var geom = new THREE.Geometry();
+    // var geom = new THREE.Geometry();
     var dataToPlot = [];
-    // var latLongCollection = [];
-
-    var cubeMat = new THREE.MeshLambertMaterial({
-      color: 0x000000,
-      opacity: 0.6,
-      emissive: 0xffffff
-    });
+    // // var latLongCollection = [];
+    //
+    // var cubeMat = new THREE.MeshLambertMaterial({
+    //   color: 0x000000,
+    //   opacity: 0.6,
+    //   emissive: 0xffffff
+    // });
 
     // Loop through the Zip codes and grab one lat/long per zip Code for future plotting.
     for (var i = 0; i < data.areas.length; i++) {
@@ -84,9 +88,10 @@ $(document).ready(function() {
       plotData["properties"] = data.areas[i]["properties"].slice(1, 4);
       dataToPlot.push(plotData);
     }
-
+    // NewGeoData = dataToPlot;
     // plotIn3dWorld(dataToPlot);
     // plotCone();
+    return dataToPlot;
   }
 
   function plotCone() {
@@ -242,8 +247,7 @@ $(document).ready(function() {
     // Get the shapeGeometry from SVG path's
     initSVGObject().done(function(data) {
       InitialSVGData = data;
-      addGeoObject(group, data, SEARCHED_GEO.city.trim().replace("_",
-        " ").toProperCase());
+      // addGeoObject(group, data, SEARCHED_GEO.city, objData);
     });
   };
 
@@ -269,13 +273,14 @@ $(document).ready(function() {
     }
 
     for (var i = 0; i < cityCollection.length; i++) {
-      addGeoObject(group, InitialSVGData, cityCollection[i]);
+      addDensityData(cityCollection[i], SEARCHED_GEO.type);
+      // addGeoObject(group, InitialSVGData, cityCollection[i]);
     }
 
   });
 
   // Add the Shape Geometries with properties to the group
-  function addGeoObject(group, svgObject, geoArr = "") {
+  function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {}) {
 
     window.group = group;
     window.svgObject = svgObject;
@@ -315,6 +320,7 @@ $(document).ready(function() {
         });
 
         mesh = new THREE.Mesh(shape3d, material);
+        mesh.geoInfo = geoDataToBind;
         mesh.userData.info = svgObject[i];
         mesh.rotation.x = Math.PI;
         mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
@@ -469,6 +475,7 @@ $(document).ready(function() {
 
         INTERSECTED = intersects[0].object;
 
+        console.log(INTERSECTED.geoInfo);
         // Follwoing MESH is a mess :()
         if (INTERSECTED.geoInfo !== undefined) {
           var currentGeoArea = INTERSECTED.geoInfo;
