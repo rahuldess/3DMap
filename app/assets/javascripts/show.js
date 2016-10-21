@@ -400,20 +400,23 @@ $(document).ready(function() {
   function zoomToCity() {
     raycaster2.setFromCamera(mouse, camera);
     var intersects = raycaster2.intersectObjects(scene.children, true);
-    console.log(intersects[0].object);
-    if (clickCounter < 1 && intersects.length > 1) {
-      clickCounter += 1;
-
-      var city_object = getCenterPoint(intersects[0].object);
-      console.log(city_object);
-      console.log(intersects[0].object.userData.info.city_name);
-
-      controls.target.set(city_object.x, city_object.y, city_object.z);
-      controls.dollyIn(4);
-
-      fadeOutOtherCities(intersects[0].object);
-      enableCloseZoomBtn();
+    if (clickCounter < 1) {
+      $('#box-bottom-left').toggleClass('active');
+      $('#box-right').toggleClass('active');
     }
+    // if (clickCounter < 1 && intersects.length > 1) {
+    //   clickCounter += 1;
+    //
+    //   var city_object = getCenterPoint(intersects[0].object);
+    //   console.log(city_object);
+    //   console.log(intersects[0].object.userData.info.city_name);
+    //
+    //   controls.target.set(city_object.x, city_object.y, city_object.z);
+    //   controls.dollyIn(4);
+    //
+    //   fadeOutOtherCities(intersects[0].object);
+    //   enableCloseZoomBtn();
+    // }
   };
 
   function fadeOutOtherCities(selectedCity) {
@@ -578,9 +581,9 @@ $(document).ready(function() {
 
     // ------- End binding POI
 
-
-    $('#box-bottom-left').toggleClass('active');
-    $('#box-right').toggleClass('active');
+    // 
+    // $('#box-bottom-left').toggleClass('active');
+    // $('#box-right').toggleClass('active');
   }
 
 });
