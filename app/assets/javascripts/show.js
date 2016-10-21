@@ -22,14 +22,14 @@ $(document).ready(function() {
     theta = 0,
     INTERSECTED;
 
-  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 10, x: -598.3606705576177 , y: 117.91763526434431 },
-    { name: 'Santa Clara', amount: 10, x: -486.96295786323947, y: 40.636799934262626 },
-    { name: 'San Jose', amount: 10, x: -30.01751928943986, y: -157.82504742736774 },
-    { name: 'Saratoga', amount: 10, x: -402.12370864348713, y: -171.24960490474427 },
-    { name: 'Montain View', amount: 10, x: -838.3606705576177 , y: 187.91763526434431 },
-    { name: 'Campbell', amount: 10, x: -692.6379782657775, y: -248.47880165292645 },
-    { name: 'Curtepino', amount: 10, x: -800.6379782657775, y: -108.47880165292645 },
-    { name: 'Los Gatos', amount: 10, x: -950.6379782657775, y: 58.47880165292645 }
+  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 170, x: -648.3606705576177 , y: 147.91763526434431 },
+    { name: 'Santa Clara', amount: 330, x: -486.96295786323947, y: 40.636799934262626 },
+    { name: 'San Jose', amount: 100, x: -30.01751928943986, y: -157.82504742736774 },
+    { name: 'Saratoga', amount: 150, x: -402.12370864348713, y: -171.24960490474427 },
+    { name: 'Montain View', amount: 130, x: -838.3606705576177 , y: 187.91763526434431 },
+    { name: 'Campbell', amount: 170, x: -692.6379782657775, y: -248.47880165292645 },
+    { name: 'Curtepino', amount: 180, x: -800.6379782657775, y: -108.47880165292645 },
+    { name: 'Los Gatos', amount: 125, x: -950.6379782657775, y: 58.47880165292645 }
 
   ];
 
@@ -351,6 +351,7 @@ $(document).ready(function() {
 
     // obj = {name: name, amount: amount}
     function showCityName(name,amount,x,y) {
+      console.log(amount)
       var loader = new THREE.FontLoader();
       loader.load( '/font.json', function ( font ) {
         var  textGeo = new THREE.TextGeometry(name, {
@@ -365,11 +366,11 @@ $(document).ready(function() {
         var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
         var  text = new THREE.Mesh(textGeo , textMaterial);
         text.rotation.x = Math.PI/4
-        text.translateZ(amount);
+        text.translateZ(0);
         text.translateX(-600);
         text.translateY(-1000);
         group.add(text);
-        text.position.set(x, y, 100);
+        text.position.set(x, y, amount);
       });
   };
 

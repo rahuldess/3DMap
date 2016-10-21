@@ -39,14 +39,14 @@ class SvgController < ApplicationController
 
   def color_match
     {
-      "Santa Clara"   => "#5E0AC2",
+      "Santa Clara"   => "#68D600",
       "San Jose"      => "#2E0ACC",
       "Mountain View" => "#666900",
       "Cupertino"     => "gold",
-      "Campbell"      => "#4093FF",
-      "Los Altos"     => "#68D600",
+      "Campbell"      => "#4271B5",
+      "Los Altos"     => "#5E0AC2",
       "Palo Alto"     => "#B1B500",
-      "Saratoga"      => "#4271B5",
+      "Saratoga"      => "#4093FF",
       "Sunnyvale"     => "#B568FF",
       "Alviso"        => "#CA49D9"
     }
