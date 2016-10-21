@@ -400,9 +400,12 @@ $(document).ready(function() {
   function zoomToCity() {
     raycaster2.setFromCamera(mouse, camera);
     var intersects = raycaster2.intersectObjects(scene.children, true);
-    if (clickCounter < 1) {
-      $('#box-bottom-left').toggleClass('active');
-      $('#box-right').toggleClass('active');
+    if (intersects.length > 1) {
+      $('#box-bottom-left').addClass('active');
+      $('#box-right').addClass('active');
+    } else if(intersects.length < 1) {
+      $('#box-bottom-left').removeClass('active');
+      $('#box-right').removeClass('active');
     }
     // if (clickCounter < 1 && intersects.length > 1) {
     //   clickCounter += 1;
@@ -581,7 +584,7 @@ $(document).ready(function() {
 
     // ------- End binding POI
 
-    // 
+    //
     // $('#box-bottom-left').toggleClass('active');
     // $('#box-right').toggleClass('active');
   }
