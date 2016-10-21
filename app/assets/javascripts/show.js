@@ -25,7 +25,9 @@ $(document).ready(function() {
   const CITY_POINTS = [{ name: 'Sunnyvale', amount: 10, x: -598.3606705576177 , y: 117.91763526434431 },
     { name: 'Santa Clara', amount: 10, x: -486.96295786323947, y: 40.636799934262626 },
     { name: 'San Jose', amount: 10, x: -30.01751928943986, y: -157.82504742736774 },
-    { name: 'Saratoga', amount: 10, x: -692.6379782657775, y: -248.47880165292645 }];
+    { name: 'Saratoga', amount: 10, x: -692.6379782657775, y: -248.47880165292645 },
+    { name: 'Campbell', amount: 10, x: -692.6379782657775, y: -248.47880165292645 }
+  ];
 
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
@@ -194,7 +196,7 @@ $(document).ready(function() {
     // Sets the camera.
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
       1, 20000);
-    camera.position.set(0, -1300, 1500);
+    camera.position.set(0, -1400, 1400);
 
 
     trackMovement();
@@ -221,6 +223,14 @@ $(document).ready(function() {
     directionLightRight = new THREE.DirectionalLight(0xffffff, 0.5);
     directionLightRight.position.set(500, 0, 100);
     scene.add(directionLightRight);
+
+    var directionLightTop = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionLightTop.position.set(0, 500, 100);
+    scene.add(directionLightTop);
+
+    var directionLightBottom = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionLightBottom.position.set(0, -500, 100);
+    scene.add(directionLightBottom);
 
     // This is for big plane which is at back of all our city geometries.
     var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
@@ -341,7 +351,7 @@ $(document).ready(function() {
         var  textGeo = new THREE.TextGeometry(name, {
           size: 20,
           height: 2,
-          curveSegments: 6,
+          curveSegments: 16,
           font: font
         });
 
