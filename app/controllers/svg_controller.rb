@@ -23,17 +23,31 @@ class SvgController < ApplicationController
 
   def color_match
     {
-      "Santa Clara"   => "red",
-      "Santa Jose"    => "yellow",
-      "Mountain View" => "blue",
-      "Cupertino"     => "green",
-      "Campbell"      => "purple",
-      "Los Altos"     => "brown",
-      "Palo Alto"     => "black",
-      "Saratoga"      => "white",
-      "Sunnyvale"     => "gold"
+      "Santa Clara"   => "#5E0AC2",
+      "San Jose"      => "#2E0ACC",
+      "Mountain View" => "#666900",
+      "Cupertino"     => "gold",
+      "Campbell"      => "#4093FF",
+      "Los Altos"     => "#68D600",
+      "Palo Alto"     => "#B1B500",
+      "Saratoga"      => "#4271B5",
+      "Sunnyvale"     => "#B568FF",
+      "Alviso"        => "#CA49D9"
     }
   end
+  # def color_match
+  #   {
+  #     "Santa Clara"   => "red",
+  #     "Santa Jose"    => "yellow",
+  #     "Mountain View" => "blue",
+  #     "Cupertino"     => "green",
+  #     "Campbell"      => "purple",
+  #     "Los Altos"     => "brown",
+  #     "Palo Alto"     => "black",
+  #     "Saratoga"      => "white",
+  #     "Sunnyvale"     => "gold"
+  #   }
+  # end
 
   #
   # {
