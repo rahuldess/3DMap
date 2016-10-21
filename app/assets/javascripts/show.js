@@ -22,12 +22,32 @@ $(document).ready(function() {
     theta = 0,
     INTERSECTED;
 
-  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 160, x: -598.3606705576177 , y: 117.91763526434431 },
-    { name: 'Santa Clara', amount: 300, x: -486.96295786323947, y: 40.636799934262626 },
-    { name: 'San Jose', amount: 50, x: -30.01751928943986, y: -157.82504742736774 },
-    { name: 'Saratoga', amount: 130, x: -692.6379782657775, y: -248.47880165292645 },
-    { name: 'Campbell', amount: 160, x: -692.6379782657775, y: -248.47880165292645 }
-  ];
+  const CITY_POINTS = [{
+    name: 'Sunnyvale',
+    amount: 160,
+    x: -598.3606705576177,
+    y: 117.91763526434431
+  }, {
+    name: 'Santa Clara',
+    amount: 300,
+    x: -486.96295786323947,
+    y: 40.636799934262626
+  }, {
+    name: 'San Jose',
+    amount: 50,
+    x: -30.01751928943986,
+    y: -157.82504742736774
+  }, {
+    name: 'Saratoga',
+    amount: 130,
+    x: -692.6379782657775,
+    y: -248.47880165292645
+  }, {
+    name: 'Campbell',
+    amount: 160,
+    x: -692.6379782657775,
+    y: -248.47880165292645
+  }];
 
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
@@ -282,7 +302,8 @@ $(document).ready(function() {
   });
 
   // Add the Shape Geometries with properties to the group
-  function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {}) {
+  function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {},
+    medianPrice = false) {
     // window.geoDataToBind = geoDataToBind
     window.group = group;
     window.svgObject = svgObject;
@@ -309,7 +330,15 @@ $(document).ready(function() {
       len1 = simpleShapes.length;
 
       for (j = 0; j < len1; ++j) {
-        var bevelAmount = Math.floor(Math.random() * 40) + svgObject[i].geo_base;
+
+        var baseValue = 0;
+        if (medianPrice) {
+          baseValue = svgObject[i].median_price_base;
+        } else {
+          baseValue = svgObject[i].geo_base;
+        }
+
+        var bevelAmount = Math.floor(Math.random() * 40) + baseValue;
 
         // if (svgObject[i].city_name === cityName) {
         //   bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
@@ -339,34 +368,36 @@ $(document).ready(function() {
     }
 
     $.each(CITY_POINTS, function(i, obj) {
-      if ( obj.name !== undefined ) {
+      if (obj.name !== undefined) {
         showCityName(obj.name, obj.amount, obj.x, obj.y);
       }
     });
   };
 
-    // obj = {name: name, amount: amount}
-    function showCityName(name,amount,x,y) {
-      var loader = new THREE.FontLoader();
-      loader.load( '/font.json', function ( font ) {
-        var  textGeo = new THREE.TextGeometry(name, {
-          size: 20,
-          height: 2,
-          curveSegments: 16,
-          font: font
-        });
-
-        var  color = new THREE.Color();
-        color.setRGB(200, 250, 250);
-        var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
-        var  text = new THREE.Mesh(textGeo , textMaterial);
-        text.rotation.x = Math.PI/4
-        text.translateZ(amount);
-        text.translateX(-600);
-        text.translateY(-1000);
-        group.add(text);
-        text.position.set(x, y, 100);
+  // obj = {name: name, amount: amount}
+  function showCityName(name, amount, x, y) {
+    var loader = new THREE.FontLoader();
+    loader.load('/font.json', function(font) {
+      var textGeo = new THREE.TextGeometry(name, {
+        size: 20,
+        height: 2,
+        curveSegments: 16,
+        font: font
       });
+
+      var color = new THREE.Color();
+      color.setRGB(200, 250, 250);
+      var textMaterial = new THREE.MeshBasicMaterial({
+        color: color
+      });
+      var text = new THREE.Mesh(textGeo, textMaterial);
+      text.rotation.x = Math.PI / 4
+      text.translateZ(amount);
+      text.translateX(-600);
+      text.translateY(-1000);
+      group.add(text);
+      text.position.set(x, y, 100);
+    });
   };
 
   function eventListeners() {
@@ -432,6 +463,9 @@ $(document).ready(function() {
     });
   };
 
+  $("#median_price_header").on('click', function() {
+    addGeoObject(group, InitialSVGData, geo, {}, true);
+  });
 
   function enableCloseZoomBtn() {
     $('#close-city-zoom').show();
@@ -581,7 +615,7 @@ $(document).ready(function() {
 
     // ------- End binding POI
 
-    // 
+    //
     // $('#box-bottom-left').toggleClass('active');
     // $('#box-right').toggleClass('active');
   }
