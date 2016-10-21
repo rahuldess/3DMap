@@ -30,6 +30,7 @@ $(document).ready(function() {
     { name: 'Campbell', amount: 10, x: -692.6379782657775, y: -248.47880165292645 },
     { name: 'Curtepino', amount: 10, x: -800.6379782657775, y: -108.47880165292645 },
     { name: 'Los Gatos', amount: 10, x: -950.6379782657775, y: 58.47880165292645 }
+
   ];
 
   // Canvas will be attached to this DIV element created
@@ -312,11 +313,12 @@ $(document).ready(function() {
       len1 = simpleShapes.length;
 
       for (j = 0; j < len1; ++j) {
-        var bevelAmount = 0;
-        if (svgObject[i].city_name === cityName) {
-          bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
-            20;
-        }
+        var bevelAmount = Math.floor(Math.random() * 40) + svgObject[i].geo_base;
+
+        // if (svgObject[i].city_name === cityName) {
+        //   bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
+        //     20;
+        // }
 
         simpleShape = simpleShapes[j];
         shape3d = simpleShape.extrude({
@@ -363,7 +365,7 @@ $(document).ready(function() {
         var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
         var  text = new THREE.Mesh(textGeo , textMaterial);
         text.rotation.x = Math.PI/4
-        text.translateZ(150);
+        text.translateZ(amount);
         text.translateX(-600);
         text.translateY(-1000);
         group.add(text);
@@ -402,20 +404,26 @@ $(document).ready(function() {
   function zoomToCity() {
     raycaster2.setFromCamera(mouse, camera);
     var intersects = raycaster2.intersectObjects(scene.children, true);
-    console.log(intersects[0].object)
-    if (clickCounter < 1 && intersects.length > 1) {
-      clickCounter += 1;
-
-      var city_object = getCenterPoint(intersects[0].object);
-      console.log(city_object);
-      console.log(intersects[0].object.userData.info.city_name);
-
-      controls.target.set(city_object.x, city_object.y, city_object.z);
-      controls.dollyIn(4);
-
-      fadeOutOtherCities(intersects[0].object);
-      enableCloseZoomBtn();
+    if (intersects.length > 1) {
+      $('#box-bottom-left').addClass('active');
+      $('#box-right').addClass('active');
+    } else if(intersects.length < 1) {
+      $('#box-bottom-left').removeClass('active');
+      $('#box-right').removeClass('active');
     }
+    // if (clickCounter < 1 && intersects.length > 1) {
+    //   clickCounter += 1;
+    //
+    //   var city_object = getCenterPoint(intersects[0].object);
+    //   console.log(city_object);
+    //   console.log(intersects[0].object.userData.info.city_name);
+    //
+    //   controls.target.set(city_object.x, city_object.y, city_object.z);
+    //   controls.dollyIn(4);
+    //
+    //   fadeOutOtherCities(intersects[0].object);
+    //   enableCloseZoomBtn();
+    // }
   };
 
   function fadeOutOtherCities(selectedCity) {
@@ -443,8 +451,6 @@ $(document).ready(function() {
     $('#close-city-zoom').hide();
     disableControls();
   });
-
-
 
   function restoreCityColors() {
     scene.traverse(function(node) {
@@ -520,6 +526,7 @@ $(document).ready(function() {
 
           var currentGeoArea = INTERSECTED.geoInfo;
           bindGeoDetails(currentGeoArea);
+          INTERSECTED = null;
         } else {
           if (INTERSECTED.info === undefined) {
             INTERSECTED = null;
@@ -581,9 +588,9 @@ $(document).ready(function() {
 
     // ------- End binding POI
 
-
-    $('#box-bottom-left').toggleClass('active');
-    $('#box-right').toggleClass('active');
+    //
+    // $('#box-bottom-left').toggleClass('active');
+    // $('#box-right').toggleClass('active');
   }
 
 });
