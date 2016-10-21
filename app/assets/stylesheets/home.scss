@@ -174,15 +174,23 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
 }
 /***************** Bottom Box ************************/
 #box-bottom{
-  height: 100px;
+  height: 65px;
   bottom: $box-to-border;
   left: 270px;
   right:320px;
-  .city-item{
-    width: 80px;
-    height: 80px;
-    background-color: red;
-    display: inline-block;
+  padding:15px;
+  input{display: none;}
+  label{
+    padding: 8px 15px;
+    border:1px solid white;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  input:checked + label{
+    border:1px solid white;
+    color:white;
+    background-color: #d92228;
   }
 
 }

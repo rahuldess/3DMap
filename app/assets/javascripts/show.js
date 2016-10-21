@@ -23,31 +23,48 @@ $(document).ready(function() {
     INTERSECTED;
 
   const CITY_POINTS = [{
-    name: 'Sunnyvale',
-    amount: 160,
-    x: -598.3606705576177,
-    y: 117.91763526434431
-  }, {
-    name: 'Santa Clara',
-    amount: 300,
-    x: -486.96295786323947,
-    y: 40.636799934262626
-  }, {
-    name: 'San Jose',
-    amount: 50,
-    x: -30.01751928943986,
-    y: -157.82504742736774
-  }, {
-    name: 'Saratoga',
-    amount: 130,
-    x: -692.6379782657775,
-    y: -248.47880165292645
-  }, {
-    name: 'Campbell',
-    amount: 160,
-    x: -692.6379782657775,
-    y: -248.47880165292645
-  }];
+      name: 'Sunnyvale',
+      amount: 10,
+      x: -598.3606705576177,
+      y: 117.91763526434431
+    }, {
+      name: 'Santa Clara',
+      amount: 10,
+      x: -486.96295786323947,
+      y: 40.636799934262626
+    }, {
+      name: 'San Jose',
+      amount: 10,
+      x: -30.01751928943986,
+      y: -157.82504742736774
+    }, {
+      name: 'Saratoga',
+      amount: 10,
+      x: -402.12370864348713,
+      y: -171.24960490474427
+    }, {
+      name: 'Montain View',
+      amount: 10,
+      x: -838.3606705576177,
+      y: 187.91763526434431
+    }, {
+      name: 'Campbell',
+      amount: 10,
+      x: -692.6379782657775,
+      y: -248.47880165292645
+    }, {
+      name: 'Curtepino',
+      amount: 10,
+      x: -800.6379782657775,
+      y: -108.47880165292645
+    }, {
+      name: 'Los Gatos',
+      amount: 10,
+      x: -950.6379782657775,
+      y: 58.47880165292645
+    }
+
+  ];
 
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
