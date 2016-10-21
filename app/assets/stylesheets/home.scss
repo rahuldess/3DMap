@@ -186,7 +186,20 @@ $hover-box-shadow:        0 3px 3px rgba(0,0,0,0.4);
     visibility: hidden;
   }
 }
+/***************** Bottom Box ************************/
+#box-bottom{
+  height: 100px;
+  bottom: $box-to-border;
+  left: 270px;
+  right:320px;
+  .city-item{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    display: inline-block;
+  }
 
+}
 /***************** Property Cards ************************/
 .property-card{
   position: relative;
