@@ -21,6 +21,10 @@ class SvgController < ApplicationController
     return array
   end
 
+  def geo_height
+    
+  end
+
   def color_match
     {
       "Santa Clara"   => "red",
