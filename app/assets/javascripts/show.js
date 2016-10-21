@@ -345,6 +345,8 @@ $(document).ready(function() {
       clickCounter += 1;
 
       var city_object = getCenterPoint(intersects[0].object);
+      console.log(intersects[0].object.userData.info.city_name);
+
       controls.target.set(city_object.x, city_object.y, city_object.z);
       controls.dollyIn(4);
 
@@ -354,17 +356,18 @@ $(document).ready(function() {
   };
 
   function fadeOutOtherCities(selectedCity) {
-    var cityName = selectedCity.userData.info.name;
+    var cityName = selectedCity.userData.info.city_name;
 
     scene.traverse(function(node) {
       if (node instanceof THREE.Mesh) {
-        if (node.userData.info.name !== cityName && node.userData.info.name !==
-          'black-board') {
+        if (node.userData.info.city_name !== cityName && node.userData.info
+          .city_name !== 'black-board') {
           node.material.color.setHex('#000000');
         }
       }
     });
   };
+
 
   function enableCloseZoomBtn() {
     $('#close-city-zoom').show();
@@ -382,7 +385,7 @@ $(document).ready(function() {
     scene.traverse(function(node) {
       if (node instanceof THREE.Mesh) {
         // node.material.color.setHex(new THREE.Color(node.material.color));
-        if (node.userData.info.name !== 'black-board') {
+        if (node.userData.info.city_name !== 'black-board') {
           node.material.color.setStyle(node.userData.info.color);
         }
       }
@@ -455,10 +458,14 @@ $(document).ready(function() {
             INTERSECTED = null;
             return;
           } else {
-            // console.log(INTERSECTED.info);
-            INTERSECTED = null;
-            // INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
-            // INTERSECTED.material.color.setHex(0xff0000);
+            if (INTERSECTED.info === undefined) {
+              INTERSECTED = null;
+              return;
+            } else {
+              INTERSECTED = null;
+              INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+              INTERSECTED.material.color.setHex(0xff0000);
+            }
           }
         }
       }
