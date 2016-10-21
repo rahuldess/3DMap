@@ -22,11 +22,11 @@ $(document).ready(function() {
     theta = 0,
     INTERSECTED;
 
-  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 10, x: -598.3606705576177 , y: 117.91763526434431 },
-    { name: 'Santa Clara', amount: 10, x: -486.96295786323947, y: 40.636799934262626 },
-    { name: 'San Jose', amount: 10, x: -30.01751928943986, y: -157.82504742736774 },
-    { name: 'Saratoga', amount: 10, x: -692.6379782657775, y: -248.47880165292645 },
-    { name: 'Campbell', amount: 10, x: -692.6379782657775, y: -248.47880165292645 }
+  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 160, x: -598.3606705576177 , y: 117.91763526434431 },
+    { name: 'Santa Clara', amount: 300, x: -486.96295786323947, y: 40.636799934262626 },
+    { name: 'San Jose', amount: 50, x: -30.01751928943986, y: -157.82504742736774 },
+    { name: 'Saratoga', amount: 130, x: -692.6379782657775, y: -248.47880165292645 },
+    { name: 'Campbell', amount: 160, x: -692.6379782657775, y: -248.47880165292645 }
   ];
 
   // Canvas will be attached to this DIV element created
@@ -309,11 +309,12 @@ $(document).ready(function() {
       len1 = simpleShapes.length;
 
       for (j = 0; j < len1; ++j) {
-        var bevelAmount = 0;
-        if (svgObject[i].city_name === cityName) {
-          bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
-            20;
-        }
+        var bevelAmount = Math.floor(Math.random() * 40) + svgObject[i].geo_base;
+
+        // if (svgObject[i].city_name === cityName) {
+        //   bevelAmount = Math.floor(Math.random() * svgObject[i].geo_base) +
+        //     20;
+        // }
 
         simpleShape = simpleShapes[j];
         shape3d = simpleShape.extrude({
@@ -360,7 +361,7 @@ $(document).ready(function() {
         var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
         var  text = new THREE.Mesh(textGeo , textMaterial);
         text.rotation.x = Math.PI/4
-        text.translateZ(150);
+        text.translateZ(amount);
         text.translateX(-600);
         text.translateY(-1000);
         group.add(text);
@@ -399,7 +400,7 @@ $(document).ready(function() {
   function zoomToCity() {
     raycaster2.setFromCamera(mouse, camera);
     var intersects = raycaster2.intersectObjects(scene.children, true);
-    console.log(intersects[0].object)
+    console.log(intersects[0].object);
     if (clickCounter < 1 && intersects.length > 1) {
       clickCounter += 1;
 
@@ -440,8 +441,6 @@ $(document).ready(function() {
     $('#close-city-zoom').hide();
     disableControls();
   });
-
-
 
   function restoreCityColors() {
     scene.traverse(function(node) {
@@ -517,6 +516,7 @@ $(document).ready(function() {
 
           var currentGeoArea = INTERSECTED.geoInfo;
           bindGeoDetails(currentGeoArea);
+          INTERSECTED = null;
         } else {
           if (INTERSECTED.info === undefined) {
             INTERSECTED = null;
