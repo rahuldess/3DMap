@@ -263,7 +263,7 @@ $(document).ready(function() {
     });
     plane = new THREE.Mesh(planGeometry, planeMaterial);
     plane.userData.info = {
-      name: 'black-board'
+      city_name: 'black-board'
     };
     group.add(plane);
 
@@ -305,6 +305,7 @@ $(document).ready(function() {
   function addGeoObject(group, svgObject, geoArr = "", geoDataToBind = {},
     medianPrice = false) {
     // window.geoDataToBind = geoDataToBind
+    // console.log(group);
     window.group = group;
     window.svgObject = svgObject;
 
@@ -315,6 +316,23 @@ $(document).ready(function() {
     var cityName = geoArr.trim().replace("_", " ").toProperCase();
 
     len = svgObject.length;
+
+    if (medianPrice) {
+      group.children = [];
+      var planGeometry = new THREE.PlaneGeometry(3000, 1500, 90, 90);
+      // var planGeometry = new THREE.PlaneGeometry(3000, 1500, 10);
+      var planeMaterial = new THREE.MeshBasicMaterial({
+        color: '#EE82EE',
+        wireframe: true,
+        // blending: THREE.NoBlending,
+        side: THREE.DoubleSide
+      });
+      plane = new THREE.Mesh(planGeometry, planeMaterial);
+      plane.userData.info = {
+        city_name: 'black-board'
+      };
+      group.add(plane);
+    }
 
     for (i = 0; i < len - 1; ++i) {
       // console.log(svgObject[i].zip_code);
@@ -434,7 +452,7 @@ $(document).ready(function() {
     if (intersects.length > 1) {
       $('#box-bottom-left').addClass('active');
       $('#box-right').addClass('active');
-    } else if(intersects.length < 1) {
+    } else if (intersects.length < 1) {
       $('#box-bottom-left').removeClass('active');
       $('#box-right').removeClass('active');
     }
@@ -466,9 +484,16 @@ $(document).ready(function() {
     });
   };
 
+
+
   $("#median_price_header").on('click', function() {
-    addGeoObject(group, InitialSVGData, geo, {}, true);
+    addGeoObject(group, InitialSVGData, "", {}, true);
   });
+
+  $("#hot_areas_header").on('click', function() {
+    addGeoObject(group, InitialSVGData, "", {}, false);
+  });
+
 
   function enableCloseZoomBtn() {
     $('#close-city-zoom').show();
