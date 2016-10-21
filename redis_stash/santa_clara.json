@@ -653,6 +653,8 @@
       "lat": 37.324656,
       "long": -121.961173,
       "display_address": "281 Bel Ayre, Santa Clara, CA-95050",
+      "pic_url": "http://ap.rdcpix.com/995930109/9545140b1cf4390dd1a7d8923fe5a3f2l-m0xd-w640_h480_q80.jpg",
+      "price": "$1,699,000",
       "data_points": [{
         "date": "2016-10-18",
         "views": "2",
@@ -809,6 +811,8 @@
       "lat": 37.331415,
       "long": -121.955574,
       "display_address": "318 Los Padres, Santa Clara, CA-95050",
+      "pic_url": "http://ap.rdcpix.com/1807588077/8f4e96db865e2cbab82d014de8aca349l-m0xd-w640_h480_q80.jpg",
+      "price": "$1,199,000",
       "data_points": [{
         "date": "2016-10-18",
         "views": "1",
@@ -947,6 +951,8 @@
       "lat": 37.3349,
       "long": -121.95875,
       "display_address": "2278 Rita, Santa Clara, CA-95050",
+      "pic_url": "http://ap.rdcpix.com/95274108/0826ec4585833ae8cdcaadfc331bc1fal-m0xd-w640_h480_q80.jpg",
+      "price": "$975,000",
       "data_points": [{
         "date": "2016-10-18",
         "views": "2",

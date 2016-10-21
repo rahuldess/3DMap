@@ -119,7 +119,7 @@ $(document).ready(function() {
         i]["leads_submitted"] + data.areas[i]["saved"] + data.areas[i][
         "shared"
       ];
-      plotData["properties"] = data.areas[i]["properties"].slice(1, 4);
+      plotData["properties"] = data.areas[i]["properties"].slice(1, 6);
       dataToPlot.push(plotData);
     }
     return dataToPlot;
