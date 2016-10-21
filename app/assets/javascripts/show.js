@@ -22,6 +22,11 @@ $(document).ready(function() {
     theta = 0,
     INTERSECTED;
 
+  const CITY_POINTS = [{ name: 'Sunnyvale', amount: 10, x: -598.3606705576177 , y: 117.91763526434431 },
+    { name: 'Santa Clara', amount: 10, x: -486.96295786323947, y: 40.636799934262626 },
+    { name: 'San Jose', amount: 10, x: -30.01751928943986, y: -157.82504742736774 },
+    { name: 'Saratoga', amount: 10, x: -692.6379782657775, y: -248.47880165292645 }];
+
   // Canvas will be attached to this DIV element created
   var container = document.createElement('div');
   document.body.appendChild(container);
@@ -324,6 +329,12 @@ $(document).ready(function() {
         group.add(mesh);
       }
     }
+
+    $.each(CITY_POINTS, function(i, obj) {
+      if ( obj.name !== undefined ) {
+        showCityName(obj.name, obj.amount, obj.x, obj.y);
+      }
+    });
   };
 
     // obj = {name: name, amount: amount}
@@ -331,7 +342,7 @@ $(document).ready(function() {
       var loader = new THREE.FontLoader();
       loader.load( '/font.json', function ( font ) {
         var  textGeo = new THREE.TextGeometry(name, {
-          size: 10,
+          size: 20,
           height: 2,
           curveSegments: 6,
           font: font
@@ -346,7 +357,7 @@ $(document).ready(function() {
         text.translateX(-600);
         text.translateY(-1000);
         group.add(text);
-        text.position.set(-598.3606705576177, 117.9176352643443, 100);
+        text.position.set(x, y, 100);
       });
     };
 
