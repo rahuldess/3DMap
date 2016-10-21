@@ -241,7 +241,9 @@ $(document).ready(function() {
 
     // Get the shapeGeometry from SVG path's
     initSVGObject().done(function(data) {
-      addGeoObject(group, data, SEARCHED_GEO.city);
+      InitialSVGData = data;
+      addGeoObject(group, data, SEARCHED_GEO.city.trim().replace("_",
+        " ").toProperCase());
     });
   };
 
@@ -257,17 +259,32 @@ $(document).ready(function() {
     });
   };
 
+  cityCollection = [];
+  $('.city-checkbox').on('click', function() {
+    var cityName = $(this)[0].value;
+    if ($(this)[0].checked) {
+      cityCollection.push(cityName);
+    } else {
+      cityCollection.pop(cityName);
+    }
+
+    for (var i = 0; i < cityCollection.length; i++) {
+      addGeoObject(group, InitialSVGData, cityCollection[i]);
+    }
+
+  });
+
   // Add the Shape Geometries with properties to the group
   function addGeoObject(group, svgObject, geoArr = "") {
+
     window.group = group;
     window.svgObject = svgObject;
-
 
     var i, j, len, len1;
     var mesh, color, material, amount, simpleShapes, simpleShape, shape3d,
       x, toAdd, results = [];
 
-    var cityName = geoArr.replace("_", " ").toProperCase();
+    var cityName = geoArr.trim().replace("_", " ").toProperCase();
 
     len = svgObject.length;
 
@@ -279,7 +296,7 @@ $(document).ready(function() {
         color: color,
       });
 
-      amount = 50;
+      amount = 0;
       simpleShapes = path.toShapes(true);
       len1 = simpleShapes.length;
 
@@ -381,6 +398,8 @@ $(document).ready(function() {
     $('#close-city-zoom').hide();
     disableControls();
   });
+
+
 
   function restoreCityColors() {
     scene.traverse(function(node) {
