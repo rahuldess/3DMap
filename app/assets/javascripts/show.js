@@ -90,11 +90,11 @@ $(document).ready(function() {
   }
 
   function plotCone() {
-    const Y_UNIT = 0.00268209219,
-      X_UNIT = 0.00935987756;
+    const Y_UNIT = 5.3898302533,
+      X_UNIT = 5.3823801302;
 
-    const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-    const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+    const PIVOT_POINT = [37.34072, -121.93221]; // (y , x)
+    const POVOT_POINT_SVG = [484.378916507, 1756.57331242]; //(x, y)
 
     var points = [
       [37.3555465, -121.9586176],
@@ -106,9 +106,9 @@ $(document).ready(function() {
       var lng = points[i][1];
 
       var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
-        100000
+        1000
       var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
-        100000
+        1000
 
       var coneGeometry = new THREE.ConeGeometry(28, 120, 60);
       var coneMaterial = new THREE.MeshBasicMaterial({
@@ -131,16 +131,17 @@ $(document).ready(function() {
       var lat = geoPoints[x]["lat_lng"][0];
       var lng = geoPoints[x]["lat_lng"][1];
 
-      const Y_UNIT = 0.05268209219,
-        X_UNIT = 0.05235987756;
+      const Y_UNIT = 5.3898302533,
+        X_UNIT = 5.3823801302;
 
-      const PIVOT_POINT = [37.36261, -122.08903]; // (y , x)
-      const POVOT_POINT_SVG = [43.30236423376482, 69.81056448139134]; //(x, y)
+      const PIVOT_POINT = [37.34072, -121.93221]; // (y , x)
+      const POVOT_POINT_SVG = [484.378916507, 1756.57331242]; //(x, y)
 
       var newY = POVOT_POINT_SVG[1] - (lat - PIVOT_POINT[0]) * Y_UNIT *
-        100000
+        1000
       var newX = POVOT_POINT_SVG[0] + (lng - PIVOT_POINT[1]) * X_UNIT *
-        100000
+        1000
+
 
 
       svgToPlot = "M," + newX + "," + newY + ", L," + (newX + 30) + "," + (
@@ -155,12 +156,10 @@ $(document).ready(function() {
 
       simpleShapes = path.toShapes(true);
       for (j = 0; j < simpleShapes.length; ++j) {
-        var bevelAmount = Math.floor(Math.random() * 9) + 2;
         simpleShape = simpleShapes[j];
         shape3d = simpleShape.extrude({
-          amount: 800,
-          bevelEnabled: true,
-          bevelThickness: bevelAmount
+          amount: 100,
+          bevelEnabled: false
         });
       }
       mesh = new THREE.Mesh(shape3d, material);
@@ -169,10 +168,9 @@ $(document).ready(function() {
       mesh.geoInfo = geoPoints[x];
       mesh.rotation.x = Math.PI;
       mesh.scale.set(0.5635568066383669, 0.5635568066383669, 1);
-      // mesh.scale.set(1, 1, 1);
-      mesh.translateZ(-180);
+      mesh.translateZ(-100);
       mesh.translateX(-600);
-      mesh.translateY(-150);
+      mesh.translateY(-1000);
     } // end of for Loop
 
 
