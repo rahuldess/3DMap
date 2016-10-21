@@ -24,13 +24,13 @@ class SvgController < ApplicationController
 
   def geo_amt_base
     {
-      "Santa Clara"   => 70,
-      "San Jose"      => 80,
-      "Mountain View" => 40,
-      "Cupertino"     => 20,
-      "Campbell"      => 10,
+      "Santa Clara"   => 250,
+      "San Jose"      => 10,
+      "Mountain View" => 30,
+      "Cupertino"     => 120,
+      "Campbell"      => 100,
       "Los Altos"     => 65,
-      "Palo Alto"     => 45,
+      "Palo Alto"     => 160,
       "Saratoga"      => 70,
       "Sunnyvale"     => 100,
       "Alviso"        => 10
