@@ -1,10 +1,14 @@
 == Idea: 
-As part of the hackathon project @Realtor.com company, our idea was to develop a project which helps in comparing nearby areas using 3D technology (Threejs). 
+As part of the hackathon project @Realtor.com (http://www.realtor.com) company, our hackathon idea was to develop a project which helps in comparing nearby areas in 3D way using Threejs (https://threejs.org/). 
 
-Its interactive in # of ways like :
-* Screen can be rotated.
-* Areas can be clicked.
-* Information is populated based on the clicked area (Using sample data set).
+== Features :
+* Screen can be rotated and view the 3D model in different dimensions.
+* Areas(3D Object) can be clicked and get relative information based on that.
+
+== Learnings from this project:
+* First time participating in hackathon :P
+* Working with <code> shapefiles </code>, <code> KML (Keyhole Markup Language) </code>, <code> SVG </code>, <code> My Maps (Google) </code> for gathering the GEO information.
+* Getting more knowledge on working with Three.js.
 
 == How to run ?
 Just clone the repo and run the command <code> rails s </code> (Maybe it will ask to to <code> bundle install </code> before it.)
