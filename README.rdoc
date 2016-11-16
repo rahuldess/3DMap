@@ -1,8 +1,19 @@
 == Idea: 
-As part of the hackathon project @Realtor.com company, our idea was to develop a project which helps in comparing nearby areas using 3D technology (Threejs).
+As part of the hackathon project @Realtor.com company, our idea was to develop a project which helps in comparing nearby areas using 3D technology (Threejs). 
+
+Its interactive in # of ways like :
+* Screen can be rotated.
+* Areas can be clicked.
+* Information is populated based on the clicked area (Using sample data set).
 
 == How to run ?
 Just clone the repo and run the command <code> rails s </code> (Maybe it will ask to to <code> bundle install </code> before it.)
 
 == URL to run
 Use http://localhost:3000/explore?area=santa_clara&type=hot_area.
+
+== How does it look ?
+
+https://cloud.githubusercontent.com/assets/4582543/20334310/e9eaf1e2-ab6d-11e6-93d2-ab14f384fb24.png
+
+https://cloud.githubusercontent.com/assets/4582543/20334318/fa4945b6-ab6d-11e6-98c4-2e56c58764f1.png
