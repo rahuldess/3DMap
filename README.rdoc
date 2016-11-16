@@ -1,28 +1,8 @@
-== README
+== Idea: 
+As part of the hackathon project @Realtor.com company, our idea was to develop a project which helps in comparing nearby areas using 3D technology (Threejs).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== How to run ?
+Just clone the repo and run the command <code> rails s </code> (Maybe it will ask to to <code> bundle install </code> before it.)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== URL to run
+Use http://localhost:3000/explore?area=santa_clara&type=hot_area.
